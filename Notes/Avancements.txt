@@ -1,0 +1,111 @@
+Fichier qui regroupe les différentes tentatives et resultats qui en découle
+
+____________________________________________________________
+METHODE 1 : CURVE_FIT
+
+Application de la fonction curve_fit de scipy avec en paramètres
+ - method='lm' / method='trf' 
+ - sigma=V_table / sigma=None
+ - maxfev=1000000
+
+On prend les paramètres donnés par Toczylowski pour p0
+
+Résultats globalement très bons pour He, Ne et Ar.
+    - Voir fichier Err
+    - Graphiquement les résultats ont tendance à perdre en précision
+      à partir d'un certain R grand. He : R=8.5 - Ar : R=12
+    - On a un très bon fit sur Ne pour p0=Toczylowski, method='lm', sigma=V_table
+    - Les contour-plot renvoient des max et min assez satisfaisant même s'ils
+      pourraient etre améliorés
+
+
+____________________________________________________________
+METHODE 2 : LEAST_SQUARES
+
+Application de la fonction least_squares de scipy avec les paramètres :
+ - method='trf'
+ - x_scale=None / x_scale='jac'
+ - loss='linear' / loss='soft_l1' / loss='huber'
+
+Résultats globalement très bons pour He, Ne et Ar.
+    - Memes remarques que pour curve_fit
+
+
+VARIATION DES PARAMETRES INITIAUX
+=> Procédure effectuée uniquement sur He dans un premier temps
+
+On fait 300 fits avec des paramètres initiaux choisis aleatoirement selon un
+un intervale aléatoire allant jusqu'à [-25,25].
+On calcul les métriques : R², RMSE et MAE de chaque paramètre optimal obtenu
+et on stock toutes les données
+L'objectif est de chercher à remarquer des tendances dans les paramètres les
+plus interessants
+
+**PROCEDURE A TERMINER**
+
+____________________________________________________________
+METHODE 3 : DIFFERENTIAL_EVOLUTION + LEAST_SQUARE
+
+L'objectif de cette méthode est de déterminer des paramètres qui fonctionnent de
+manière "grossière" avec differential_evolution de scipy puis d'affiner ces 
+paramètres en utilisant least_square.
+
+Griphiquement cette methode ne semble pas apporter des resultats suffisamment
+satisfaisant
+
+____________________________________________________________
+METHODE 4 : R PROGRESSIF
+
+On a remarqué qu'à partir d'un certain R, la courbe suis la trajectoire des
+points mais n'est pas alignée à ceci, ou parfois seulement un manque de précision.
+
+L'idée ici est d'effectuer le fit plusieurs fois sur un ensemble de données différent
+progressivement plus grand.
+
+On utilise la méthode least_squares.
+L'échantillon 1 contient les données pour R>=9
+L'échantillon 2 contient les données pour R>=7
+L'échantillon 3 contient les données pour R>=4 (cad toutes les données)
+
+TEST 1 :
+ * fit 1 : p0 = parametres de Toczylowski sur l'échantillon 1 -> on obtient p1
+=> Les points pour R=9 et + sont bien suivis par la courbe avec un leger surapprentissage pour R=12
+
+ * fit 2 : p0 = p1                        sur l'échantillon 2 -> on obtient p2
+=> Les fit sont bons pour 7<=R<=8.5 - A partir de 8.5 on perd en précision
+
+ * fit 3 : p0 = p2                        sur l'échantillon 3 -> on obtient p3
+=> Surapprentissage sur plusieurs valeurs de R. Les points sont atteints par la courbe mais elle oscile
+
+Conclusion du test 1 : on ne parvient pas a garder une précision satisfaisante pour R grand on se retrouve
+même avec du surapprentissage général, ce que l'on ne veut surtout pas
+
+TEST 2 :
+On essaye de faire varier pour donner plus d'importance aux points après R=8.5 et supprimer le 
+phénomène de perte de précision. On ajoute un fit intermédiaire qui a encore lieu sur l'échantillon 1.
+ * fit 1  : p0 = parametres de Toczylowski sur l'échantillon 1 -> on obtient p1
+=> Les points pour R=9 et + sont bien suivis par la courbe avec un leger surapprentissage pour R=12
+
+ * fit 2  : p0 = p1                        sur l'échantillon 2 -> on obtient p2
+=> Les fit sont bons pour 7<=R<=8.5 - A partir de 8.5 on perd en précision
+
+ * fit 2b : p0 = p2                        sur l'échantillon 1 -> on obtient p2
+=> Surapprentissage visible pour R=12
+
+
+ * fit 3  : p0 = p2b                       sur l'échantillon 3 -> on obtient p3
+=> Perte du phénomène du observé pour le fit 2b. Mais grosse perte de précision dès R=7.5
+
+Conclusion du test 2 : On parvient à perdre le surapprentissage général mais la question
+de la précision pour R grand n'est toujours pas résolut
+
+PISTES POUR LA SUITE : 
+
+Diminuer le nombre de données de manière précise peut permettre de ciblé quels points
+seront bien fit.
+Refaire le fit plusieurs fois sur le même échantillon peu engendrer un surapprentissage.
+Elargir l'échantillon peu faire perdre en précision sur les points initialement bien fit.
+
+Il est peut etre possible de trouver une methode qui permet de donner un poids aux paramètres
+ou à certaines données pour le fit. Ou bien standardiser les données pour que les données
+aux échelles plus grande n'écrasent pas les plus petites?
