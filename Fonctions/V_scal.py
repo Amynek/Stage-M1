@@ -25,7 +25,7 @@ def f(n,x):
     return y
 
 
-def V(vars, *params):
+def V(vars, params):
 
     R, Theta = vars
 
