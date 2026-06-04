@@ -64,7 +64,7 @@ def plot_interactif(model, params, fixed_vals, x, data, fixed_col, x_col,
 ############################################################################
 
 def multi_plot_interactif(model, list_params, fixed_vals, x, data, fixed_col, x_col, y_col, 
-                    title="Graphique interactif", fixed_first=True, nom_courbe=None):
+                          title="Graphique interactif", fixed_first=True, nom_courbe=None):
     
     fig = go.Figure()
     
@@ -98,10 +98,6 @@ def multi_plot_interactif(model, list_params, fixed_vals, x, data, fixed_col, x_
                              visible=True,
                              marker=dict(size=8)))
 
-    # Liste de tous les indices de traces (0 à N-1 = Modèles, N = Données)
-    tous_les_indices = list(range(num_models + 1))
-
-
     # 3. Etapes du Slider
     steps = []
     
@@ -130,7 +126,9 @@ def multi_plot_interactif(model, list_params, fixed_vals, x, data, fixed_col, x_
         x_updates.append(x_data_f[ordre_f].tolist())
         y_updates.append(y_data_f[ordre_f].tolist())
         
-        # Ajout de l'étape au slider
+        # --- CORRECTION ICI ---
+        # Au lieu de passer `tous_les_indices` en 3ème argument de args,
+        # on associe explicitement chaque modification à son index de trace.
         steps.append(dict(
             method="update",
             args=[
@@ -138,17 +136,13 @@ def multi_plot_interactif(model, list_params, fixed_vals, x, data, fixed_col, x_
                     "x": x_updates,
                     "y": y_updates
                 },
-                # Correction ici : Format dict requis pour le titre dans les arguments du slider
-                {"title": {"text": f"{title} - {fixed_col} = {val}"}}, 
-                tous_les_indices
+                {"title": {"text": f"{title} - {fixed_col} = {val}"}}
             ],
             label=str(val)
         ))
 
-
     # 4. Layout
     fig.update_layout(
-        # Correction ici : Format dict également pour l'affichage initial
         title={"text": f"{title} - {fixed_col} = {val_initiale}"},
         sliders=[dict(
             active=0,
@@ -160,7 +154,6 @@ def multi_plot_interactif(model, list_params, fixed_vals, x, data, fixed_col, x_
     )
 
     fig.show()
-
 
 
 ############################################################################
@@ -234,4 +227,9 @@ def contour_plot(ax, params, niveaux, niveaux_label, title):
 
     legende_point = Line2D([0], [0], linestyle='None', marker='v', color='red', markersize=5, label="Energie min")
     ax.legend(handles=[legende_point],loc='upper right', fontsize=10, framealpha=0.9)
+
+############################################################################
+############################################################################
+
+
 

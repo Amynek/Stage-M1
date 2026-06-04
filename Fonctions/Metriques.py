@@ -20,6 +20,37 @@ def mae(y,f):
     f = np.asarray(f)
     return np.mean(np.abs(y-f))
 
+def mae_pondere(y, f, alpha=1.0):
+    y = np.array(y)
+    f = np.array(f)
+    
+    # Pondération : 1 / (|y| + alpha) — plus y est petit, plus le poids est grand
+    poids = 1 / (np.abs(y) + alpha)
+    poids_normalise = poids / np.sum(poids)
+    
+    erreur_absolue = np.abs(y - f)
+    mae_pondere = np.sum(poids_normalise * erreur_absolue)
+    
+    return mae_pondere
+
+def mae_intervalle(y_exact, y_obtenu, seuil=1):
+    mask = np.abs(y_exact) < seuil
+    if np.sum(mask) == 0:
+        return np.nan
+    
+    mae_zero = np.mean(np.abs(y_exact[mask] - y_obtenu[mask]))
+    return mae_zero
+
+def mape(y,f):
+    y = np.asarray(y)
+    f = np.asarray(f)
+    mape_value = np.mean(np.abs((y - f) / y)) * 100
+    return mape_value
+
+def roughness(y,f):
+    f = np.asarray(f)
+    return np.mean(np.abs(np.diff(f, n=2)))
+
 def print_metriques(y_true, dict_predictions):
     """
     y : array-like
@@ -29,7 +60,7 @@ def print_metriques(y_true, dict_predictions):
     """
     
     # Définition des métriques à calculer
-    metriques = {"R²": rsq, "RMSE": rmse, "MAE": mae}
+    metriques = {"R²": rsq, "RMSE": rmse, "MAE": mae, "MAE pondérée": mae_pondere,"MAE petites valeurs": mae_intervalle, "Rugosité": roughness}
     
     # Calcul de la largeur maximale pour un alignement parfait des ":"
     longueur_max = max(len(f"{nom_metrique} ({nom_modele})") 
@@ -43,5 +74,5 @@ def print_metriques(y_true, dict_predictions):
             
             # Construction et alignement de la ligne de texte
             prefixe = f"{nom_metrique} ({nom_modele})"
-            print(f"{prefixe:<{longueur_max}} : {valeur}")
+            print(f"{prefixe:<{longueur_max}} : {valeur:.12f}")
         print()  # Ligne vide de séparation entre les blocs de métriques

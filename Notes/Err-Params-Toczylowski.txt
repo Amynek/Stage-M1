@@ -32,6 +32,7 @@ MAE : Erreur absolue moyenne (même unité que la cible)
     * Chaque erreur compte de façon linéaire
 => Met en valeur l’erreur moyenne du modèle
 __________________________
+MAPE : Erreur absolue moyenne en %
 
 _____________________________________________________________________________________
                               #===============#
