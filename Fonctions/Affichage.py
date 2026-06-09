@@ -1,5 +1,6 @@
 import plotly.graph_objects as go
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def plot_interactif(model, params, fixed_vals, x, data, fixed_col, x_col,
@@ -152,7 +153,78 @@ def multi_plot_interactif(model, list_params, fixed_vals, x, data, fixed_col, x_
 
     fig.show()
 
+##########################################################################################
+##########################################################################################
 
+def to_grid(R, T, E, R_unique, T_unique):
+    grid = np.empty((len(R_unique), len(T_unique)))
 
+    for i, r in enumerate(R_unique):
+        for j, t in enumerate(T_unique):
+            mask = (R == r) & (T == t)
+            grid[i, j] = E[mask][0]
 
+    return grid
 
+def plot_Theta_fix_zoom(Val_fixee, params, R_a0, Theta_deg, E_mEh,
+                        V_opt, xlim=[6,15], ylim=[-1,1]):
+    """
+    Val_fixee : entier de 0 à 18
+    params    : dict {"nom courbe": param_array}
+    """
+    Thet = np.linspace(0,180,19)
+    R_unique = np.unique(R_a0)
+    R_dense = np.linspace(np.min(R_unique),np.max(R_unique), 500)
+    E_chinois = to_grid(R_a0, Theta_deg, E_mEh, R_unique, Thet)
+
+    fig, ax = plt.subplots()
+    for nom, par in params.items():
+        courbe = V_opt(par,R_dense, np.full_like(R_dense,Thet[Val_fixee]))
+        ax.plot(R_dense, courbe, label=nom)   
+
+    ax.plot(R_unique,E_chinois[:,Val_fixee],"o", mec="1.0",color='r', ms=4, lw=1, label="Données ab initio")
+    ax.set_ylim(ylim[0],ylim[1])
+    ax.set_xlim(xlim[0],xlim[1])
+
+    ax.legend()
+    ax.grid(alpha=0.3)
+
+    plt.title(f"Energie potentielle en fonction de R pour Theta={Thet[Val_fixee]:.0f}°")
+    plt.xlabel("R (bohr)")
+    plt.ylabel("Energie potentielle (mEh)")
+    
+    plt.tight_layout()
+    plt.show()
+
+##########################################################################################
+##########################################################################################
+
+def plot_R_fix(Val_fixee, params, R_a0, Theta_deg, E_mEh, V_opt):
+    """
+    Val_fixee : entier de 0 à len(R_unique)-1
+    params    : dict {"nom courbe": param_array}
+    """
+    Thet = np.linspace(0,180,19)
+    Thet_dense = np.linspace(0, 180, 500)
+    R_unique = np.unique(R_a0)
+    R_dense = np.linspace(np.min(R_unique),np.max(R_unique), 500)
+    E_chinois = to_grid(R_a0, Theta_deg, E_mEh, R_unique, Thet)
+
+    fig, ax = plt.subplots()
+    for nom, par in params.items():
+        courbe = V_opt(par,np.full_like(Thet_dense,R_unique[Val_fixee]), Thet_dense)
+        ax.plot(Thet_dense, courbe, label=nom)   
+
+    ax.plot(Thet,E_chinois[Val_fixee,:],"o", 
+            mec="1.0",color='r', ms=4, lw=1, label="Données ab initio")
+
+    ax.legend()
+    ax.grid(alpha=0.3)
+
+    plt.title(f"Energie potentielle en fonction de Theta pour R={R_unique[Val_fixee]:.4f} bohr")
+    plt.xlabel("Theta en °")
+    plt.xticks(Thet, rotation=45)
+    plt.ylabel("Energie potentielle (mEh)")
+    
+    plt.tight_layout()
+    plt.show()
