@@ -167,24 +167,25 @@ def to_grid(R, T, E, R_unique, T_unique):
     return grid
 
 def plot_Theta_fix_zoom(Val_fixee, params, R_a0, Theta_deg, E,
-                        V_opt, xlim=[6,15], ylim=[-1,1]):
+                        V_opt, xlim=[6,15], ylim=[-1,1], data=True):
     """
-    Val_fixee : entier de 0 à 18
+    Val_fixee : entier
     params    : dict {"nom courbe": param_array}
     """
-    Thet = np.linspace(0,180,19)
+    Thet = np.unique(Theta_deg)
     R_unique = np.unique(R_a0)
     R_dense = np.linspace(np.min(R_unique),np.max(R_unique), 500)
-    E_chinois = to_grid(R_a0, Theta_deg, E, R_unique, Thet)
 
     fig, ax = plt.subplots()
     for nom, par in params.items():
         courbe = V_opt(par,R_dense, np.full_like(R_dense,Thet[Val_fixee]))
         ax.plot(R_dense, courbe, label=nom)   
-
-    ax.plot(R_unique,E_chinois[:,Val_fixee],"o", mec="1.0",color='r', ms=4, lw=1, label="Données ab initio")
+    if data:
+        E_chinois = to_grid(R_a0, Theta_deg, E, R_unique, Thet)
+        ax.plot(R_unique,E_chinois[:,Val_fixee],"o", mec="1.0",color='r', ms=4, lw=1, label="Données ab initio")
     ax.set_ylim(ylim[0],ylim[1])
     ax.set_xlim(xlim[0],xlim[1])
+    ax.set_yticks(np.linspace(ylim[0], ylim[1], 10))
 
     ax.legend()
     ax.grid(alpha=0.3)
@@ -197,7 +198,7 @@ def plot_Theta_fix_zoom(Val_fixee, params, R_a0, Theta_deg, E,
     plt.show()
 
 def plot_Theta_fix_zoom_cmm1(Val_fixee, params, R_a0, Theta_deg, E,
-                             V_opt, xlim=[0,25], ylim=[-5,500]):
+                             V_opt, xlim=[0,25], ylim=[-5,500], data=True):
     """
     Val_fixee : entier de 0 à 18
     params    : dict {"nom courbe": param_array}
@@ -205,7 +206,6 @@ def plot_Theta_fix_zoom_cmm1(Val_fixee, params, R_a0, Theta_deg, E,
     Thet = np.linspace(0,180,19)
     R_unique = np.unique(R_a0)
     R_dense = np.linspace(np.min(R_unique),np.max(R_unique), 500)
-    E_chinois = to_grid(R_a0, Theta_deg, E, R_unique, Thet)
 
     R_dense_A = R_dense * 1/1.889726125
     R_unique_A = R_unique * 1/1.889726125
@@ -215,7 +215,9 @@ def plot_Theta_fix_zoom_cmm1(Val_fixee, params, R_a0, Theta_deg, E,
         courbe = V_opt(par,R_dense, np.full_like(R_dense,Thet[Val_fixee])) * 219474.6313705 / 1000.0
         ax.plot(R_dense_A, courbe, label=nom)   
 
-    ax.plot(R_unique_A,E_chinois[:,Val_fixee],"o", mec="1.0",color='r', ms=4, lw=1, label="Données ab initio")
+    if data:
+        E_chinois = to_grid(R_a0, Theta_deg, E, R_unique, Thet)    
+        ax.plot(R_unique_A,E_chinois[:,Val_fixee],"o", mec="1.0",color='r', ms=4, lw=1, label="Données ab initio")
     ax.set_ylim(ylim[0],ylim[1])
     ax.set_xlim(xlim[0],xlim[1])
 
@@ -241,15 +243,16 @@ def plot_R_fix(Val_fixee, params, R_a0, Theta_deg, E, V_opt):
     Thet_dense = np.linspace(0, 180, 500)
     R_unique = np.unique(R_a0)
     R_dense = np.linspace(np.min(R_unique),np.max(R_unique), 500)
-    E_chinois = to_grid(R_a0, Theta_deg, E, R_unique, Thet)
 
     fig, ax = plt.subplots()
     for nom, par in params.items():
         courbe = V_opt(par,np.full_like(Thet_dense,R_unique[Val_fixee]), Thet_dense)
         ax.plot(Thet_dense, courbe, label=nom)   
 
+    
+    E_chinois = to_grid(R_a0, Theta_deg, E, R_unique, Thet)   
     ax.plot(Thet,E_chinois[Val_fixee,:],"o", 
-            mec="1.0",color='r', ms=4, lw=1, label="Données ab initio")
+                mec="1.0",color='r', ms=4, lw=1, label="Données ab initio")
 
     ax.legend()
     ax.grid(alpha=0.3)
