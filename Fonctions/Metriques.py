@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def rsq(y, f):
   y = np.asarray(y)
   f = np.asarray(f)
@@ -8,12 +7,10 @@ def rsq(y, f):
   sres = np.sum((y-f)**2)
   return 1.0 - sres/stot
 
-
 def rmse(y, f):
     y = np.asarray(y)
     f = np.asarray(f)
     return np.sqrt(np.mean((y-f)**2))
-
 
 def mae(y,f):
     y = np.asarray(y)
@@ -47,10 +44,6 @@ def mape(y,f):
     mape_value = np.mean(np.abs((y - f) / y)) * 100
     return mape_value
 
-def roughness(y,f):
-    f = np.asarray(f)
-    return np.mean(np.abs(np.diff(f, n=2)))
-
 def print_metriques(y_true, dict_predictions):
     """
     y : array-like
@@ -60,7 +53,7 @@ def print_metriques(y_true, dict_predictions):
     """
     
     # Définition des métriques à calculer
-    metriques = {"R²": rsq, "RMSE": rmse, "MAE": mae, "MAE pondérée": mae_pondere,"MAE petites valeurs": mae_intervalle, "Rugosité": roughness}
+    metriques = {"R²": rsq, "RMSE": rmse, "MAE": mae, "MAE pondérée": mae_pondere,"MAE petites valeurs": mae_intervalle}
     
     # Calcul de la largeur maximale pour un alignement parfait des ":"
     longueur_max = max(len(f"{nom_metrique} ({nom_modele})") 

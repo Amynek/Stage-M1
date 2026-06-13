@@ -5,7 +5,18 @@ import matplotlib.pyplot as plt
 
 def plot_interactif(model, params, fixed_vals, x, data, fixed_col, x_col,
                     y_col, title="Graphique interactif", fixed_first=True):
-
+    """
+    model       :  V_opt
+    params      :  40 paramètres en argument de V_opt
+    fixed_vals  :  ensemble des valeurs fixées
+    x           :  variable en abscisse (si R est fixé, theta est en abscisse et inversement)
+    data        :  jeu de données 
+    fixed_col   :  nom de fixed_vals dans data
+    x_col       :  nom de x dans data
+    y_col       :  nom de la variable à afficher en ordonnée dans data
+    title       :  titre du graphe
+    fixed_first :  pour model(p,a,b), fixed_first=True => a variable fixée | fixed_first=False => b variable fixée
+    """
     fig = go.Figure()
 
     for i, val in enumerate(fixed_vals):
@@ -66,6 +77,19 @@ def plot_interactif(model, params, fixed_vals, x, data, fixed_col, x_col,
 
 def multi_plot_interactif(model, list_params, fixed_vals, x, data, fixed_col, x_col, y_col, 
                           title="Graphique interactif", fixed_first=True, nom_courbe=None):
+    """
+    model       :  V_opt
+    list_params :  liste des paramètres qui seront comparés
+    fixed_vals  :  ensemble des valeurs fixées
+    x           :  variable en abscisse (si R est fixé, theta est en abscisse et inversement)
+    data        :  jeu de données 
+    fixed_col   :  nom de fixed_vals dans data
+    x_col       :  nom de x dans data
+    y_col       :  nom de la variable à afficher en ordonnée dans data
+    title       :  titre du graphe
+    fixed_first :  pour model(p,a,b), fixed_first=True => a variable fixée | fixed_first=False => b variable fixée
+    nom_courbe  :  nom associé à chaque paramètre pour la légende
+    """    
     
     fig = go.Figure()
     
@@ -75,7 +99,7 @@ def multi_plot_interactif(model, list_params, fixed_vals, x, data, fixed_col, x_
 
     val_initiale = fixed_vals[0]
 
-    # 1. Courbes de modèles INITIALES (Arrière-plan)
+    # 1. Courbes de modèles initiales
     for j in range(num_models):
         params = list_params[j]
         
@@ -88,7 +112,7 @@ def multi_plot_interactif(model, list_params, fixed_vals, x, data, fixed_col, x_
                                  mode='lines', name=nom_courbe[j],
                                  visible=True))
 
-    # 2. Points de données INITIALES (Premier plan)
+    # 2. Points de données initiales
     data_init = data[data[fixed_col] == val_initiale]
     x_data = np.asarray(data_init[x_col])
     y_data = np.asarray(data_init[y_col])
@@ -118,7 +142,7 @@ def multi_plot_interactif(model, list_params, fixed_vals, x, data, fixed_col, x_
             x_updates.append(x.tolist())
             y_updates.append(y_model.tolist())
             
-        # B. Mise à jour des données réelles filtrées
+        # B. Mise à jour des données fournies filtrées
         data_filtree = data[data[fixed_col] == val]
         x_data_f = np.asarray(data_filtree[x_col])
         y_data_f = np.asarray(data_filtree[y_col])
@@ -157,6 +181,14 @@ def multi_plot_interactif(model, list_params, fixed_vals, x, data, fixed_col, x_
 ##########################################################################################
 
 def to_grid(R, T, E, R_unique, T_unique):
+    """
+    Création d'un tableau :
+        | T1  T2  T3 ...
+    ----|----------------------
+     R1 | E11 ...
+     R2 | ... ...
+    """
+    
     grid = np.empty((len(R_unique), len(T_unique)))
 
     for i, r in enumerate(R_unique):
@@ -169,14 +201,17 @@ def to_grid(R, T, E, R_unique, T_unique):
 def plot_Theta_fix_zoom(Val_fixee, params, R_a0, Theta_deg, E,
                         V_opt, xlim=[6,15], ylim=[-1,1], data=True):
     """
-    Val_fixee : entier
+    Val_fixee : entier (adresse du tableau des Theta : Theta[Val_fixee])
     params    : dict {"nom courbe": param_array}
     """
     Thet = np.unique(Theta_deg)
     R_unique = np.unique(R_a0)
     R_dense = np.linspace(np.min(R_unique),np.max(R_unique), 500)
-
+    
     fig, ax = plt.subplots()
+
+    ax.axhline(0, color='k', ls='--', lw=1)
+    
     for nom, par in params.items():
         courbe = V_opt(par,R_dense, np.full_like(R_dense,Thet[Val_fixee]))
         ax.plot(R_dense, courbe, label=nom)   
@@ -211,6 +246,9 @@ def plot_Theta_fix_zoom_cmm1(Val_fixee, params, R_a0, Theta_deg, E,
     R_unique_A = R_unique * 1/1.889726125
     
     fig, ax = plt.subplots()
+
+    ax.axhline(0, color='k', ls='--', lw=1)
+    
     for nom, par in params.items():
         courbe = V_opt(par,R_dense, np.full_like(R_dense,Thet[Val_fixee])) * 219474.6313705 / 1000.0
         ax.plot(R_dense_A, courbe, label=nom)   
@@ -225,8 +263,8 @@ def plot_Theta_fix_zoom_cmm1(Val_fixee, params, R_a0, Theta_deg, E,
     ax.grid(alpha=0.3)
 
     plt.title(f"Energie potentielle en fonction de R pour Theta={Thet[Val_fixee]:.0f}°")
-    plt.xlabel("R (angstrom)")
-    plt.ylabel("Energie potentielle (cm^-1)")
+    plt.xlabel(r"R ($\AA$)")
+    plt.ylabel(r"Energie potentielle ($cm^{-1}$)")
     
     plt.tight_layout()
     plt.show()
@@ -292,7 +330,107 @@ def plot_R_fix_cmm1(Val_fixee, params, R_a0, Theta_deg, E, V_opt):
     plt.title(f"Energie potentielle en fonction de Theta pour R={R_ang:.4f} bohr")
     plt.xlabel("Theta en °")
     plt.xticks(Thet, rotation=45)
-    plt.ylabel("Energie potentielle (cm^-1)")
+    plt.ylabel(r"Energie potentielle ($cm^{-1}$)")
     
+    plt.tight_layout()
+    plt.show()
+
+############################################################################################################################
+############################################################################################################################
+
+def erreur_rel_Theta_fix(theta_fix, Theta_deg, R_a0, E, params, V_opt):
+    """
+    theta_fix : valeur de theta fixée
+    Theta_deg : valeurs de theta possible
+    R_a0      : valeurs de R
+    E         : energie ab initio en cm-1
+    params    : dict {"nom courbe": param_array}
+    """
+    i_theta = np.argmin(np.abs(Theta_deg - theta_fix))
+
+    Thet = np.unique(Theta_deg)
+    R_unique = np.unique(R_a0)
+    E_grid = to_grid(R_a0, Theta_deg, E, R_unique, Thet)
+
+    
+    fig, ax = plt.subplots()
+
+    for nom, p in params.items():
+
+        V_fit = V_opt(p, R_a0, Theta_deg) * 219474.6313705 / 1000.0
+        V_grid = to_grid(R_a0, Theta_deg, V_fit, R_unique, Thet)
+        erreur = 100 * np.abs(V_grid[:, i_theta] - E_grid[:, i_theta]) / np.abs(E_grid[:, i_theta])
+
+        ax.plot(R_unique * 0.529177210903, erreur, label=nom) # Affichage en Angstrom
+
+    plt.xlabel(r"R ($\AA$)")
+    plt.ylabel("Erreur relative (%)")
+    plt.title(f"Erreur relative pour θ = {Theta_deg[i_theta]:.0f}°")
+    plt.legend()
+    plt.grid()
+    plt.tight_layout()
+    plt.show()
+
+def erreur_abs_Theta_fix(theta_fix, Theta_deg, R_a0, E, params, V_opt):
+    """
+    theta_fix : valeur de theta fixée
+    Theta_deg : valeurs de theta possible
+    R_a0      : valeurs de R
+    E         : energie ab initio en cm-1
+    params    : dict {"nom courbe": param_array}
+    """
+    i_theta = np.argmin(np.abs(Theta_deg - theta_fix))
+
+    Thet = np.unique(Theta_deg)
+    R_unique = np.unique(R_a0)
+    E_grid = to_grid(R_a0, Theta_deg, E, R_unique, Thet)
+
+    
+    fig, ax = plt.subplots()
+
+    for nom, p in params.items():
+
+        V_fit = V_opt(p, R_a0, Theta_deg) * 219474.6313705 / 1000.0
+        V_grid = to_grid(R_a0, Theta_deg, V_fit, R_unique, Thet)
+        erreur = 100 * np.abs(V_grid[:, i_theta] - E_grid[:, i_theta])
+
+        ax.plot(R_unique * 0.529177210903, erreur, label=nom) # Affichage en Angstrom
+
+    plt.xlabel(r"R ($\AA$)")
+    plt.ylabel("Erreur absolue ($cm^{-1}$)")
+    plt.title(f"Erreur absolue pour θ = {Theta_deg[i_theta]:.0f}°")
+    plt.legend()
+    plt.grid()
+    plt.tight_layout()
+    plt.show()
+
+
+def erreur_rel_contour(Theta_deg, R_a0, E, params, V_opt):
+    """
+    theta_fix : valeur de theta fixée
+    Theta_deg : valeurs de theta possible
+    R_a0      : valeurs de R
+    E         : energie ab initio en cm-1
+    params    : dict {"nom courbe": param_array}
+    """
+    Thet = np.unique(Theta_deg)
+    R_unique = np.unique(R_a0)
+    E_grid = to_grid(R_a0, Theta_deg, E, R_unique, Thet)
+
+    
+    fig, ax = plt.subplots()
+
+    (nom, p), = params.items()
+    V_fit = V_opt(p, R_a0, Theta_deg) * 219474.6313705 / 1000.0
+    V_grid = to_grid(R_a0, Theta_deg, V_fit, R_unique, Thet)
+    erreur = 100 * np.abs(V_grid - E_grid) / np.abs(E_grid)
+
+    c = ax.contourf(Thet, R_unique * 0.529177210903, erreur, levels=50, cmap="coolwarm")
+    plt.colorbar(c, ax=ax, label="Erreur")
+
+    ax.set_xlabel("Theta (deg)")
+    ax.set_ylabel(r"R ($\AA$)")
+
+    plt.title(f"Erreur relative pour les paramètres optimaux = {nom}")
     plt.tight_layout()
     plt.show()
