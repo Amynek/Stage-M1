@@ -1,0 +1,20 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}A savoir}{2}{section.1}%
+\contentsline {section}{\numberline {2}Les 5 jeux de paramètres}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Valeurs obtenues}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Détails des méthodes}{3}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}curve\_fit (Table~\ref {params_cf})}{3}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}least\_squares n°1 (Table~\ref {params_ls_1})}{3}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}least\_squares n°2 (Table~\ref {params_ls_2})}{3}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}differential\_evolution (Table~\ref {params_df})}{3}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Paramètres optimaux pour les données ab initio de Toczylowski (Table~\ref {params_polonais})}{4}{subsubsection.2.2.5}%
+\contentsline {section}{\numberline {3}Erreurs par rapport aux données ab-initio de Liman Tian}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Erreur absolue pour $\theta $ fixé}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Erreur relative pour $\theta $ fixé}{6}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Erreur relative pour tout les $\theta $ et $R$}{7}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Contour plot}{8}{section.4}%
+\contentsline {section}{\numberline {5}Minimum Energy Path}{9}{section.5}%
+\contentsline {section}{\numberline {6}Courbes des énergies pour $\theta $ fixé}{10}{section.6}%
+\contentsline {section}{\numberline {7}Courbes des énergies pour R fixé}{11}{section.7}%
+\contentsline {section}{\numberline {8}Conclusion}{11}{section.8}%
+\contentsline {section}{\numberline {A}Figures complémentaires}{12}{appendix.A}%

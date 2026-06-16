@@ -233,7 +233,7 @@ def plot_Theta_fix_zoom(Val_fixee, params, R_a0, Theta_deg, E,
     plt.show()
 
 def plot_Theta_fix_zoom_cmm1(Val_fixee, params, R_a0, Theta_deg, E,
-                             V_opt, xlim=[0,25], ylim=[-5,500], data=True):
+                             V_opt, xlim=[0,25], ylim=[-5,500], data=True, aff_Title=True):
     """
     Val_fixee : entier de 0 à 18
     params    : dict {"nom courbe": param_array}
@@ -261,8 +261,8 @@ def plot_Theta_fix_zoom_cmm1(Val_fixee, params, R_a0, Theta_deg, E,
 
     ax.legend()
     ax.grid(alpha=0.3)
-
-    plt.title(f"Energie potentielle en fonction de R pour Theta={Thet[Val_fixee]:.0f}°")
+    if aff_Title:
+        plt.title(f"Energie potentielle en fonction de R pour Theta={Thet[Val_fixee]:.0f}°")
     plt.xlabel(r"R ($\AA$)")
     plt.ylabel(r"Energie potentielle ($cm^{-1}$)")
     
@@ -303,7 +303,7 @@ def plot_R_fix(Val_fixee, params, R_a0, Theta_deg, E, V_opt):
     plt.tight_layout()
     plt.show()
 
-def plot_R_fix_cmm1(Val_fixee, params, R_a0, Theta_deg, E, V_opt):
+def plot_R_fix_cmm1(Val_fixee, params, R_a0, Theta_deg, E, V_opt, aff_Title=True):
     """
     Val_fixee : entier de 0 à len(R_unique)-1
     params    : dict {"nom courbe": param_array}
@@ -326,8 +326,8 @@ def plot_R_fix_cmm1(Val_fixee, params, R_a0, Theta_deg, E, V_opt):
     ax.grid(alpha=0.3)
 
     R_ang = R_unique[Val_fixee] * 1/1.889726125
-    
-    plt.title(f"Energie potentielle en fonction de Theta pour R={R_ang:.4f} bohr")
+    if aff_Title:
+        plt.title(rf"Energie potentielle en fonction de Theta pour R={R_ang:.4f} $\AA$")
     plt.xlabel("Theta en °")
     plt.xticks(Thet, rotation=45)
     plt.ylabel(r"Energie potentielle ($cm^{-1}$)")
@@ -338,7 +338,7 @@ def plot_R_fix_cmm1(Val_fixee, params, R_a0, Theta_deg, E, V_opt):
 ############################################################################################################################
 ############################################################################################################################
 
-def erreur_rel_Theta_fix(theta_fix, Theta_deg, R_a0, E, params, V_opt):
+def erreur_rel_Theta_fix(theta_fix, Theta_deg, R_a0, E, params, V_opt, aff_Title=True):
     """
     theta_fix : valeur de theta fixée
     Theta_deg : valeurs de theta possible
@@ -365,13 +365,14 @@ def erreur_rel_Theta_fix(theta_fix, Theta_deg, R_a0, E, params, V_opt):
 
     plt.xlabel(r"R ($\AA$)")
     plt.ylabel("Erreur relative (%)")
-    plt.title(f"Erreur relative pour θ = {Theta_deg[i_theta]:.0f}°")
+    if aff_Title:
+        plt.title(f"Erreur relative pour θ = {Theta_deg[i_theta]:.0f}°")
     plt.legend()
     plt.grid()
     plt.tight_layout()
     plt.show()
 
-def erreur_abs_Theta_fix(theta_fix, Theta_deg, R_a0, E, params, V_opt):
+def erreur_abs_Theta_fix(theta_fix, Theta_deg, R_a0, E, params, V_opt, aff_Title=True):
     """
     theta_fix : valeur de theta fixée
     Theta_deg : valeurs de theta possible
@@ -398,14 +399,15 @@ def erreur_abs_Theta_fix(theta_fix, Theta_deg, R_a0, E, params, V_opt):
 
     plt.xlabel(r"R ($\AA$)")
     plt.ylabel("Erreur absolue ($cm^{-1}$)")
-    plt.title(f"Erreur absolue pour θ = {Theta_deg[i_theta]:.0f}°")
+    if aff_Title:
+        plt.title(f"Erreur absolue pour θ = {Theta_deg[i_theta]:.0f}°")
     plt.legend()
     plt.grid()
     plt.tight_layout()
     plt.show()
 
 
-def erreur_rel_contour(Theta_deg, R_a0, E, params, V_opt):
+def erreur_rel_contour(Theta_deg, R_a0, E, params, V_opt, aff_Title=True):
     """
     theta_fix : valeur de theta fixée
     Theta_deg : valeurs de theta possible
@@ -425,12 +427,12 @@ def erreur_rel_contour(Theta_deg, R_a0, E, params, V_opt):
     V_grid = to_grid(R_a0, Theta_deg, V_fit, R_unique, Thet)
     erreur = 100 * np.abs(V_grid - E_grid) / np.abs(E_grid)
 
-    c = ax.contourf(Thet, R_unique * 0.529177210903, erreur, levels=50, cmap="coolwarm")
-    plt.colorbar(c, ax=ax, label="Erreur")
+    c = ax.contourf(Thet, R_unique * 0.529177210903, erreur, levels=np.linspace(0, 100, 51), cmap="coolwarm", extend="max")
+    plt.colorbar(c, ax=ax, label="Erreur relative (%)")
 
     ax.set_xlabel("Theta (deg)")
     ax.set_ylabel(r"R ($\AA$)")
-
-    plt.title(f"Erreur relative pour les paramètres optimaux = {nom}")
+    if aff_Title:
+        plt.title(f"Erreur relative pour les paramètres optimaux = {nom}")
     plt.tight_layout()
     plt.show()

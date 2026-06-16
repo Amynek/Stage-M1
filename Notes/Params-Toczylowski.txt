@@ -390,7 +390,7 @@ Ar-HCN - Paramètres optimaux : least_squares + x_scale='jac' + loss='huber' et 
 -------------------------------------------------------------------------------------------------------------
 
 
-Ne-HCN - METRIQUES pour les parametres de Toczylowski
+Ar-HCN - METRIQUES pour les parametres de Toczylowski
  ---------------------------------
 | R²    :  0.9973571231491378     |
 | RMSE  :  0.14053712510676145    |
