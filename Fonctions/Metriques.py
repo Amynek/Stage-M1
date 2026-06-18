@@ -46,10 +46,10 @@ def mape(y,f):
 
 def print_metriques(y_true, dict_predictions):
     """
-    y : array-like
+    y : array
         Les valeurs réelles (ex: E_mEh)
     dict_predictions : dict
-        Dictionnaire au format {"Nom du modèle": y_predise}
+        Dictionnaire au format {"Nom du modèle": y_pred}
     """
     
     # Définition des métriques à calculer
