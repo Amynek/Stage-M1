@@ -1,5 +1,1 @@
-Affichage-Ar-Chinois-Complet.ipynb filter=lfs diff=lfs merge=lfs -text
-Affichage-Ar-Chinois-Partiel.ipynb filter=lfs diff=lfs merge=lfs -text
-Ar-HNC.ipynb filter=lfs diff=lfs merge=lfs -text
-Affichage-HNC-Ar.ipynb filter=lfs diff=lfs merge=lfs -text
 *.ipynb filter=lfs diff=lfs merge=lfs -text
