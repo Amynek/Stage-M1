@@ -1,3 +1,4 @@
+
 import numpy as np
 from   numpy.polynomial.legendre import legval
 from   scipy.special             import eval_legendre
@@ -88,5 +89,83 @@ def V_opt(p, R, Theta):
       
     return V_total # Energie renvoyée en mEh (selon les parametres p donnés)
 
+def V_opt_de(p, R, Theta):
+    """
+    VERSION OPTIMISÉE POUR OPTIMISATION
 
-    
+    p : vecteur (40,)
+        p[6:10] = u  (log-params)
+        c = -10^u
+    """
+
+    R = np.asarray(R, dtype=float)
+    cosTh = np.cos(np.deg2rad(np.asarray(Theta, dtype=float)))
+
+    # ----------------- paramètres ----------------- #
+    b  = p[0:6]
+    u  = p[6:10]          # transformation
+    d  = p[10:16]
+
+    g0 = np.asarray(p[16:22], dtype=float)
+    g1 = np.asarray(p[22:28], dtype=float)
+    g2 = np.asarray(p[28:34], dtype=float)
+    g3 = np.asarray(p[34:40], dtype=float)
+
+    # reconstruction physique
+    c = -10.0 ** u
+
+    # ----------------- X(theta) ------------------ #
+    X_b = legval(cosTh, b)
+    X_d = legval(cosTh, d)
+
+    X_bR = X_b * R
+    abs_BR = np.abs(X_bR)
+
+    # ----------------- Legendre ------------------ #
+    Pl = eval_legendre(np.arange(6)[:, None], cosTh)
+
+    # ----------------- short-range ---------------- #
+    g = g0[:, None] + R * (g1[:, None] + R * (g2[:, None] + R * g3[:, None]))
+
+    exp_val = np.clip(X_d - X_bR, -200, 200)
+
+    V_sh = np.sum(g * Pl, axis=0) * np.exp(exp_val)
+
+    # ----------------- asymptotique --------------- #
+    inv_R = 1.0 / R
+    inv_R6 = inv_R**6
+    inv_R7 = inv_R6 * inv_R
+
+    C6 = c[0] * (1.0) + c[2] * (0.5 * (3*cosTh**2 - 1))
+    C7 = c[1] * (cosTh) + c[3] * (0.5 * (5*cosTh**3 - 3*cosTh))
+
+    V_as = (
+        f6_opt(abs_BR) * C6 * inv_R6 +
+        f7_opt(abs_BR) * C7 * inv_R7
+    )
+
+    # ----------------- total ---------------------- #
+    V_total = V_sh + V_as
+
+    return np.nan_to_num(
+        V_total,
+        nan=1e100,
+        posinf=1e100,
+        neginf=-1e100
+    )
+
+# Fonction qui converti les paramètres obtenus via V_opt_de en paramètres compatibles avec V_opt
+def de_to_opt(p_de):
+    p = p_de.copy()
+    p[6:10] = -10.0 ** p_de[6:10]   # u → c
+    return p
+
+# Fonction qui converti les paramètres obtenus via V_opt en paramètres compatibles avec V_opt_de
+def opt_to_de(p_opt):
+    p = p_opt.copy().astype(float)
+    c = p_opt[6:10]
+    # c doit être négatif pour que log10(-c) soit défini
+    if np.any(c >= 0):
+        raise ValueError(f"c doit être négatif, got {c}")
+    p[6:10] = np.log10(-c)   # c → u
+    return p

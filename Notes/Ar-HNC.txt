@@ -1,0 +1,31 @@
+Paramètres :
+
+CURVE_FIT :
+
+params_opt_cf_lm X
+params_opt_cf_lm_sigma X
+params_opt_cf_trf X
+params_opt_cf_trf_sigma V 
+params_opt_cf_trf_sigma_A X
+params_opt_cf_trf_sigma_B X
+params_opt_cf_trf_sigma_C X
+params_opt_cf_trf_sigma_good X
+params_opt_cf_trf_sigma_hybrid X
+
+LEAST_SQUARES : 
+params_opt_ls X
+params_opt_ls_jac X
+params_opt_ls_jac_soft X
+params_opt_ls_jac_huber X
+params_opt_ls_norm X
+params_opt_ls_jac_norm X
+params_opt_ls_jac_soft_norm X
+params_opt_ls_jac_huber_norm X 
+params_opt_ls_norm2 X
+params_opt_ls_jac_norm2 X
+params_opt_ls_jac_soft_norm2 X
+params_opt_ls_jac_huber_norm2 X
+de_to_opt(result_ls_hybrid.x) X
+de_to_opt(result_ls_smooth.x) X
+de_to_opt(result_ls_sigma_final.x) V
+de_to_opt(result_bounded.x) V

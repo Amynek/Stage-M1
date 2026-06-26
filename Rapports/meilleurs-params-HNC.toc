@@ -1,0 +1,15 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}A savoir}{2}{section.1}%
+\contentsline {section}{\numberline {2}Les 3 jeux de paramètres}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Valeurs obtenues}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Détails des méthodes}{3}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Premier jeu (Table~\ref {params_cf_trf_sigma})}{3}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Deuxième jeu (Table~\ref {params_ls_sigma_final})}{3}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Troisième jeu (Table~\ref {params_ls_bounded})}{3}{subsubsection.2.2.3}%
+\contentsline {section}{\numberline {3}Erreurs obtenues en comparaison aux données de référence}{4}{section.3}%
+\contentsline {section}{\numberline {4}Contour plot}{7}{section.4}%
+\contentsline {section}{\numberline {5}Minimums Energy Paths}{8}{section.5}%
+\contentsline {section}{\numberline {6}Courbes d'énergies potentielles pour $\theta $ fixé}{9}{section.6}%
+\contentsline {section}{\numberline {7}Courbes d'énergies potentielles pour $R$ fixé}{10}{section.7}%
+\contentsline {section}{\numberline {8}Conclusion}{10}{section.8}%
+\contentsline {section}{\numberline {A}Figures complémentaires}{11}{appendix.A}%

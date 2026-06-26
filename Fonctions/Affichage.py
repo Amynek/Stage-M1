@@ -196,14 +196,13 @@ def plot_Theta_fix_zoom(Val_fixee, params, R_a0, Theta_deg, E,
     plt.tight_layout()
     plt.show()
 
-def plot_Theta_fix_zoom_cmm1(
-    Val_fixee, params, R_a0, Theta_deg, E,
-    V_opt,
-    xlim=[0,25], ylim=[-5,500],
-    data=True, aff_Title=True,
-    ax=None
-):
-    Thet = np.linspace(0, 180, 19)
+def plot_Theta_fix_zoom_cmm1(Val_fixee, params, R_a0, Theta_deg, E,
+                             V_opt,
+                             xlim=[0,25], ylim=[-5,500],
+                             data=True, aff_Title=True,
+                             ax=None, data_dot=True):
+    
+    Thet = np.unique(Theta_deg)
     R_unique = np.unique(R_a0)
     R_dense = np.linspace(np.min(R_unique), np.max(R_unique), 500)
 
@@ -225,9 +224,14 @@ def plot_Theta_fix_zoom_cmm1(
 
     if data:
         E_chinois = to_grid(R_a0, Theta_deg, E, R_unique, Thet)
-        ax.plot(R_unique_A, E_chinois[:, Val_fixee],
-                "o", mec="1.0", color='r', ms=4, lw=1,
-                label="Données ab initio")
+        if data_dot:
+            ax.plot(R_unique_A, E_chinois[:, Val_fixee],
+                    "o", mec="1.0", color='r', ms=4, lw=1,
+                    label="Données de référence")
+        else:
+            ax.plot(R_unique_A, E_chinois[:, Val_fixee],
+                    "--", mec="1.0", color='r', ms=4, lw=1,
+                    label="Données de référence")
 
     ax.set_xlim(xlim)
     ax.set_ylim(ylim)
@@ -247,6 +251,8 @@ def plot_Theta_fix_zoom_cmm1(
         plt.tight_layout()
         plt.show()
 
+
+    
 ##########################################################################################
 ##########################################################################################
 
@@ -284,9 +290,9 @@ def plot_R_fix(Val_fixee, params, R_a0, Theta_deg, E, V_opt):
 def plot_R_fix_cmm1(
     Val_fixee, params, R_a0, Theta_deg, E, V_opt,
     aff_Title=True,
-    ax=None
+    ax=None, data_dot=True
 ):
-    Thet = np.linspace(0, 180, 19)
+    Thet = np.unique(Theta_deg)
     Thet_dense = np.linspace(0, 180, 500)
 
     R_unique = np.unique(R_a0)
@@ -309,17 +315,10 @@ def plot_R_fix_cmm1(
         ) * 219474.6313705 / 1000.0
 
         ax.plot(Thet_dense, courbe, label=nom)
-
-    ax.plot(
-        Thet,
-        E_chinois[Val_fixee, :],
-        "o",
-        mec="1.0",
-        color='r',
-        ms=4,
-        lw=1,
-        label="Données ab initio"
-    )
+    if data_dot:
+        ax.plot(Thet,E_chinois[Val_fixee, :],"o",mec="1.0",color='r',ms=4,lw=1,label="Données ab initio")
+    else:
+        ax.plot(Thet,E_chinois[Val_fixee, :],"--",mec="1.0",color='r',ms=4,lw=1,label="Données ab initio")
 
     ax.grid(alpha=0.3)
     ax.legend()
@@ -330,7 +329,7 @@ def plot_R_fix_cmm1(
         ax.set_title(rf"Energie potentielle en fonction de $\Theta$ pour R={R_ang:.4f} $\AA$")
 
     ax.set_xlabel("Theta en °")
-    ax.set_xticks(Thet)
+    ax.set_xticks(np.linspace(0,180,19))
     ax.tick_params(axis='x', rotation=45)
     ax.set_ylabel(r"Energie potentielle ($cm^{-1}$)")
 
@@ -411,35 +410,61 @@ def erreur_abs_Theta_fix(theta_fix, Theta_deg, R_a0, E, params, V_opt, aff_Title
     plt.show()
 
 
-def erreur_rel_contour(Theta_deg, R_a0, E, params, V_opt, aff_Title=True):
+def erreur_rel_contour(Theta_deg, R_a0, E, params, V_opt, ax=None, aff_Title=True):
     """
     theta_fix : valeur de theta fixée
-    Theta_deg : valeurs de theta possible
+    Theta_deg : valeurs de theta possibles
     R_a0      : valeurs de R
-    E         : energie ab initio en cm-1
+    E         : énergie ab initio en cm-1
     params    : dict {"nom courbe": param_array}
+    ax        : axe matplotlib (subplot). Si None → création figure autonome
     """
+
+    import matplotlib.pyplot as plt
+    import numpy as np
+
     Thet = np.unique(Theta_deg)
     R_unique = np.unique(R_a0)
     E_grid = to_grid(R_a0, Theta_deg, E, R_unique, Thet)
 
-    
-    fig, ax = plt.subplots()
+    # gestion subplot vs standalone
+    if ax is None:
+        fig, ax = plt.subplots()
+        standalone = True
+    else:
+        fig = ax.figure
+        standalone = False
 
+    # paramètres (un seul couple attendu)
     (nom, p), = params.items()
+
     V_fit = V_opt(p, R_a0, Theta_deg) * 219474.6313705 / 1000.0
     V_grid = to_grid(R_a0, Theta_deg, V_fit, R_unique, Thet)
-    erreur = 100 * np.abs(V_grid - E_grid) / np.abs(E_grid)
 
-    c = ax.contourf(Thet, R_unique * 0.529177210903, erreur, levels=np.linspace(0, 100, 51), cmap="coolwarm", extend="max")
-    plt.colorbar(c, ax=ax, label="Erreur relative (%)")
+    erreur = 100 * np.abs(V_grid - E_grid) / (np.abs(E_grid)+1e-6)
+
+    c = ax.contourf(
+        Thet,
+        R_unique * 0.529177210903,
+        erreur,
+        levels=np.linspace(0, 100, 51),
+        cmap="coolwarm",
+        extend="max"
+    )
 
     ax.set_xlabel("Theta (deg)")
     ax.set_ylabel(r"R ($\AA$)")
+
     if aff_Title:
-        plt.title(f"Erreur relative pour les paramètres optimaux = {nom}")
-    plt.tight_layout()
-    plt.show()
+        ax.set_title(f"Erreur relative pour les paramètres optimaux = {nom}")
+
+    # seulement en mode standalone
+    if standalone:
+        fig.colorbar(c, ax=ax, label="Erreur relative (%)")
+        plt.tight_layout()
+        plt.show()
+
+    return c
 
 def erreur_rel_tricontour(Theta_deg, R_a0, E, params, V_opt, ax=None, aff_Title=True):
 

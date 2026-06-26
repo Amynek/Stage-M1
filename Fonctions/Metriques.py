@@ -1,4 +1,8 @@
 import numpy as np
+import pandas as pd
+
+# y : valeur exacte
+# f : valeur prédite
 
 def rsq(y, f):
   y = np.asarray(y)
@@ -44,6 +48,26 @@ def mape(y,f):
     mape_value = np.mean(np.abs((y - f) / y)) * 100
     return mape_value
 
+def erreur_rel(y,f):
+    y = np.asarray(y)
+    f = np.asarray(f)  
+    return 100 * np.abs(f-y)/(np.abs(f) + 0.02 * np.ptp(y))
+    
+def erreur_abs(y,f):
+    y = np.asarray(y)
+    f = np.asarray(f)  
+    return np.abs(f-y)
+
+def max_rel(y,f):
+    return erreur_rel(y,f).max()
+def max_abs(y,f):
+    return erreur_abs(y,f).max()
+
+def mean_rel(y,f):
+    return erreur_rel(y,f).mean()
+def mean_abs(y,f):
+    return erreur_abs(y,f).mean()
+
 def print_metriques(y_true, dict_predictions):
     """
     y : array
@@ -69,3 +93,29 @@ def print_metriques(y_true, dict_predictions):
             prefixe = f"{nom_metrique} ({nom_modele})"
             print(f"{prefixe:<{longueur_max}} : {valeur:.12f}")
         print()  # Ligne vide de séparation entre les blocs de métriques
+
+def calcul_metriques(y_true, dict_predictions):
+    """
+    Parameters
+    ----------
+    y_true : array-like
+        Valeurs de référence.
+
+    dict_predictions : dict
+        Dictionnaire de la forme :
+        {"Nom du modèle": y_pred}
+    """
+
+    metriques = {"R²": rsq,"RMSE": rmse,"MAE": mae,
+                 "Relative Max (%)": max_rel, "Relative Moyenne (%)": mean_rel,
+                 "Absolue Max": max_abs,  "Absolue Moyenne": mean_abs}
+
+    data = {}
+
+    for nom_modele, y_pred in dict_predictions.items():
+        data[nom_modele] = {
+            nom_metrique: fonction(y_true, y_pred)
+            for nom_metrique, fonction in metriques.items()
+        }
+
+    return pd.DataFrame.from_dict(data, orient="index")
