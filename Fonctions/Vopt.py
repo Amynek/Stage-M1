@@ -91,7 +91,7 @@ def V_opt(p, R, Theta):
 
 def V_opt_de(p, R, Theta):
     """
-    VERSION OPTIMISÉE POUR OPTIMISATION
+    VERSION ADAPTEE POUR OPTIMISATION
 
     p : vecteur (40,)
         p[6:10] = u  (log-params)

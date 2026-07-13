@@ -68,6 +68,8 @@ def mean_rel(y,f):
 def mean_abs(y,f):
     return erreur_abs(y,f).mean()
 
+
+
 def print_metriques(y_true, dict_predictions):
     """
     y : array

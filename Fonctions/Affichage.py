@@ -209,7 +209,6 @@ def plot_Theta_fix_zoom_cmm1(Val_fixee, params, R_a0, Theta_deg, E,
     R_dense_A = R_dense / 1.889726125
     R_unique_A = R_unique / 1.889726125
 
-    # création conditionnelle
     if ax is None:
         fig, ax = plt.subplots()
         standalone = True
@@ -246,7 +245,7 @@ def plot_Theta_fix_zoom_cmm1(Val_fixee, params, R_a0, Theta_deg, E,
 
     ax.legend()
 
-    # on ne fait show QUE si fonction autonome
+    # show que si fonction autonome
     if standalone:
         plt.tight_layout()
         plt.show()
@@ -435,7 +434,7 @@ def erreur_rel_contour(Theta_deg, R_a0, E, params, V_opt, ax=None, aff_Title=Tru
         fig = ax.figure
         standalone = False
 
-    # paramètres (un seul couple attendu)
+    # paramètres
     (nom, p), = params.items()
 
     V_fit = V_opt(p, R_a0, Theta_deg) * 219474.6313705 / 1000.0
