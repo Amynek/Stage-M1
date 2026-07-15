@@ -1,0 +1,7 @@
+\babel@toc {french}{}\relax 
+\beamer@sectionintoc {1}{Introduction \& Contexte}{3}{0}{1}
+\beamer@sectionintoc {2}{Implémentation du modèle}{6}{0}{2}
+\beamer@sectionintoc {3}{Méthodes pour les fits de surface}{8}{0}{3}
+\beamer@sectionintoc {4}{Premiers ajustements de suface}{9}{0}{4}
+\beamer@sectionintoc {5}{Résultats \& Analyse}{11}{0}{5}
+\beamer@sectionintoc {6}{Conclusion \& Perspectives}{12}{0}{6}

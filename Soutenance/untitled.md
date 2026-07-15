@@ -1,8 +1,59 @@
 # Contexte
 
-Dans l'article ... de Toczylowski, un modèle physique permettant de calculer l'énergie potentielle pour un R et un Theta donné est présenté. Il est également précisé qu'il contient 40 paramètres à calculer selon les Atomes et Molécules données
 
-Dans la thèse de Toczylowski, les paramètres qu'il donne pour Ar-HCN ne donnent pas des résultats satisfaisants. On cherche donc à savoir pourquoi et si on peut trouver des paramètres donnent de meilleurs résultats
+- La structure et la dynamique moléculaires sont décrites par la mécanique quantique.
+
+- Considère un système composé d’un atome A et d’une molécule linéaire B de longueur fixe (un rotateur rigide).
+
+- Le système est décrit par une fonction d’onde $\Psi(\vec{r}, \vec{\rho})$, qui est une solution de l’équation de Schrödinger.
+    - $\vec{r}$ est la position du centre de masse de A par rapport au centre de masse de B
+    - $\vec{\rho}$ sont les coordonnées internes de A et B (électrons, ...)
+
+- Approximation de Born-Oppenheimer :
+    - masse de l’électron $\ll$ masse du proton
+    - les électrons réagissent presque instantanément à de faibles variations des positions nucléaires
+    - la fonction d’onde s’écrit comme le produit d’une fonction décrivant le mouvement relatif et d’une autre représentant le mouvement électronique, qui dépend paramétriquement de $\vec{r}$:
+
+        $\Psi(\vec{r}, \vec{\rho}) = F(\vec{r})\chi(\vec{\rho}; \vec{r})$
+
+    - Algorithme :
+        - fixer les positions nucléaires $\vec{r}$ et résoudre l'équation de Schrödinger électronique correspondant pour retrouver $\chi(\vec{\rho}; \vec{r})$
+        -  faire varier la géométrie nucléaire => l’énergie électronique en fonction de la géométrie nucléaire, appelé surface d’énergie potentielle (PES).
+        - résoudre l'équation pour le mouvement nucléaire pour obtenir $F(\vec{r})$
+
+- La PES est obtenue à l'aide de techniques de chimie quantique et de programmes informatiques associés
+    - les calculs sont coûteux et sont effectués pour un (petit) ensemble de géométries nucléaires
+    - Les points de données ab initio ainsi obtenus sont généralement ajustés à un modèle analytique qui sert à interpoler la fonction potentielle d'énergie (PES) pour d'autres géométries
+
+
+Voici une proposition condensée pour tenir sur **une seule slide**, en gardant l'essentiel et en évitant la surcharge de texte (le jury a juste besoin du contexte, pas d'un cours) :
+
+Titre : Contexte théorique — surfaces d'énergie potentielle (PES)
+
+**Système étudié**
+Atome A + molécule linéaire rigide B, décrits par une fonction d'onde $\Psi(\vec{r},\vec{\rho})$ solution de l'équation de Schrödinger ($\vec{r}$ : position relative A–B ; $\vec{\rho}$ : coordonnées internes/électroniques).
+
+**Approximation de Born-Oppenheimer**
+Les électrons étant beaucoup plus légers que les noyaux, on sépare les mouvements :
+$$\Psi(\vec{r},\vec{\rho}) = F(\vec{r})\,\chi(\vec{\rho};\vec{r})$$
+→ à géométrie nucléaire $\vec{r}$ fixée, on résout le problème électronique ; en faisant varier $\vec{r}$, on obtient l'énergie électronique comme fonction de la géométrie : **la PES**.
+
+**De l'ab initio au modèle analytique**
+- Calculs de chimie quantique coûteux → un nombre limité de points $(\vec{r}, E)$
+- **Ajustement (fit)** de ces points à une fonction analytique → PES continue, exploitable pour toute géométrie (dynamique, spectroscopie, etc.)
+___
+
+**Sujet du stage :**
+
+On s'interesse à l'article : _Theoretical study of the He–HCN, Ne–HCN, Ar–HCN,
+and Kr–HCN complexes_ écrit par Toczyłowski, Doloresco et Cybulski en 2000.
+On y retrouve des tableaux de données ab-initio pour les systèmes présents dans le titre. Ainsi qu'un modèle physique permettant de calculer l'énergie potentielle pour un R et un Theta donné. Il est également précisé qu'il contient 40 paramètres à calculer selon le système étudié.
+
+Dans un article ultérieur Toczylowski, donne pour chacun de ces sytèmes un jeu de paramètres pour calculer les Energies potentielles. Il se trouve que ces paramètres n'apportent pas des résultats satisfaisants particulièrement pour le système avec l'atome d'Argon.
+
+La première étape de ce stage est donc de déterminer s'il est possible de calculer de "meilleurs" paramètres à partir des données ab-initio présentes dans l'article 
+
+les paramètres qu'il donne pour Ar-HCN ne donnent pas des résultats satisfaisants. On cherche donc à savoir pourquoi et si on peut trouver des paramètres donnent de meilleurs résultats
 
 # Implémentation et optimisation
 
@@ -126,7 +177,7 @@ Pour la méthode curve_fit, on fait varier les arguments : sigma, jac et method
 
 Pour least_squares, on fait varier seulement les argument x_scale et loss. On pose la fonction résidus simplement comme l'erreur absolue (difference entre ab-initio et prediction).
 
-parmis tous les paramètres optimaux obtnus, une première selection est faite graphiquement en affichant des coupes de la surface de potentielle obtenue avec une valeur Theta ou R fixée.
+parmis tous les paramètres optimaux obtenus, une première selection est faite graphiquement en affichant des coupes de la surface de potentielle obtenue avec une valeur Theta ou R fixée.
 
 Pour chaque atome on selectionne 2 jeux de paramètres et on les compares avec les metriques suivantes : 
 - R² : sans unité, exprime la capacité du modele à expliquer la tendance globale
@@ -138,14 +189,75 @@ On conclu de cette partie qu'il est possible d'obtenir de meilleurs paramètres 
 
 # Paramètres Chinois
 
+On s'interresse à un nouvel article plus récent du journal chinois de ... qui traite spécifiquement de l'Argon. A celui ci est ajouté un nouveau jeu de données ab-initio plus grand pour Ar-HCN.
+il est plus grand tant dans le nombre de points calculés que dans la plage de valeurs que prend R.
 
+- 1767 points
+- R de 2 à 25 Angstrom avec un pas de 0.5 (soit 3.77945225 à 47.243153125 bohr)
+- Theta de 0° à 180° avec un pas de 10
+
+Pas la meme géométrie que Toczylowski pour theta donc il faut inverser.
+Il y a beaucoup plus de données, les fit deviennent plus complexes.
+
+
+Meme méthodologie que les données précedentes à quelques différences pres :
+
+- On prend p0 le meilleur jeu de paramètres que l'on a obtenu pour les données Ar-HCN de Toczylowski
+- curve_fit est apppliquée de la même manière
+- Pour least_squares on met en place 3 fonctions résidus :
+    - residus 1 : erreur absolue
+    - residus 2 : (y_ref-y_pred)/sqrt(abs(y_ref)+1)
+    - residus 2 : mean(((y_ref-y_pred)/sqrt(abs(y_ref) + eps))**2)
+- Pour differential evolution on effectue plus de test avec des fonctions de couts différentes 
+
+En utilisant toutes les données, il est plutot difficile d'obtenir un fit satisfaisant:
+- Probleme d'une forte variation d'échelle (zone répulsive, puits, zone ou R est tres grand)
+
+On obtient des premiers resultats
+
+puis on refait des calculs en réduisant l'ensemble et en prenant R entre 2.5 et 10 Angstrom avec la meme procédure.
+
+La selection des meilleurs paramètres se fait graphiquement et avec les métrique. J'ai aussi ajouté ici une metrique MAE pondérée qui donne plus de poids aux erreurs dans la zone du puit. Et une MAE qui n'est calculée que sur les valeurs entre -1 et 1 mEh.
+
+
+# Comparaison des methodes sur les données
+
+Efficacité, temps d'execution, meilleurs résutats, flexibilité
+
+Comparaison des Paramètres obtenus
 
 # HNC - Données de Rennes
 
+On travaille maintenant sur un grand dataset qui comporte des données ab-initio mélangées à des données calculées. Celui ci contient 25000 points. 
 
+La molécule a changé, ce n'est plus HCN mais HNC. Le grand nombre de points rend plus difficile le fit.
+
+On réduit l'intervalle des valeurs et on prend les points entre 2.5 et 10 Angstrom. 
+
+Temps de calcul?
 
 # Réseaux de neurones
 
+Dans un dernier temps on s'interesse brievement à l'utilisation de réseaux de neuronnes pour l'ajustement de surface.
+
+Utilisation de la Bibliothèque PyTorch. On oublie le modèle physique est on cherche à obtenir les coefficients d'une somme de polynomes de legendre de degré n.
+
+Pour aller plus vite, comme on est dans une phase exploratoire, je demande à Gemini de me mettre en place le réseau.
+
+Architecture : 
+- Entree du NN : Distance R
+- Sortie du NN : Les coefficients $c_0(R),\,\dots\,,\,c_{L_{max}}$
+- Couche de fusion (forward) : modele prend $(R,\theta)$ en entrée du forward. $R$ passe dans le réseau pour obtenir les $c_l(R)$ l'énergie finale est le produit scalaire entre les $c_l$ et les $P_l$
+
+Gemini préconise aussi de normaliser les R à l'entrée pour éviter les instabilités numériques et de redimensionner les énergies.
+
+
+On choisis la loss-L1 dans un premier temps, sur les données de Rennes de 2.5 à 10 Angstrom
+
+
+Les résultats sont plutot satisfaisants dans la zone répulsive et la zone du puit (sans etre meilleur que les méthodes classiques d'optimisation), 
+
+Probleme à longue distance : l'énergie tend à passer au dessus de 0.
 
 
 # Conclusion

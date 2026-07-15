@@ -1,0 +1,22 @@
+\frametitle{Algorithme et Code Python (NumPy \& SciPy)}
+L'algorithme utilise la vectorisation de \textbf{NumPy} pour éviter les boucles lentes et la méthode d'intégration de Simpson via \textbf{SciPy}.
+
+    \begin{lstlisting}[style=pythonstyle]
+import numpy as np
+from scipy.integrate import simpson
+
+def compute_v_lambda(r, theta_grid, V_grid, lmbda):
+    """
+    Calcule le coefficient radial v_lambda(r) par quadrature numerique.
+    """
+    # Evaluation des polynomes de Legendre sur la grille angulaire
+    P_l = np.polynomial.legendre.legval(np.cos(theta_grid), [0]*lmbda + [1])
+
+    # Construction de l'integrande : V(r, theta) * P_lambda(cos(theta)) * sin(theta)
+    integrand = V_grid * P_l * np.sin(theta_grid)
+
+    # Integration par la methode de Simpson
+    factor = (2 * lmbda + 1) / 2.0
+    v_l = factor * simpson(y=integrand, x=theta_grid)
+    return v_l
+    \end{lstlisting}
