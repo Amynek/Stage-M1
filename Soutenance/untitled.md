@@ -207,7 +207,7 @@ Meme méthodologie que les données précedentes à quelques différences pres :
 - Pour least_squares on met en place 3 fonctions résidus :
     - residus 1 : erreur absolue
     - residus 2 : (y_ref-y_pred)/sqrt(abs(y_ref)+1)
-    - residus 2 : mean(((y_ref-y_pred)/sqrt(abs(y_ref) + eps))**2)
+    - residus 3 : mean(((y_ref-y_pred)/sqrt(abs(y_ref) + eps))**2)
 - Pour differential evolution on effectue plus de test avec des fonctions de couts différentes 
 
 En utilisant toutes les données, il est plutot difficile d'obtenir un fit satisfaisant:
@@ -226,6 +226,8 @@ Efficacité, temps d'execution, meilleurs résutats, flexibilité
 
 Comparaison des Paramètres obtenus
 
+C
+
 # HNC - Données de Rennes
 
 On travaille maintenant sur un grand dataset qui comporte des données ab-initio mélangées à des données calculées. Celui ci contient 25000 points. 
@@ -234,7 +236,7 @@ La molécule a changé, ce n'est plus HCN mais HNC. Le grand nombre de points re
 
 On réduit l'intervalle des valeurs et on prend les points entre 2.5 et 10 Angstrom. 
 
-Temps de calcul?
+contour plot HCN HNC
 
 # Réseaux de neurones
 
@@ -260,4 +262,12 @@ Les résultats sont plutot satisfaisants dans la zone répulsive et la zone du p
 Probleme à longue distance : l'énergie tend à passer au dessus de 0.
 
 
+pas aussi bien que analytique
+
+
+
+probleme contexte avec plus de degrés de liberté peut etre meilleur?
+
 # Conclusion
+
+
