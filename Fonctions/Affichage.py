@@ -367,6 +367,7 @@ def erreur_rel_Theta_fix(theta_fix, Theta_deg, R_a0, E, params, V_opt, aff_Title
 
     plt.xlabel(r"R ($\AA$)")
     plt.ylabel("Erreur relative (%)")
+    
     if aff_Title:
         plt.title(f"Erreur relative pour θ = {Theta_deg[i_theta]:.0f}°")
     plt.legend()

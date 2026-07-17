@@ -1,22 +1,44 @@
-\frametitle{Algorithme et Code Python (NumPy \& SciPy)}
-L'algorithme utilise la vectorisation de \textbf{NumPy} pour éviter les boucles lentes et la méthode d'intégration de Simpson via \textbf{SciPy}.
+\frametitle{Méthodes utilisées pour les ajustements de surface}
 
-    \begin{lstlisting}[style=pythonstyle]
-import numpy as np
-from scipy.integrate import simpson
+  \begin{center}
+    Fonctions de la bibliothèque \texttt{scipy.optimize}
+  \end{center}
 
-def compute_v_lambda(r, theta_grid, V_grid, lmbda):
-    """
-    Calcule le coefficient radial v_lambda(r) par quadrature numerique.
-    """
-    # Evaluation des polynomes de Legendre sur la grille angulaire
-    P_l = np.polynomial.legendre.legval(np.cos(theta_grid), [0]*lmbda + [1])
+  \begin{columns}[T]
+    \begin{column}{0.33\textwidth\small}
+      \begin{block}{\texttt{curve\_fit}}
+        \begin{itemize}
+          \item Ajustement de courbes
+          \item On entre des données (x,y)
+          \item Cherche les paramètres qui approchent le mieux ces données
+          \item Converge vers le minimum le plus proche de p0
+        \end{itemize}
 
-    # Construction de l'integrande : V(r, theta) * P_lambda(cos(theta)) * sin(theta)
-    integrand = V_grid * P_l * np.sin(theta_grid)
+      \end{block}
+    \end{column}
 
-    # Integration par la methode de Simpson
-    factor = (2 * lmbda + 1) / 2.0
-    v_l = factor * simpson(y=integrand, x=theta_grid)
-    return v_l
-    \end{lstlisting}
+    \begin{column}{0.33\textwidth\small}
+      \begin{exampleblock}{\texttt{least\_squares}}
+        \begin{itemize}
+          \item Plus générale que curve\_fit
+          \item On fixe une fonction résidus
+          \item Choix de bornes possible
+          \item Converge vers le minimum le plus proche de p0
+        \end{itemize}
+
+      \end{exampleblock}
+    \end{column}
+
+    \begin{column}{0.33\textwidth\small}
+      \begin{block}{\texttt{differential\_evolution}}
+       \begin{itemize}
+          \item Algorithme d'optimisation global
+          \item Ne nécessite pas de points de départ
+          \item Méthode stochastique
+          \item Echappe aux minimas locaux
+          \item Plus lente
+
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}

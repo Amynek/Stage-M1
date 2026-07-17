@@ -125,25 +125,31 @@
 \section{Introduction \& Contexte}
 
 \begin{frame}{Contexte théorique}
-    \begin{itemize}
+  \begin{columns}[T]
+    \begin{column}{0.45\textwidth\small}
+      \begin{block}{}
+      \begin{itemize}
         \item \textbf{Système étudié :} Décrit par une fonction d'onde 
-          $\Psi(\vec{r},\vec{\rho}) = F(\vec{r})\,\chi(\vec{\rho};\vec{r})$
-        \item \textbf{Fonction d'onde :} Solution de l'équation de Schrödinger avec 
+          $\Psi(\vec{R},\vec{\rho}) = F(\vec{R})\,\chi(\vec{\rho};\vec{R})$
+        \item Solution de l'équation de \textbf{Schrödinger} avec :
           \begin{itemize}
-            \item $\vec{r}$ : position relative Atome - Molécule
+            \item $\vec{R}$ : position relative Atome - Molécule
             \item $\vec{\rho}$ : coordonnées internes de l'atome et de la molécule (électrons, etc.)
           \end{itemize}
-    \end{itemize}
+        \item Approximation de \textbf{Born-Oppenheimer} : masse de l’électron $\ll$ masse du proton
+      \end{itemize}
+      \end{block}
+    \end{column}
     
-    \vspace{0.3cm}
-   \begin{figure}
-      \begin{center}
-      \caption{Système Ar-HCN}\label{fig:Ar-HCN}
-        \includegraphics[width=0.45\textwidth]{../Figures/Soutenance/Systeme.png}
-      \end{center}
-    \end{figure}
-     
-    
+    \begin{column}{0.45\textwidth}
+      \begin{figure}
+        \begin{center}
+          \caption{Système Ar-HCN}
+          \includegraphics[width=1\textwidth]{../Figures/Soutenance/Systeme.png}
+        \end{center}
+      \end{figure}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 
@@ -151,9 +157,9 @@
 
   \begin{exampleblock}{Références}
     \begin{itemize}
-      \item Theoretical study of the He–HCN, Ne–HCN, Ar–HCN,
-        and Kr–HCN complexes - 2000 - Rafał R. Toczyłowski, Fred Doloresco, and Sławomir M. Cybulski
-      \item Autre article de Toczyłowski avec des paramètres pour chaque systèmes
+      \item \textit{Theoretical study of the He–HCN, Ne–HCN, Ar–HCN,
+        and Kr–HCN complexes - 2000 - R.R. Toczyłowski, F. Doloresco, S. M. Cybulski}
+    \item \textit{R.R. Toczylowski, doctoral thesis, Miami University, 2004}
   \end{itemize} 
   \end{exampleblock}
   
@@ -349,15 +355,14 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
       \end{block}
     \end{column}
   \end{columns}
-
 \end{frame}
 
 
 % -------------------------------------------------------------
-% Section 4 : Premier fit
+% Section 4 : fit de surface
 % -------------------------------------------------------------
 
-\section{Premiers ajustements de suface}
+\section{Ajustements de suface}
 
 \begin{frame}{Premières données ab-initio}
   \begin{columns}[T]
@@ -370,100 +375,335 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
         \end{itemize}
       \end{block}
       
-      \begin{exampleblock}{}
+          \end{column}
+
+    \begin{column}{0.45\textwidth}
+       \begin{block}{}
         \begin{itemize}
           \item Plusieurs ajustements effectués avec différents paramètres d'entrée dans les fonctions
           \item Première selection graphique 
           \item Deuxième selection à l'aide des métriques : R², RMSE, MAE 
         \end{itemize}
-      \end{exampleblock}
-    \end{column}
-
-    \begin{column}{0.45\textwidth}
-      \begin{figure}
-        \begin{center}
-          \includegraphics[width=0.45\textwidth]{figures/}
-        \end{center}
-        \caption{}\label{fig:}
-      \end{figure}
-      
-      
+      \end{block}
     \end{column}
   
   \end{columns}
-   
+  
+  \begin{columns}[T]
+    \begin{column}{0.33\textwidth}
+      \begin{exampleblock}{R²}
+        \begin{itemize}
+          \item Sans unité 
+          \item Tendance globale
+        \end{itemize}
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \begin{exampleblock}{RMSE}
+        \begin{itemize}
+          \item Même unité que la cible
+          \item Erreurs importantes
+        \end{itemize}
+      \end{exampleblock}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \begin{exampleblock}{MAE}
+        \begin{itemize}
+          \item Même unité que la cible
+          \item Erreur moyenne
+        \end{itemize}
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
 
 \end{frame}
 
-\begin{frame}[fragile]{Algorithme et Code Python (NumPy \& SciPy)}
-    L'algorithme utilise la vectorisation de \textbf{NumPy} pour éviter les boucles lentes et la méthode d'intégration de Simpson via \textbf{SciPy}.
 
-    \begin{lstlisting}[style=pythonstyle]
-import numpy as np
-from scipy.integrate import simpson
-
-def compute_v_lambda(r, theta_grid, V_grid, lmbda):
-    """
-    Calcule le coefficient radial v_lambda(r) par quadrature numerique.
-    """
-    # Evaluation des polynomes de Legendre sur la grille angulaire
-    P_l = np.polynomial.legendre.legval(np.cos(theta_grid), [0]*lmbda + [1])
-    
-    # Construction de l'integrande : V(r, theta) * P_lambda(cos(theta)) * sin(theta)
-    integrand = V_grid * P_l * np.sin(theta_grid)
-    
-    # Integration par la methode de Simpson
-    factor = (2 * lmbda + 1) / 2.0
-    v_l = factor * simpson(y=integrand, x=theta_grid)
-    return v_l
-    \end{lstlisting}
+\begin{frame}{Contour plots des surfaces d'énergie potentielle pour Ar-HCN}
+  \begin{columns}[T]
+    \begin{column}{0.35\textwidth\small}
+      \begin{figure}
+        \centering
+        \includegraphics[width=1\textwidth]{../Figures/Soutenance/PES-AR-Toczylowski-params.png}
+        \caption{\scriptsize Paramètres de R. Toczylowski}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \begin{figure}
+        \begin{center}
+          \includegraphics[width=1\textwidth]{../Figures/Soutenance/PES-AR-Toczylowski.png}
+        \end{center}
+        \caption{\scriptsize Graphe de l'article}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \begin{figure}
+        \begin{center}
+          \includegraphics[width=1\textwidth]{../Figures/Soutenance/PES-AR-Toczylowski-bestfit.png}
+        \end{center}
+        \caption{\scriptsize Nouveaux paramètres}
+      \end{figure}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-% -------------------------------------------------------------
-% Section 4 : Résultats & Discussion
-% -------------------------------------------------------------
-\section{Résultats \& Analyse}
+\begin{frame}{Coupes de surfaces d'énergie potentielle pour Ar-HCN}
+  \begin{columns}[T]
+    \begin{column}{0.33\textwidth}
+        \begin{figure}
+          \caption{\scriptsize Energie potentielle à $\theta=90$°}
+          \begin{center}
+            \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-polonais-T90.png}
+          \end{center}
+        \end{figure}
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \begin{figure}
+        \caption{\scriptsize Energie potentielle à R=7.5 $a_0$}
+        \begin{center}
+          \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-polonais-R7_5.png}
+        \end{center}
+      \end{figure}
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \begin{figure}
+        \caption{\scriptsize Energie potentielle à R=8.0 $a_0$}
+        \begin{center}
+          \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-polonais-R8.png}
+        \end{center}
+      \end{figure}
+       
+    \end{column}
+    
+  \end{columns}
+  
+\end{frame}
 
-\begin{frame}{Analyse d'une Surface d'Énergie Potentielle (PES)}
-    \begin{columns}[T]
-        \begin{column}{0.5\textwidth}
-            \textbf{Observations clés :}
-            \begin{itemize}
-                \item Présence d'un puits de potentiel prononcé à la distance d'équilibre $r_{\text{eq}}$.
-                \item Précision de la projection de Legendre validée ($\epsilon < 10^{-4}$~cm$^{-1}$).
-                \item \textbf{Performance :} Gain d'un facteur 50 par rapport à une implémentation Python pure.
-            \end{itemize}
-            \vspace{0.2cm}
-            \begin{block}{Validation}
-                Les résultats de l'interpolation s'accordent parfaitement avec les données de référence de la littérature.
-            \end{block}
-        \end{column}
-        
-        \begin{column}{0.48\textwidth}
-            \centering
-            \begin{tikzpicture}[scale=0.85]
-                % Axes de coordonnées
-                \draw[->, thick] (0,-2.2) -- (0,2.5) node[above] {$V(r)$ (cm$^{-1}$)};
-                \draw[->, thick] (0,0) -- (4.5,0) node[right] {$r$ (\r{A})};
-                
-                % Tracé de la courbe de Morse (stable et ne cause pas d'explosion numérique)
-                \draw[domain=0.5:4.2, smooth, variable=\x, brandblue, very thick] 
-                    plot ({\x}, {3*(1 - exp(-1.5*(\x-1.25)))^2 - 2});
-                
-                % Lignes de repère
-                \draw[dashed, gray] (1.25, -2) -- (1.25, 2.0) node[above] {$r_{\text{eq}}$};
-                \draw[dashed, gray] (0, -2) -- (4.2, -2);
-                \node[left, gray] at (0,-2) {$-D_e$};
-                
-                % Puits de potentiel
-                \fill[brandteal] (1.25,-2) circle (3pt) node[below right] {Minimum};
-            \end{tikzpicture}
-            \vspace{0.2cm}
-            \begin{center}
-                \scriptsize\textcolor{brandblue!80}{\textbf{Figure 1 :} Coupe monodimensionnelle du potentiel d'interaction (potentiel de Morse).}
-            \end{center}
-        \end{column}
-    \end{columns}
+\begin{frame}{Nouvelles données ab-initio pour Ar-HCN}
+  \textit{Chinese Journal of Chemical Physics - 2026 - T. Liman, S. Tong, N. Chuangang, C. Xiaolin}
+  
+  \begin{columns}[T]
+    \begin{column}{0.49\textwidth}
+      \begin{block}{Jeu de données}
+        \begin{itemize}
+          \item 1767 points
+          \item R : 93 valeurs de 3.78 à 47.24 bohr 
+          \item $\theta$ : 19 valeurs de 0° à 180°
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{block}{Méthodes d'optimisation}
+        \begin{itemize}
+          \item p0 : meilleurs paramètres obtenus sur les premières données 
+          \item Nouvelles fonction résidus
+        \end{itemize}
+      \end{block}
+    \end{column}
+    
+  \end{columns}
+
+  \begin{exampleblock}{Ajustements}
+    \begin{itemize}
+      \item Paramètres peu satisfaisants
+      \item Réduction de l'échantillon : données de 4.7 à 18.9 bohr
+      \item MAE pondérée - MAE "réduite"
+    \end{itemize}
+    
+  \end{exampleblock}
+  
+\end{frame}
+
+
+\begin{frame}{Erreurs relatives à $\theta=90$° sur les données du Chinese Journal}
+  \begin{columns}[T]
+    \begin{column}{0.33\textwidth}
+        \begin{figure}
+          \caption{\scriptsize Meilleurs paramètres calculés sur le nouveau dataset par échantillon}
+          \begin{center}
+            \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-err-rel-T90-complet_partiel.png}
+          \end{center}
+        \end{figure}
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \begin{figure}
+        \caption{\scriptsize Meilleurs paramètres calculés sur le nouveau dataset par méthode}
+        \begin{center}
+          \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-err-rel-T90-methodes.png}
+        \end{center}
+      \end{figure}
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \begin{figure}
+        \caption{\scriptsize Paramètres calculés au fil du temps}
+        \begin{center}
+          \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-err-rel-T90-donnees.png}
+        \end{center}
+      \end{figure}
+       
+    \end{column}
+    
+  \end{columns}
+
+\end{frame}
+
+
+\begin{frame}{Contours plot et erreurs relatives sur les données du Chinese journal}
+  \begin{columns}[T]
+    \begin{column}{0.33\textwidth}
+        \begin{figure}
+          \caption{\scriptsize Paramètres donnés par R. Toczylowski}
+          \begin{center}
+            \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-chinois-contour-err-Toczylowski.png}
+          \end{center}
+        \end{figure}
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \begin{figure}
+        \caption{\scriptsize Meilleurs paramètres pour les premières données ab-initio}
+        \begin{center}
+          \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-chinois-contour-err-best-polonais.png}
+        \end{center}
+      \end{figure}
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \begin{figure}
+        \caption{\scriptsize Meilleurs paramètres pour les nouvelles données ab-initio}
+        \begin{center}
+          \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png}
+        \end{center}
+      \end{figure}
+       
+    \end{column}
+    
+  \end{columns}
+
+  
+\end{frame}
+
+\begin{frame}{Nouveau système : Ar-HNC}
+  \begin{block}{}
+    \begin{itemize}
+      \item Molécule : HCN $\to$ HNC
+      \item Données ab-initio + Données ajustées
+      \item 13872 points après Réduction de l'échantillon 
+    \end{itemize}
+  \end{block}
+
+  \begin{columns}[T]
+    \begin{column}{0.33\textwidth}
+        \begin{figure}
+          \caption{\scriptsize Energie potentielle $\theta=0$°}
+          \begin{center}
+            \includegraphics[width=1\textwidth]{../Figures/Soutenance/HCN-HNC-T0.png}
+          \end{center}
+        \end{figure}
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \begin{figure}
+        \caption{\scriptsize Energie potentielle $\theta=90$°}
+        \begin{center}
+          \includegraphics[width=1\textwidth]{../Figures/Soutenance/HCN-HNC-T90.png}
+        \end{center}
+      \end{figure}
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \begin{figure}
+        \caption{\scriptsize Energie potentielle $\theta=180$°}
+        \begin{center}
+          \includegraphics[width=1\textwidth]{../Figures/Soutenance/HCN-HNC-T180.png}
+        \end{center}
+      \end{figure}
+       
+    \end{column}
+    
+  \end{columns}
+\end{frame}
+
+\section{Réseaux de neurones}
+
+\begin{frame}{Réseaux de neurones}
+  \begin{block}{Modèle simplifié}
+    $$V(R,\theta)=\sum\limits_{l=0}^{L_{max}}c_{l}(R)P_{l}(\cos(\theta))$$
+  \end{block}
+
+  \begin{exampleblock}{Architecture}
+    \begin{itemize}
+      \item Entrée du Réseau : Distance R
+      \item Sortie du NN : $c_0(R),\,\dots\,,\,c_{L_{max}}(R)$
+      \item Couche de fusion (forward) :
+        \begin{itemize}
+          \item $(R,\theta)$ en entrée 
+          \item Energie finale : produit scalaire des $c_l$ et $P_l$
+        \end{itemize}
+    \end{itemize}
+    
+  \end{exampleblock}
+  
+\end{frame}
+
+\begin{frame}{Courbes de l'énergie potentielle pour $\theta$ fixé -- Ar-HNC}
+  \begin{columns}[T]
+    \begin{column}{0.50\textwidth\small}
+      \begin{block}{Réseau n°1}
+        \begin{itemize}
+          \item batch\_size : $128$
+          \item Couches cachées : $\left[512,256,128\right]$ 
+          \item Learning rate : $10^{-5}$
+        \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}{0.50\textwidth\small}
+      \begin{block}{Réseau n°2}
+        \begin{itemize}
+          \item batch\_size : $256$
+          \item Couches cachées : $\left[512,256,128,64\right]$ 
+          \item Learning rate : $10^{-4}$
+        \end{itemize}
+      \end{block}
+      
+    \end{column}
+    
+  \end{columns}
+
+  \begin{columns}[T]
+    \begin{column}{0.33\textwidth}
+        \begin{figure}
+          \caption{\scriptsize Energie potentielle $\theta=0$°}
+          \begin{center}
+            \includegraphics[width=1\textwidth]{../Figures/Soutenance/NN-T0.png}
+          \end{center}
+        \end{figure}
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \begin{figure}
+        \caption{\scriptsize Energie potentielle $\theta=90$°}
+        \begin{center}
+          \includegraphics[width=1\textwidth]{../Figures/Soutenance/NN-T90.png}
+        \end{center}
+      \end{figure}
+    \end{column}
+    
+    \begin{column}{0.33\textwidth}
+      \begin{figure}
+        \caption{\scriptsize Energie potentielle $\theta=180$°}
+        \begin{center}
+          \includegraphics[width=1\textwidth]{../Figures/Soutenance/NN-T180.png}
+        \end{center}
+      \end{figure}
+       
+    \end{column}
+    
+  \end{columns}
 \end{frame}
 
 % -------------------------------------------------------------
@@ -472,22 +712,15 @@ def compute_v_lambda(r, theta_grid, V_grid, lmbda):
 \section{Conclusion \& Perspectives}
 
 \begin{frame}{Conclusion et Perspectives}
-    \begin{block}{Bilan des Réalisations}
-        \begin{itemize}
-            \item \textbf{Fiabilité :} Conception d'une méthodologie d'interpolation spectrale performante.
-            \item \textbf{Efficacité :} Optimisation de code Python pour le traitement de volumes de données massifs.
-            \item \textbf{Outils :} Maîtrise d'un workflow Linux / Python Scientifique / Git.
-        \end{itemize}
-    \end{block}
+  \begin{block}{Bilan et Perspectives}
+      \begin{itemize}
+          \item \textbf{Fiabilité :} Implémentation d'un modèle physique - production de nouveaux paramètres validés pour plusieurs systèmes
+          \item \textbf{Efficacité :} Optimisation de code Python pour supporter un grand nombre d'appels
+          \item \textbf{Outils :} Python : NumPy, SciPy, PyTorch / Linux /  Git
+          \item \textbf{Approfondissements :} Organisation, Méthodes d'optimisation, Réseaux de neurones
+      \end{itemize}
+  \end{block}
     
-    \vspace{0.3cm}
-    
-    \begin{block}{Perspectives de Recherche}
-        \begin{itemize}
-            \item Modélisation en 3D incluant des vibrations intra-moléculaires.
-            \item Couplage direct de la PES optimisée avec des codes de collision quantique (méthode Close-Coupling).
-        \end{itemize}
-    \end{block}
 \end{frame}
 
 % 6. Slide de Fin (Remerciements)

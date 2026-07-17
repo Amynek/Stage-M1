@@ -1,9 +1,18 @@
 # Contexte
 
+On s'interesse à un système composé d'un atome A et d'une molécule B linéaire de longueure fixe.
+La structure et dynamique moléculaire sont décrites par la mécanique quantique. De ce fait le système est décrit par une fonction d'onde qui est solution de l'équation de Schrödinger $\Psi(\vec{r}, \vec{\rho})$ 
 
-- La structure et la dynamique moléculaires sont décrites par la mécanique quantique.
 
-- Considère un système composé d’un atome A et d’une molécule linéaire B de longueur fixe (un rotateur rigide).
+
+
+
+On s'interesse à un système composé d'un atome A et d'une molécule B linéaire de longueure fixe.
+La structure et dynamique moléculaire sont décrites par la mécanique quantique. De ce fait le système est décrit par une fonction d'onde qui est solution de l'équation de Schrödinger $\Psi(\vec{r}, \vec{\rho})$ 
+
+
+
+
 
 - Le système est décrit par une fonction d’onde $\Psi(\vec{r}, \vec{\rho})$, qui est une solution de l’équation de Schrödinger.
     - $\vec{r}$ est la position du centre de masse de A par rapport au centre de masse de B
@@ -181,6 +190,9 @@ parmis tous les paramètres optimaux obtenus, une première selection est faite 
 
 Pour chaque atome on selectionne 2 jeux de paramètres et on les compares avec les metriques suivantes : 
 - R² : sans unité, exprime la capacité du modele à expliquer la tendance globale
+
+
+
 - RMSE : même unité que la cible, racine de l'erreur quadratique moyenne, met en valeur les erreurs importantes
 - MAE : même unité que la cible, erreur absolue moyenne, met en valeur l'erreur moyenne du modèle
 
@@ -193,7 +205,7 @@ On s'interresse à un nouvel article plus récent du journal chinois de ... qui 
 il est plus grand tant dans le nombre de points calculés que dans la plage de valeurs que prend R.
 
 - 1767 points
-- R de 2 à 25 Angstrom avec un pas de 0.5 (soit 3.77945225 à 47.243153125 bohr)
+- R de 2 à 25 Angstrom avec un pas de 0.05 (soit 3.77945225 à 47.243153125 bohr)
 - Theta de 0° à 180° avec un pas de 10
 
 Pas la meme géométrie que Toczylowski pour theta donc il faut inverser.
@@ -215,7 +227,7 @@ En utilisant toutes les données, il est plutot difficile d'obtenir un fit satis
 
 On obtient des premiers resultats
 
-puis on refait des calculs en réduisant l'ensemble et en prenant R entre 2.5 et 10 Angstrom avec la meme procédure.
+puis on refait des calculs en réduisant l'ensemble et en prenant R entre 2.5 et 10 Angstrom (4.7 et 18.9 bohr) avec la meme procédure.
 
 La selection des meilleurs paramètres se fait graphiquement et avec les métrique. J'ai aussi ajouté ici une metrique MAE pondérée qui donne plus de poids aux erreurs dans la zone du puit. Et une MAE qui n'est calculée que sur les valeurs entre -1 et 1 mEh.
 
@@ -234,7 +246,7 @@ On travaille maintenant sur un grand dataset qui comporte des données ab-initio
 
 La molécule a changé, ce n'est plus HCN mais HNC. Le grand nombre de points rend plus difficile le fit.
 
-On réduit l'intervalle des valeurs et on prend les points entre 2.5 et 10 Angstrom. 
+On réduit l'intervalle des valeurs et on prend les points entre 2.5 et 10 Angstrom (4.7 et 18.9 bohr). 
 
 contour plot HCN HNC
 
