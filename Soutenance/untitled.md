@@ -4,16 +4,6 @@ On s'interesse à un système composé d'un atome A et d'une molécule B linéai
 La structure et dynamique moléculaire sont décrites par la mécanique quantique. De ce fait le système est décrit par une fonction d'onde qui est solution de l'équation de Schrödinger $\Psi(\vec{r}, \vec{\rho})$ 
 
 
-
-
-
-On s'interesse à un système composé d'un atome A et d'une molécule B linéaire de longueure fixe.
-La structure et dynamique moléculaire sont décrites par la mécanique quantique. De ce fait le système est décrit par une fonction d'onde qui est solution de l'équation de Schrödinger $\Psi(\vec{r}, \vec{\rho})$ 
-
-
-
-
-
 - Le système est décrit par une fonction d’onde $\Psi(\vec{r}, \vec{\rho})$, qui est une solution de l’équation de Schrödinger.
     - $\vec{r}$ est la position du centre de masse de A par rapport au centre de masse de B
     - $\vec{\rho}$ sont les coordonnées internes de A et B (électrons, ...)

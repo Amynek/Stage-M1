@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1784271191.81658 "diapo.tex" "diapo.pdf" "diapo" 1784271195.11064 0
+["pdflatex"] 1784271532.83672 "diapo.tex" "diapo.pdf" "diapo" 1784271536.08385 0
   "../Figures/Soutenance/Ar-chinois-contour-err-Toczylowski.png" 1784207464.40444 287205 a5f529808f1ea3b755e9ec4f5eaac240 ""
   "../Figures/Soutenance/Ar-chinois-contour-err-best-polonais.png" 1784207329.84837 309840 9fbce11ec9c6a34491e684c9062f570e ""
   "../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png" 1784207266.31566 269249 19342ff0ef6029dcfa77692c255012c9 ""
@@ -263,12 +263,12 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1775415801 43569 fd570f2fa160877d211e859f687312ba ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1783191994 5381188 391446149fac6a688e0a7fb13b1e6cd7 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1783191980 2328183 9b31245c61098a17e4898d05ee0de764 ""
-  "diapo.aux" 1784271195.03961 5206 712a9b5081941aa42f176f015a42a08a "pdflatex"
-  "diapo.nav" 1784271195.04025 3040 25e76a7996fead1f61763791d3ea6724 "pdflatex"
-  "diapo.out" 1784271195.04025 1046 ad7ccb80c5efa146170fde0876d7afd1 "pdflatex"
-  "diapo.tex" 1784271191.52232 22628 14107b51ba5c131279ea5038a9ddd245 ""
-  "diapo.toc" 1784271195.04025 398 ac410475cd83ca62cebf7fd91b8a8d20 "pdflatex"
-  "diapo.vrb" 1784271193.85143 1348 40274b9ed8cbd123a5213b825eec75a3 "pdflatex"
+  "diapo.aux" 1784271536.01548 5206 712a9b5081941aa42f176f015a42a08a "pdflatex"
+  "diapo.nav" 1784271536.01648 3040 25e76a7996fead1f61763791d3ea6724 "pdflatex"
+  "diapo.out" 1784271536.01648 1046 ad7ccb80c5efa146170fde0876d7afd1 "pdflatex"
+  "diapo.tex" 1784271531.45957 22626 85831a1fba6aec6898c5a372c0c003df ""
+  "diapo.toc" 1784271536.01648 398 ac410475cd83ca62cebf7fd91b8a8d20 "pdflatex"
+  "diapo.vrb" 1784271534.83164 1348 40274b9ed8cbd123a5213b825eec75a3 "pdflatex"
   (generated)
   "diapo.aux"
   "diapo.log"
