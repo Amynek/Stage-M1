@@ -10,7 +10,6 @@
         \begin{itemize}
           \item Ajustement de courbes
           \item On entre des données (x,y)
-          \item Cherche les paramètres qui approchent le mieux ces données
           \item Converge vers le minimum le plus proche de p0
         \end{itemize}
 
@@ -21,7 +20,7 @@
       \begin{exampleblock}{\texttt{least\_squares}}
         \begin{itemize}
           \item Plus générale que curve\_fit
-          \item On fixe une fonction résidus
+          \item On choisit une fonction résidus
           \item Choix de bornes possible
           \item Converge vers le minimum le plus proche de p0
         \end{itemize}

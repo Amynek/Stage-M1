@@ -45,6 +45,9 @@
     \vspace{0.3cm}
 }
 
+
+\newcommand{\mybullet}{\usebeamertemplate{itemize item}\hspace{0.5em}}
+
 % Pied de page personnalisé (Épuré et professionnel)
 \setbeamertemplate{footline}{
     \leavevmode%
@@ -126,9 +129,10 @@
 
 \begin{frame}{Contexte théorique}
   \begin{columns}[T]
-    \begin{column}{0.45\textwidth\small}
+    \begin{column}{0.50\textwidth\small}
       \begin{block}{}
       \begin{itemize}
+        \setlength{\itemsep}{1.0em}
         \item \textbf{Système étudié :} Décrit par une fonction d'onde 
           $\Psi(\vec{R},\vec{\rho}) = F(\vec{R})\,\chi(\vec{\rho};\vec{R})$
         \item Solution de l'équation de \textbf{Schrödinger} avec :
@@ -158,8 +162,8 @@
   \begin{exampleblock}{Références}
     \begin{itemize}
       \item \textit{Theoretical study of the He–HCN, Ne–HCN, Ar–HCN,
-        and Kr–HCN complexes - 2000 - R.R. Toczyłowski, F. Doloresco, S. M. Cybulski}
-    \item \textit{R.R. Toczylowski, doctoral thesis, Miami University, 2004}
+        and Kr–HCN complexes - 2000 - R.R. Toczyłowski, F. Doloresco, S.M. Cybulski}
+    \item \textit{R.R. Toczyłowski, doctoral thesis, Miami University, 2004}
   \end{itemize} 
   \end{exampleblock}
   
@@ -238,7 +242,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
 \begin{frame}{Implémentation du modèle}
   \begin{block}{Etapes}
     \begin{itemize}
-      \item Numérisation des tableaux de données
+      \item Numérisation des tableaux de données ab-initio
       \item Programmation de $V(R,\theta)$ utilisable et fonctionnelle
       \item Optimisation de $V$ pour de meilleures performances
 
@@ -285,16 +289,16 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
           \end{center}
         \end{table}
     \end{column}
-    
+ 
     \begin{column}{0.48\textwidth}
       \begin{table}
         \caption{Temps d'execution moyen par appel}\label{tab:temps}
         \begin{center}
-          \begin{tabular}[c]{|l|c|c|}
+          \begin{tabular}[c]{lcc}
             \hline
-            \multicolumn{1}{|c|}{\textbf{}} & 
+            \multicolumn{1}{c}{\textbf{}} & 
             \multicolumn{1}{c}{$V_{init}$} & 
-            \multicolumn{1}{c|}{$V_{opt}$} \\
+            \multicolumn{1}{c}{$V_{opt}$} \\
             \hline
             100 appels & 3.12e-03s& 8.05e-04s\\
             50 least\_squares & 12.652s & 5.759s \\
@@ -323,7 +327,6 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
         \begin{itemize}
           \item Ajustement de courbes 
           \item On entre des données (x,y)
-          \item Cherche les paramètres qui approchent le mieux ces données
           \item Converge vers le minimum le plus proche de p0
         \end{itemize}
         
@@ -334,7 +337,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
       \begin{exampleblock}{\texttt{least\_squares}}
         \begin{itemize}
           \item Plus générale que curve\_fit
-          \item On fixe une fonction résidus
+          \item On choisit une fonction résidus
           \item Choix de bornes possible
           \item Converge vers le minimum le plus proche de p0
         \end{itemize}
@@ -364,7 +367,9 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
 
 \section{Ajustements de suface}
 
-\begin{frame}{Premières données ab-initio}
+\begin{frame}{Premières données ab-initio - Surface n°1}
+  \textit{Theoretical study of the He–HCN, Ne–HCN, Ar–HCN, and Kr–HCN complexes
+  - 2000 - R.R. Toczyłowski, F. Doloresco, S.M. Cybulski}
   \begin{columns}[T]
     \begin{column}{0.45\textwidth}
       \begin{block}{}
@@ -449,7 +454,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
 
 \begin{frame}{Coupes de surfaces d'énergie potentielle pour Ar-HCN}
   \begin{columns}[T]
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.35\textwidth}
         \begin{figure}
           \caption{\scriptsize Energie potentielle à $\theta=90$°}
           \begin{center}
@@ -458,7 +463,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
         \end{figure}
     \end{column}
     
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.35\textwidth}
       \begin{figure}
         \caption{\scriptsize Energie potentielle à R=7.5 $a_0$}
         \begin{center}
@@ -467,7 +472,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
       \end{figure}
     \end{column}
     
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.35\textwidth}
       \begin{figure}
         \caption{\scriptsize Energie potentielle à R=8.0 $a_0$}
         \begin{center}
@@ -481,7 +486,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
   
 \end{frame}
 
-\begin{frame}{Nouvelles données ab-initio pour Ar-HCN}
+\begin{frame}{Nouvelles données ab-initio pour Ar-HCN - Surface n°2}
   \textit{Chinese Journal of Chemical Physics - 2026 - T. Liman, S. Tong, N. Chuangang, C. Xiaolin}
   
   \begin{columns}[T]
@@ -518,43 +523,18 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
 
 
 \begin{frame}{Erreurs relatives à $\theta=90$° sur les données du Chinese Journal}
-  \begin{columns}[T]
-    \begin{column}{0.33\textwidth}
-        \begin{figure}
-          \caption{\scriptsize Meilleurs paramètres calculés sur le nouveau dataset par échantillon}
-          \begin{center}
-            \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-err-rel-T90-complet_partiel.png}
-          \end{center}
-        \end{figure}
-    \end{column}
-    
-    \begin{column}{0.33\textwidth}
-      \begin{figure}
-        \caption{\scriptsize Meilleurs paramètres calculés sur le nouveau dataset par méthode}
-        \begin{center}
-          \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-err-rel-T90-methodes.png}
-        \end{center}
-      \end{figure}
-    \end{column}
-    
-    \begin{column}{0.33\textwidth}
-      \begin{figure}
-        \caption{\scriptsize Paramètres calculés au fil du temps}
-        \begin{center}
-          \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-err-rel-T90-donnees.png}
-        \end{center}
-      \end{figure}
-       
-    \end{column}
-    
-  \end{columns}
-
+  \begin{figure}
+    \caption{Meilleurs paramètres calculés par méthode - Surface n°2}
+    \begin{center}
+      \includegraphics[width=0.50\textwidth]{../Figures/Soutenance/Ar-err-rel-T90-methodes.png}
+    \end{center}
+  \end{figure}
 \end{frame}
 
 
 \begin{frame}{Contours plot et erreurs relatives sur les données du Chinese journal}
   \begin{columns}[T]
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.35\textwidth}
         \begin{figure}
           \caption{\scriptsize Paramètres donnés par R. Toczylowski}
           \begin{center}
@@ -563,25 +543,23 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
         \end{figure}
     \end{column}
     
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.35\textwidth}
       \begin{figure}
-        \caption{\scriptsize Meilleurs paramètres pour les premières données ab-initio}
+        \caption{\scriptsize Meilleurs paramètres calculés sur la Suface n°1}
         \begin{center}
           \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-chinois-contour-err-best-polonais.png}
         \end{center}
       \end{figure}
     \end{column}
     
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.35\textwidth}
       \begin{figure}
-        \caption{\scriptsize Meilleurs paramètres pour les nouvelles données ab-initio}
+        \caption{\scriptsize Meilleurs paramètres calculés sur la Surface n°2}
         \begin{center}
           \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png}
         \end{center}
       \end{figure}
-       
     \end{column}
-    
   \end{columns}
 
   
@@ -597,7 +575,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
   \end{block}
 
   \begin{columns}[T]
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.35\textwidth}
         \begin{figure}
           \caption{\scriptsize Energie potentielle $\theta=0$°}
           \begin{center}
@@ -606,7 +584,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
         \end{figure}
     \end{column}
     
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.35\textwidth}
       \begin{figure}
         \caption{\scriptsize Energie potentielle $\theta=90$°}
         \begin{center}
@@ -615,7 +593,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
       \end{figure}
     \end{column}
     
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.35\textwidth}
       \begin{figure}
         \caption{\scriptsize Energie potentielle $\theta=180$°}
         \begin{center}
@@ -655,18 +633,16 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
     \begin{column}{0.50\textwidth\small}
       \begin{block}{Réseau n°1}
         \begin{itemize}
-          \item batch\_size : $128$
+          \item batch\_size : $128$ | learning rate : $10^{-5}$
           \item Couches cachées : $\left[512,256,128\right]$ 
-          \item Learning rate : $10^{-5}$
         \end{itemize}
       \end{block}
     \end{column}
     \begin{column}{0.50\textwidth\small}
       \begin{block}{Réseau n°2}
         \begin{itemize}
-          \item batch\_size : $256$
+          \item batch\_size : $256$ | learning rate : $10^{-4}$
           \item Couches cachées : $\left[512,256,128,64\right]$ 
-          \item Learning rate : $10^{-4}$
         \end{itemize}
       \end{block}
       
@@ -675,7 +651,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
   \end{columns}
 
   \begin{columns}[T]
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.35\textwidth}
         \begin{figure}
           \caption{\scriptsize Energie potentielle $\theta=0$°}
           \begin{center}
@@ -684,7 +660,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
         \end{figure}
     \end{column}
     
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.35\textwidth}
       \begin{figure}
         \caption{\scriptsize Energie potentielle $\theta=90$°}
         \begin{center}
@@ -693,7 +669,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
       \end{figure}
     \end{column}
     
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.35\textwidth}
       \begin{figure}
         \caption{\scriptsize Energie potentielle $\theta=180$°}
         \begin{center}
