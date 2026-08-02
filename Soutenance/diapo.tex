@@ -104,7 +104,7 @@
 }
 
 % --- INFORMATIONS DU DIAPORAMA ---
-\title[Soutenance de Stage]{Ajustement de surface de potentiels}
+\title[Soutenance de Stage]{Ajustement de surfaces de potentiels}
 %\subtitle{Développement et optimisation de méthodes d'analyse physique}
 \author[KADDOURI Amyne]{KADDOURI Amyne}
 \institute[Univ. Rennes]{Université de Rennes \\ Master 1 Calcul Scientifique et Modélisation}
@@ -170,7 +170,7 @@
   \begin{block}{Objectifs}
   \begin{itemize}
     \item Calculer de nouveaux paramètres
-    \item Déterminer comment évaluer leur qualité
+    \item Déterminer comment évaluer la qualité du fit
     \item Comparaison des résultats
   \end{itemize}
 \end{block}
@@ -279,7 +279,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
           \begin{center}
             \begin{tabular}[c]{lll}
               \hline
-              \multicolumn{1}{c}{Moyennne} & 
+              \multicolumn{1}{c}{Moyenne} & 
               \multicolumn{1}{c}{Max} &
               \multicolumn{1}{c}{e-type}\\
               \hline
@@ -292,7 +292,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
  
     \begin{column}{0.48\textwidth}
       \begin{table}
-        \caption{Temps d'execution moyen par appel}\label{tab:temps}
+        \caption{Temps d'exécution moyen par appel}\label{tab:temps}
         \begin{center}
           \begin{tabular}[c]{lcc}
             \hline
@@ -351,7 +351,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
           \item Algorithme d'optimisation global 
           \item Ne nécessite pas de points de départ
           \item Méthode stochastique
-          \item Echappe aux minimas locaux
+          \item Echappe aux minima locaux
           \item Plus lente
 
         \end{itemize} 
@@ -365,7 +365,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
 % Section 4 : fit de surface
 % -------------------------------------------------------------
 
-\section{Ajustements de suface}
+\section{Ajustements de surface}
 
 \begin{frame}{Premières données ab-initio - Surface n°1}
   \textit{Theoretical study of the He–HCN, Ne–HCN, Ar–HCN, and Kr–HCN complexes
@@ -386,8 +386,8 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
        \begin{block}{}
         \begin{itemize}
           \item Plusieurs ajustements effectués avec différents paramètres d'entrée dans les fonctions
-          \item Première selection graphique 
-          \item Deuxième selection à l'aide des métriques : R², RMSE, MAE 
+          \item Première sélection graphique 
+          \item Deuxième sélection à l'aide des métriques : R², RMSE, MAE 
         \end{itemize}
       \end{block}
     \end{column}
@@ -522,9 +522,9 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
 \end{frame}
 
 
-\begin{frame}{Erreurs relatives à $\theta=90$° sur les données du Chinese Journal}
+\begin{frame}{Erreurs relatives à $\theta=90$° du fit de la surface n°2}
   \begin{figure}
-    \caption{Meilleurs paramètres calculés par méthode - Surface n°2}
+    \caption{Erreurs relatives obtenues avec les paramètres optimisés par différentes méthodes}
     \begin{center}
       \includegraphics[width=0.50\textwidth]{../Figures/Soutenance/Ar-err-rel-T90-methodes.png}
     \end{center}
@@ -532,11 +532,11 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
 \end{frame}
 
 
-\begin{frame}{Contours plot et erreurs relatives sur les données du Chinese journal}
+\begin{frame}{Contours plot et erreurs relatives par rapport à la surface n°2}
   \begin{columns}[T]
     \begin{column}{0.35\textwidth}
         \begin{figure}
-          \caption{\scriptsize Paramètres donnés par R. Toczylowski}
+          \caption{\scriptsize Paramètres donnés par R. Toczyłowski}
           \begin{center}
             \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-chinois-contour-err-Toczylowski.png}
           \end{center}
@@ -545,7 +545,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
     
     \begin{column}{0.35\textwidth}
       \begin{figure}
-        \caption{\scriptsize Meilleurs paramètres calculés sur la Suface n°1}
+        \caption{\scriptsize Meilleurs paramètres calculés sur la Surface n°1}
         \begin{center}
           \includegraphics[width=1\textwidth]{../Figures/Soutenance/Ar-chinois-contour-err-best-polonais.png}
         \end{center}
@@ -570,7 +570,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
     \begin{itemize}
       \item Molécule : HCN $\to$ HNC
       \item Données ab-initio + Données ajustées
-      \item 13872 points après Réduction de l'échantillon 
+      \item 13872 points après réduction de l'échantillon 
     \end{itemize}
   \end{block}
 
@@ -610,7 +610,7 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
 
 \begin{frame}{Réseaux de neurones}
   \begin{block}{Modèle simplifié}
-    $$V(R,\theta)=\sum\limits_{l=0}^{L_{max}}c_{l}(R)P_{l}(\cos(\theta))$$
+    $$V(R,\theta)=\sum\limits_{l=0}^{L_{max}}c_{l}(R)P_{l}(\cos\theta)$$
   \end{block}
 
   \begin{exampleblock}{Architecture}
@@ -690,10 +690,10 @@ $\;B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$
 \begin{frame}{Conclusion et Perspectives}
   \begin{block}{Bilan et Perspectives}
       \begin{itemize}
-          \item \textbf{Fiabilité :} Implémentation d'un modèle physique - production de nouveaux paramètres validés pour plusieurs systèmes
+          \item \textbf{Robustesse :} Implémentation d'un modèle physique - production de nouveaux paramètres validés pour plusieurs systèmes
           \item \textbf{Efficacité :} Optimisation de code Python pour supporter un grand nombre d'appels
           \item \textbf{Outils :} Python : NumPy, SciPy, PyTorch / Linux /  Git
-          \item \textbf{Approfondissements :} Organisation, Méthodes d'optimisation, Réseaux de neurones
+          \item \textbf{Perspectives :} Autres méthodes d'optimisation, Réseaux de neurones
       \end{itemize}
   \end{block}
     

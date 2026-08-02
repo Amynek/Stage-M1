@@ -34,7 +34,7 @@
           \item Algorithme d'optimisation global
           \item Ne nécessite pas de points de départ
           \item Méthode stochastique
-          \item Echappe aux minimas locaux
+          \item Echappe aux minima locaux
           \item Plus lente
 
         \end{itemize}

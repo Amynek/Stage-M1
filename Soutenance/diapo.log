@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.7.4)  18 JUL 2026 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.7.4)  19 JUL 2026 19:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -943,17 +943,17 @@ Package pdftex.def Info: ../Figures/Soutenance/Ar-err-rel-T90-methodes.png  used
  [13
 
  <../Figures/Soutenance/Ar-err-rel-T90-methodes.png>]
-<../Figures/Soutenance/Ar-chinois-contour-err-Toczylowski.png, id=186, 671.3883pt x 573.1011pt>
+<../Figures/Soutenance/Ar-chinois-contour-err-Toczylowski.png, id=185, 671.3883pt x 573.1011pt>
 File: ../Figures/Soutenance/Ar-chinois-contour-err-Toczylowski.png Graphic file (type png)
 <use ../Figures/Soutenance/Ar-chinois-contour-err-Toczylowski.png>
 Package pdftex.def Info: ../Figures/Soutenance/Ar-chinois-contour-err-Toczylowski.png  used on input line 566.
 (pdftex.def)             Requested size: 139.42093pt x 119.00807pt.
-<../Figures/Soutenance/Ar-chinois-contour-err-best-polonais.png, id=187, 671.3883pt x 573.1011pt>
+<../Figures/Soutenance/Ar-chinois-contour-err-best-polonais.png, id=186, 671.3883pt x 573.1011pt>
 File: ../Figures/Soutenance/Ar-chinois-contour-err-best-polonais.png Graphic file (type png)
 <use ../Figures/Soutenance/Ar-chinois-contour-err-best-polonais.png>
 Package pdftex.def Info: ../Figures/Soutenance/Ar-chinois-contour-err-best-polonais.png  used on input line 566.
 (pdftex.def)             Requested size: 139.42093pt x 119.00807pt.
-<../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png, id=188, 671.3883pt x 573.1011pt>
+<../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png, id=187, 671.3883pt x 573.1011pt>
 File: ../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png Graphic file (type png)
 <use ../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png>
 Package pdftex.def Info: ../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png  used on input line 566.
@@ -961,17 +961,17 @@ Package pdftex.def Info: ../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.
  [14
 
  <../Figures/Soutenance/Ar-chinois-contour-err-Toczylowski.png> <../Figures/Soutenance/Ar-chinois-contour-err-best-polonais.png> <../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png>]
-<../Figures/Soutenance/HCN-HNC-T0.png, id=199, 451.6875pt x 329.5512pt>
+<../Figures/Soutenance/HCN-HNC-T0.png, id=198, 451.6875pt x 329.5512pt>
 File: ../Figures/Soutenance/HCN-HNC-T0.png Graphic file (type png)
 <use ../Figures/Soutenance/HCN-HNC-T0.png>
 Package pdftex.def Info: ../Figures/Soutenance/HCN-HNC-T0.png  used on input line 607.
 (pdftex.def)             Requested size: 139.42093pt x 101.72232pt.
-<../Figures/Soutenance/HCN-HNC-T90.png, id=200, 451.6875pt x 329.5512pt>
+<../Figures/Soutenance/HCN-HNC-T90.png, id=199, 451.6875pt x 329.5512pt>
 File: ../Figures/Soutenance/HCN-HNC-T90.png Graphic file (type png)
 <use ../Figures/Soutenance/HCN-HNC-T90.png>
 Package pdftex.def Info: ../Figures/Soutenance/HCN-HNC-T90.png  used on input line 607.
 (pdftex.def)             Requested size: 139.42093pt x 101.72232pt.
-<../Figures/Soutenance/HCN-HNC-T180.png, id=201, 451.6875pt x 329.5512pt>
+<../Figures/Soutenance/HCN-HNC-T180.png, id=200, 451.6875pt x 329.5512pt>
 File: ../Figures/Soutenance/HCN-HNC-T180.png Graphic file (type png)
 <use ../Figures/Soutenance/HCN-HNC-T180.png>
 Package pdftex.def Info: ../Figures/Soutenance/HCN-HNC-T180.png  used on input line 607.
@@ -985,17 +985,17 @@ Overfull \vbox (1.38171pt too high) detected at line 607
  <../Figures/Soutenance/HCN-HNC-T0.png> <../Figures/Soutenance/HCN-HNC-T90.png> <../Figures/Soutenance/HCN-HNC-T180.png>] [16
 
 ]
-<../Figures/Soutenance/NN-T0.png, id=220, 415.5525pt x 314.3745pt>
+<../Figures/Soutenance/NN-T0.png, id=219, 415.5525pt x 314.3745pt>
 File: ../Figures/Soutenance/NN-T0.png Graphic file (type png)
 <use ../Figures/Soutenance/NN-T0.png>
 Package pdftex.def Info: ../Figures/Soutenance/NN-T0.png  used on input line 683.
 (pdftex.def)             Requested size: 139.42093pt x 105.4756pt.
-<../Figures/Soutenance/NN-T90.png, id=221, 409.0482pt x 314.3745pt>
+<../Figures/Soutenance/NN-T90.png, id=220, 409.0482pt x 314.3745pt>
 File: ../Figures/Soutenance/NN-T90.png Graphic file (type png)
 <use ../Figures/Soutenance/NN-T90.png>
 Package pdftex.def Info: ../Figures/Soutenance/NN-T90.png  used on input line 683.
 (pdftex.def)             Requested size: 139.42093pt x 107.14973pt.
-<../Figures/Soutenance/NN-T180.png, id=222, 415.5525pt x 314.3745pt>
+<../Figures/Soutenance/NN-T180.png, id=221, 415.5525pt x 314.3745pt>
 File: ../Figures/Soutenance/NN-T180.png Graphic file (type png)
 <use ../Figures/Soutenance/NN-T180.png>
 Package pdftex.def Info: ../Figures/Soutenance/NN-T180.png  used on input line 683.
@@ -1022,21 +1022,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `diapo.out' has not changed.
-(rerunfilecheck)             Checksum: AD7CCB80C5EFA146170FDE0876D7AFD1;1046.
+(rerunfilecheck)             Checksum: D3439CCA36E023FB87CC46A3221627C4;1051.
  ) 
 Here is how much of TeX's memory you used:
- 28196 strings out of 469515
- 547165 string characters out of 5470808
- 934330 words of memory out of 5000000
- 56267 multiletter control sequences out of 15000+600000
- 643211 words of font info for 95 fonts, out of 8000000 for 9000
+ 28194 strings out of 469515
+ 547143 string characters out of 5470808
+ 934336 words of memory out of 5000000
+ 56266 multiletter control sequences out of 15000+600000
+ 642869 words of font info for 94 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  128i,15n,123p,380b,930s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb>
-Output written on diapo.pdf (19 pages, 2273968 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsx1200.pfb>
+Output written on diapo.pdf (19 pages, 2271240 bytes).
 PDF statistics:
- 369 PDF objects out of 1000 (max. 8388607)
- 231 compressed objects within 3 object streams
+ 364 PDF objects out of 1000 (max. 8388607)
+ 228 compressed objects within 3 object streams
  47 named destinations out of 1000 (max. 500000)
  176 words of extra memory for PDF output out of 10000 (max. 10000000)
 
