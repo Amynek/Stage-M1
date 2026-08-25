@@ -1,4 +1,3 @@
-
 import numpy as np
 from   numpy.polynomial.legendre import legval
 from   scipy.special             import eval_legendre

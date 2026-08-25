@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper, openany]{report}
+\documentclass[11pt, a4paper, openany]{report}
 
 % ==============================================================================
 % PACKAGES DE BASE & TYPOGRAPHIE
@@ -135,7 +135,7 @@
 
   % Titre du stage
   \rule{\textwidth}{1.5pt}\\[0.8em]
-  {\huge \bfseries \color{primary} Etude numérique de surfaces de potentiel}\\[0.5em]
+  {\huge \bfseries \color{primary} Etude numérique \\ de surfaces de potentiel}\\[0.5em]
   %{\large \itshape \color{darktext} [ Sous-titre ou thématique principale de recherche / développement ]}
   \rule{\textwidth}{1.5pt}
 
@@ -146,7 +146,8 @@
     \begin{tabularx}{\textwidth}{@{} X X @{}}
       \textbf{Présenté par :} & \textbf{Encadrement :} \\[0.3em]
       \small Amyne KADDOURI & \textbf{Tuteur universitaire :} Mariko DUNSEATH-TERAO  \\
-      \small \textbf{Formation :} Master 1 Calcul Scientifique et Modélisation & \textbf{Tuteur d'accueil :} Kevin DUNSEATH \\
+      \small \textbf{Formation :} &\\
+      \small Master 1 Calcul Scientifique et Modélisation & \textbf{Tuteur d'accueil :} Kevin DUNSEATH \\
       \small \textbf{Dates du stage :} 18 Mai -- 17 Juillet 2026 & \small \textbf{Fonction :} Chargé de Recherche CNRS \\
     \end{tabularx}
   \end{minipage}
@@ -167,7 +168,7 @@
 \textbf{Mariko DUNSEATH-TERAO} et \textbf{Kevin DUNSEATH}, 
 pour leur accueil, 
 leur suivi académique, la qualité de leur encadrement ainsi que de leurs 
-conseils mais aussi pour la confiance qu'ils m'ont accordé tout au long de 
+conseils mais aussi pour la confiance qu'ils m'ont accordée tout au long de 
 cette période.\\
 
 \noindent Mes remerciements s'adressent également aux membres de l'équipe du département
@@ -180,7 +181,9 @@ pour les échanges, ses conseils et son temps accordé.
 % ------------------------------------------------------------------------------
 % TABLES DES MATIÈRES & FIGURES
 % ------------------------------------------------------------------------------
+\begin{spacing}{1.2}
 \tableofcontents
+\end{spacing}
 \newpage
 \listoffigures
 \addcontentsline{toc}{chapter}{Table des figures}
@@ -190,10 +193,10 @@ pour les échanges, ses conseils et son temps accordé.
 % ------------------------------------------------------------------------------
 \chapter{Présentation de la Structure d'Accueil}
 
-\noindent L’Institut de Physique de Rennes (IPR UMR 6251) est une Unité Mixte de 
-Recherche qui a pour tutelles l’Université de Rennes et le CNRS.
-Au CNRS, l’IPR est rattaché principalement au CNRS Physique et secondairement
-au CNRS Chimie et au CNRS Ingénierie.
+\noindent L’Institut de Physique de Rennes \cite{structure} (IPR UMR 6251) est 
+une Unité Mixte de Recherche qui a pour tutelles l’Université de Rennes et le 
+CNRS. Au CNRS, l’IPR est rattaché principalement au CNRS Physique et 
+secondairement au CNRS Chimie et au CNRS Ingénierie.
 Au sein de 5 bâtiments situés sur le campus de Beaulieu, les 6 départements de
 recherche mènent des activités scientifiques extrêmement variées et une grande
 partie des thématiques de la physique y est abordée.\\
@@ -204,13 +207,13 @@ sociétales, avec une part de plus en plus importante d’activités qui se
 développent dans le cadre de partenariats industriels.\\
 
 \noindent L'IPR développe des recherches fondamentale et appliquée au meilleur niveau 
-international grâce à l’expertise des personnels techniques et administratifs. 
+international avec le soutien des personnels techniques et administratifs. 
 Une des forces majeures de l’IPR réside dans l’imbrication entre projets de recherche 
 et développement de savoir-faire technique et technologique.\\
 
 \noindent Le département "Physique Moléculaire" fédère théoriciens et 
 expérimentateurs autour de la structure et de la dynamique de systèmes 
-atomiques et moléculaires et de leur interaction avec la lumière.\cite{structure}\\
+atomiques et moléculaires et de leur interaction avec la lumière.\\
 
 
 
@@ -221,24 +224,24 @@ atomiques et moléculaires et de leur interaction avec la lumière.\cite{structu
 
 \section{Contexte Théorique}
 
-\noindent On considère un système composé d'un Atome A et d'une molécule linéaire B de longueur fixe (rotateur rigide).
-La structure et la dynamique du système sont décrites par la mécanique quantique via une fonction d'onde 
-$\Psi(\vec{R}, \vec{\rho})$, solution de l'équation de Schrödinger :
+\noindent On considère un système composé d'un atome A et d'une molécule 
+linéaire B de longueur fixe (rotateur rigide). La structure et la dynamique du
+système sont décrites par la mécanique quantique via une fonction d'onde 
+$\Psi(\vec{R}, \vec{\rho})$ :
 \begin{itemize}
   \item $\vec{R}$ : Position du centre de masse de A par rapport au centre de masse de B 
   \item $\vec{\rho}$ : Coordonnées internes de A et B (électrons, etc.)
 \end{itemize}
+solution de l'équation de Schrödinger.\\
 
-\qquad
+\noindent La masse des électrons étant beaucoup plus petite que celle du noyau,
+ceux-ci s’adaptent presque instantanément aux variations des positions nucléaires.
+L’approximation de Born-Oppenheimer consiste à séparer la fonction d’onde :
+$$\Psi(\vec{R}, \vec{\rho}) = F(\vec{R})\chi(\vec{\rho}; \vec{R})$$
 
-\noindent Par l'approximation de Born-Oppenheimer, la masse de l'électron est beaucoup plus faible que celle du noyau.
-Les électrons s'adaptent donc presque instantanément à de faibles variations des positions nucléaires. On peut alors séparer la 
-fonction d'onde sous la forme : $\Psi(\vec{R}, \vec{\rho}) = F(\vec{R})\chi(\vec{\rho}; \vec{R})$
 \begin{itemize}
   \item $F(\vec{R})$ : qui décrit le mouvement relatif 
-  \item $\chi(\vec{\rho}; \vec{R})$ : qui décrit le mouvement électronique
-
-
+  \item $\chi(\vec{\rho}; \vec{R})$ : qui décrit le mouvement électronique.
 \end{itemize}
 
 \qquad 
@@ -246,10 +249,10 @@ fonction d'onde sous la forme : $\Psi(\vec{R}, \vec{\rho}) = F(\vec{R})\chi(\vec
 \noindent Cette approche permet de résoudre le problème en trois étapes : 
 \begin{enumerate}
   \item On fixe la géométrie nucléaire $\vec{R}$ et on résout l'équation de
-    Schrödinger électronique pour obtenir $\chi(\vec{\rho}; \vec{r})$ 
+    Schrödinger électronique pour obtenir $\chi(\vec{\rho}; \vec{R})$. 
   \item En faisant varier $\vec{R}$, on obtient l'énergie électronique en 
-    fonction de cette géométrie : c'est la \textbf{surface d'énergie potentielle (PES)}
-  \item On résout l'équation du mouvement nucléaire pour obtenir $F(\vec{R})$
+    fonction de cette géométrie : c'est la \textbf{surface d'énergie potentielle (PES)}.
+  \item On résout l'équation du mouvement nucléaire pour obtenir $F(\vec{R})$.
 
 
 \end{enumerate}
@@ -259,8 +262,11 @@ fonction d'onde sous la forme : $\Psi(\vec{R}, \vec{\rho}) = F(\vec{R})\chi(\vec
 \noindent La surface d'énergie potentielle est obtenue par des techniques de
 chimie quantique et des programmes informatiques associés. Les calculs étant 
 particulièrement coûteux, ceux-ci sont effectués sur un ensemble réduit de 
-géométries nucléaires (\textbf{points \textit{ab initio}}). On utilise ensuite un modèle
-analytique pour interpoler la fonction de potentiel $V(R,\theta)$.\\
+géométries nucléaires (\textbf{valeurs de potentiel \textit{ab initio}}). On 
+utilise ensuite un modèle analytique pour interpoler la fonction de potentiel
+car les calculs de dynamique requièrent a priori la valeur du potentiel en
+n’importe quel point. La précision de l’interpolation est cruciale pour la 
+fiabilité des études de dynamique quantique sur surfaces de potentiel.\\
 
 \begin{figure}[h]
   \begin{center}
@@ -271,41 +277,50 @@ analytique pour interpoler la fonction de potentiel $V(R,\theta)$.\\
 
 \newpage
 
-\noindent Pour notre système, la symétrie axiale\footnote{Le potentiel est donc indépendant de l'angle d'azimut} et le caractère rigide de la molécule B font que la surface de potenitel
- ne dépend que de $R$ et $\theta$ :
+\noindent Pour le système d'intérêt ici (voir Figure~\ref{fig:complexe} ),
+on suppose que la surface de potentiel ne dépend que de $R$ et 
+$\theta$ car la molécule est rigide (elle ne vibre pas) et est invariante sous
+rotation autour de son axe où :\footnote{Pour le système étudié ici, le PES 
+correspond à l'état fondamental électronique du complexe Ar-HCN, c'est-à-dire
+l'état présentant l'énergie électronique la plus faible.}
 
  \begin{itemize}
-   \item $R$ : distance entre les centres de masse de A et B 
-   \item $\theta$ : angle entre l'axe de la molécule B et le vecteur $\vec{R}$
+   \item $R$ : Distance entre les centres de masse de A et B ;
+   \item $\theta$ : Angle entre l'axe de la molécule B et le vecteur $\vec{R}$.
  \end{itemize}
 
 \qquad
 
 \noindent En pratique, en fixant une variable (par exemple $\theta=90$°) on
-réalise des coupes de la surface d'énergie potentielle. Le signe de l'énergie
-indique sur la nature de l'interaction entre A et B ($V > 0$ : Répulsive ; $V < 0$ : Attractive)
+réalise des coupes de la surface d'énergie potentielle. On fixe à zéro 
+l'énergie du complexe correspondant à la limite des très grandes distances ($R\to\infty$). Le signe de l'énergie
+indique la nature de l'interaction entre A et B ($V > 0$ : Répulsive ; $V < 0$ : Attractive).
 
 \begin{itemize}
-  \item A courte distance $V(R,\theta)$ prend de grandes valeurs (mur répulsif) 
-  \item A grande distance $V(R,\theta) \to 0$ par valeurs négatives (région asymptotique) 
-  \item La configuration stable du système se trouve dans le puits de potentiel
+  \item À courte distance $V(R,\theta)$ est très grand en raison du potentiel centrifuge (mur répulsif). 
+  \item À grande distance $V(R,\theta) \to 0$ par valeurs négatives (région asymptotique).
+  \item La configuration stable du système se trouve dans le puits de potentiel.
 \end{itemize}
 
 \begin{figure}[H]
-  \begin{center}
-    \includegraphics[width=0.55\textwidth]{../Figures/Rapport/Description-PES.png}
-  \end{center}
   \caption{Coupe de la PES à $\theta=90$° -- Complexe Ar-HCN}\label{fig:coupe-description}
+  \begin{center}
+    \includegraphics[width=0.60\textwidth]{../Figures/Rapport/Description-PES.png}
+  \end{center}
 \end{figure}
 
 
-\noindent Les surfaces d'énergie potentielle sont notamment utilisées pour étudier la dynamique des collisions ou la formation d'états liés.
+\noindent Dans ce travail, nous utilisons le milli-Hartree\footnote{1 Hartree 
+= $4.36\times10^{-18}$ joules} (mE$_{h}$) comme unité d'énergie, le bohr ($a_0$) comme 
+unité de distance et le degré comme unité angulaire. On précise que lorsque
+$\theta=0$°, on a Ar-HCN linéaire.
 
 \section{Sujet du stage}
 
 \noindent La problématique de ce stage trouve son origine dans l'article de
 référence publié en 2000 par R.R. Toczyłowski, F. Doloresco et S.M. Cybulski : 
-\textit{Theoretical study of the He–HCN, Ne–HCN, Ar–HCN, and Kr–HCN complexes}.\\ 
+\textit{Theoretical study of the He–HCN, Ne–HCN, Ar–HCN, and Kr–HCN complexes} 
+\cite{ref1}.\\ 
 
 \noindent Cet article présente des données \textit{ab initio} pour ces quatre systèmes, ainsi qu'un 
 modèle analytique permettant de calculer la surface d'énergie potentielle 
@@ -337,45 +352,44 @@ aux résultats présentés dans l'article initial.\\
 
 \noindent L'objectif de ce travail est d'une part de réaliser de nouveaux ajustements de 
 la surface (fits) d'énergie potentielle afin de déterminer des jeux de 
-paramètres qui conduisent à des résultats physiquement cohérents. D'autre part,
+paramètres qui conduisent aux valeurs du potentiel \textit{ab initio} et
+permettant de reproduire les énergies d'états liés du système, et d'autre part,
 de définir des critères pertinents pour évaluer et quantifier la qualité de ces
 ajustements.\\
 
 \newpage{}
 \section{Le modèle physique et ses paramètres\label{sec:modele}}
 
-\noindent Notre modèle décrivant $V(R,\theta)$ s'exprime comme la somme d'un 
-terme qui décrit les interactions à courte portée ($V_{sh}$) et d'un terme 
-asymptotique régissant les phénomènes à longue portée ($V_{as}$).
+\noindent Le modèle décrivant $V(R,\theta)$ s'exprime comme la somme d'un 
+terme qui décrit les interactions à courte (\textit{short}) portée ($V_{sh}$) et d'un terme 
+à très longue portée ($V_{as}$) dans la région asymptotique. Entre les deux se 
+trouve la région du puits où l’atome et la molécule peuvent se trouver piégés
+temporairement et interagir de manière significative durant une collision.\\
 $$\boxed{V(R,\theta)=V_{\mathrm{sh}}(R,\theta) + V_{\mathrm{as}}(R,\theta)}$$
 
-\subsection{Courte portée : $V_{\mathrm{sh}}$}
-
-\noindent Ce terme permet de modéliser les forces de répulsion à courte distance.
-
-$$V_{\mathrm{sh}}=G(R,\theta)e^{D(\theta)+B(\theta)R}$$
+où $$V_{\mathrm{sh}}=G(R,\theta)e^{D(\theta)+B(\theta)R}$$
 
 avec $$G(R,\theta) = \sum_{l=0}^{5} (g_{0,l}+g_{1,l}R+g_{2,l}R^2+g_{3,l}R^3)P_l(\cos\theta)$$
 
-$$D(\theta)=\sum\limits_{l=0}^{5}d_lP_l(\cos\theta) \qquad B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$$
+$$D(\theta)=\sum\limits_{l=0}^{5}d_lP_l(\cos\theta) \qquad B(\theta)=\sum\limits_{l=0}^{5}b_lP_l(\cos\theta)$$\\
 
-\subsection{Longue portée : $V_{\mathrm{as}}$}
 
-\noindent Le terme asymptotique décrit les forces d'attraction à grande distance. 
-La fonction d'amortissement $f_{n}(x)$ vient corriger le comportement non 
-physique à courte distance du développement en $1/R^{n}$.
+\noindent Les polynômes de Legendre $P_l(\cos\theta)$ forment une base des fonctions en $\theta$ et $l$
+correspond au moment angulaire (entier, positif ou nul).\\ 
+
+\noindent À très grande distance, on écrit :
 
 $$V_{as}=f_6(\vert B(\theta)R\vert)\frac{c_0P_0(\cos\theta)+c_2P_2(\cos\theta)}{R^6}
   +f_7(\vert B(\theta)R\vert)\frac{c_1P_1(\cos\theta)+c_3P_3(\cos\theta)}{R^7}$$
 
-avec $$f_n(x)=1-e^{-x}\sum_{k=0}^{n}\frac{x^k}{k!}$$
+\noindent La fonction d'amortissement $f_{n}(x)$ vient corriger le comportement non 
+physique à courte distance du développement en $1/R^{n}$.
+$$f_n(x)=1-e^{-x}\sum_{k=0}^{n}\frac{x^k}{k!}$$
 
-\subsection{Les 40 paramètres}
-
-\noindent Les quarante paramètres à ajuster selon le système étudié sont les suivants :
+\noindent Les quarante paramètres à ajuster selon le système étudié sont :
 \begin{itemize}
-  \item $b_{l},\;d_{l},\;g_{i,l}$ ($l=0,\dots,5$ et $i=0,1,2,3$) 
-  \item $c_{0},\; c_{1},\; c_{2},\; c_{3}$ 
+  \item $b_{l},\;d_{l},\;g_{i,l}$ ($l=0,\dots,5$ et $i=0,1,2,3$).
+  \item $c_{0},\; c_{1},\; c_{2},\; c_{3}$.
 \end{itemize}
 
 \newpage{}
@@ -384,80 +398,63 @@ avec $$f_n(x)=1-e^{-x}\sum_{k=0}^{n}\frac{x^k}{k!}$$
 
 \section{Les surfaces étudiées}
 
-\noindent Pour faciliter les comparaisons entre les surfaces, on fixe les unités suivantes :
 \begin{itemize}
-  \item $R$ en bohr ($a_0$)
-  \item $\theta$ en degrés. On précise que lorsque $\theta=0$°, on a Ar--HCN linéaire
-  \item $V$ (Energie potentielle) en milli Hartree (mE$_h$)
+  \item\label{itm:surf1} \textbf{Surface n°1 -- Ar-HCN :} Cette première surface publiée dans
+    l'article de référence \cite{ref1} contient 140 points \textit{ab initio}
+    sur une grille de R et $\theta$ incomplette 
+    (Table~\ref{tab:Ar-HCN-Toczylowski}).
+    $R$ (resp. $\theta$) prend ses valeurs entre $5$ et $15$ $a_0$ 
+    (resp. $0$° et $180$°) avec un pas irrégulier.
+  \item\label{itm:surf2} \textbf{Surface n°2 -- Ar-HCN :} Publiée dans le \textit{Chinese 
+    Journal of Chemical Physics} \cite{ref2}, elle contient 1767 points
+    \textit{ab initio} pour une grille régulière de 93 valeurs de $R$ (de 
+    $3.78$ à $47.24$ $a_0$) et 19 valeurs de $\theta$ (de $0$° à $180$°).
+  \item\label{itm:surf3} \textbf{Surface n°3 -- Ar-HNC : } Cette troisième surface \cite{refHNC} 
+    contient une combinaison de 25000 points \textit{ab initio} et issus d'un
+    premier fit sur une grille régulière de 500 valeurs de $R$ (entre $4$ et
+    $30$ $a_0$) et 50 valeurs de $\theta$ (entre $0$° et $180$°).
 \end{itemize}
-
-\subsection{Surface n°1 : Ar-HCN datant de 2000\label{sec:surf1}}
-
-\noindent Cette première surface donnée dans notre article de référence \cite{ref1} 
-contient 140 points \textit{ab initio} sur une grille de R et $\theta$ 
-incomplette (Table~\ref{tab:Ar-HCN-Toczylowski}).
-$R$ (resp. $\theta$) prend ses valeurs entre $5$ et $15$ bohr (resp. $0$° et $180$°) avec un pas irrégulier. 
-
-\subsection{Surface n°2 : Ar-HCN datant de 2026\label{sec:surf2}}
-
-\noindent Donnée dans le \textit{Chinese Journal of 
-Chemical Physics} \cite{ref2}, elle contient 1767 points \textit{ab initio} pour une 
-grille régulière de 93 valeurs de $R$ (de $3.78$ à $47.24$ bohr) et 19 valeurs
-de $\theta$ (de $0$° à $180$°).
-
-\subsection{Surface n°3 : Ar-HNC\label{sec:surf3}}
-
-\noindent Cette troisième surface, produite à l'IPR contient un mélange de 25000
-points \textit{ab initio} et issus d'un premier fit sur une grille régulière de 
-500 valeurs de $R$ (entre $4$ et $30$ bohr) et 50 valeurs de $\theta$ (entre $0$°
-et $180$°)
 
 \section{Les méthodes d'optimisation\label{sec:methodes}}
 
 \noindent Pour effectuer nos ajustements de surface, on utilisera le langage 
-python et les fonctions de la bibliothèque \verb|scipy.optimize| :
+Python et les fonctions du module \verb|scipy.optimize| : 
+\verb|curve_fit| \cite{curve_fit}, \verb|least_squares| \cite{least_squares},
+\verb|differential_evolution| \cite{differential_evolution} :\\
+
 \begin{itemize}
-  \item \verb|curve_fit| \cite{curve_fit}
-  \item \verb|least_squares| \cite{least_squares}
-  \item \verb|differential_evolution| \cite{differential_evolution}
+  \item \texttt{curve\_fit} : Cette méthode est la plus directe pour ajuster une fonction modèle $y=f(x,p)$
+  ($x=(R,\theta)$ dans notre cas). Elle repose sur des algorithmes des moindres 
+  carrés non linéaires comme Levenberg-Marquardt ou Trust Region Reflective.
+  
+  \noindent En pratique, il suffit d'y entrer en argument notre fonction modèle, les données
+  de référence ainsi que des paramètres initiaux $p_0$. La fonction convergera vers les paramètres
+  optimaux les plus proches de $p_0$. Pour améliorer les résultats, on utilisera
+  les options permettant de pondérer ou non le fit et faisant varier la méthode
+  de minimisation utilisée par la fonction.
+  
+  \qquad
+
+  \item \texttt{least\_squares} : Plus génerale que \verb|curve_fit|, cette 
+    méthode travaille sur une fonction résidus fournie par l'utilisateur 
+    ($\text{Res}(p)=y_{\mathrm{ref}}-y_{\mathrm{pred}}(p)$ par exemple). Elle 
+    offre un niveau de contrôle plus poussé avec notamment la possibilité de 
+    fixer des bornes sur les paramètres à calculer ou faire varier les fonctions
+    de perte utilisées. La fonction convergera, à l'instar de \verb|curve_fit|, 
+    vers le minimum local le plus proche de $p_0$.
+
+  \qquad
+
+  \item \texttt{differential\_evolution} : Contrairement aux deux méthodes 
+    précédentes qui sont des optimisateurs locaux dépendants d'un bon choix du 
+    point initial $p_0$, \verb|differential_evolution| est un algorithme 
+    d'optimisation globale stochastique. Il permet d'explorer un vaste espace
+    de valeurs à l'aide d'une population de solutions $p$ candidates, d'isoler
+    la région du minimum global pour ensuite effectuer un affinage local.
+
+    \noindent Comme \verb|least_squares|, elle ne prend pas directement le 
+    modèle en argument mais une fonction de coût que l'on choisit.
 \end{itemize}
-
-\noindent L'idée est qu'à partir de nos données de référence on puisse déterminer les paramètres
-optimaux les plus prometteurs.
-
-\subsection{curve\_fit}
-
-\noindent Cette méthode est la plus directe pour ajuster une fonction modèle $y=f(x,p)$
-($x=(R,\theta)$ dans notre cas). Elle repose sur des algorithmes des moindres 
-carrés non linéaires comme Levenberg-Marquardt ou Trust Region Reflective.\\ 
-
-\noindent En pratique, il suffit d'y entrer en argument notre fonction modèle, les données
-de référence ainsi que des paramètres initiaux $p_0$. La fonction convergera vers les paramètres
-optimaux les plus proches de $p_0$. Pour améliorer les résultats, on fera 
-varier les arguments \verb|sigma|, \verb|method| et \verb|jac|.
-
-\subsection{least\_squares}
-
-\noindent Cette méthode est plus génerale que \verb|curve_fit|, elle travaille
-sur une fonction résidus que l'on choisit ($\text{Res}(p)=y_{\mathrm{ref}}-
-y_{\mathrm{pred}}(p)$ par exemple). Elle offre un niveau de contrôle plus poussé
-avec notamment la possibilité de fixer des bornes sur nos paramètres à calculer
-ou faire varier les fonctions de perte utilisées .
-La fonction convergera, à l'instar de \verb|curve_fit|, vers le minimum local
-le plus proche de $p_0$.
-
-
-\subsection{differential\_evolution}
-
-\noindent Contrairement aux deux méthodes précédentes qui sont des optimisateurs
-locaux dépendants d'un bon choix de point initial $p_0$, \verb|differential_evolution|
-est un algorithme d'optimisation globale stochastique. Il permet d'explorer un 
-vaste espace de recherche à l'aide d'une population de solutions $p$ candidates, 
-d'isoler la région du minimum global pour ensuite effectuer un affinage local.\\
-
-\noindent Comme \verb|least_squares|, elle ne prend pas directement le modèle 
-en argument mais une fonction de coût que l'on choisit.
-
 
 \section{L'implémentation du modèle analytique}
 
@@ -468,31 +465,31 @@ on prendra $e^{D(\theta)-B(\theta)R}$ au lieu de $e^{D(\theta)+B(\theta)R}$
 car c'est ce que l'on retrouve plus communément dans la littérature\footnote{On
 s'assurera d'ajuster les signes des $c_l$ lorsque nécessaire}.\\ 
 
-\noindent Après avoir validé l'exactitude numérique de la fonction, il est 
-essentiel d'en optimiser les performances d'exécution. En effet, les algorithmes
+\noindent Après avoir vérifié la validité des résultats fournis par la fonction,
+il est essentiel d'en optimiser les performances d'exécution. En effet, les algorithmes
 d'optimisation évaluant le potentiel plusieurs milliers de fois, de légères réductions 
 du temps de calcul auront un impact majeur sur la durée globale du fit. Pour y parvenir,
-plusieurs axes d'amélioration se sont présentés : 
+plusieurs axes d'amélioration ont été examinés :\\
 
 \begin{itemize}
   \item \textbf{Vectorisation NumPy :} Remplacement des boucles Python et du module 
     \verb|math| par des opérations vectorielles, permettant d'évaluer 
-    simultanément l'ensemble des points $(R, \theta)$
+    simultanément l'ensemble des points $(R, \theta)$.
   \item \textbf{Optimisations algébriques :} Utilisation du schéma de Horner
     pour les polynômes $G(R, \theta)$ et $f_n$, pré-calcul explicite des factorielles, 
-    et évaluation des polynômes de Legendre avec \verb|np.polynomial.legendre.legval| 
+    et évaluation des polynômes de Legendre avec \verb|np.polynomial.legendre.legval|.
   \item \textbf{Stabilité numérique :} Utilisation de \verb|np.clip| et traitement 
     des \verb|NaN| ou infinis (\verb|np.nan_to_num|), pour prévenir
     les problèmes d'overflow lorsque les paramètres testés par les algorithmes 
-    d'optimisation sont absurdes
+    d'optimisation sont absurdes.
 \end{itemize}
 
-\noindent (Vous touverez en annexe les deux versions de l'implémentation : ~\ref{lst:V_classique}, \ref{lst:V_opt})
+\noindent (Les deux versions l'implémentation sont présentées en annexe : ~\ref{lst:V_classique} -- \ref{lst:V_opt}.)
 
 \subsection{Validation des améliorations}
 
 \noindent Pour s'assurer de la pertinence des modifications effectués on 
-applique une série de test.\\ 
+applique une série de tests.\\ 
 
 \noindent Dans un premier temps, il s'agit de vérifier que les deux
 fonctions sont numériquement équivalentes. Pour ce faire, on tire aléatoirement
@@ -518,19 +515,22 @@ et on s'assure qu'elle soit suffisamment faible.
   \end{center}
 \end{table}
 
-\noindent Dans un second temps, on évalue les gains en performances par trois
+\newpage
+\noindent Dans un second temps, on évalue les gains en performance par trois
 tests :
 \begin{itemize}
-  \item \textbf{Sur la fonction isolée :} Mesure du temps moyen d'execution de
-    $V$ sur 10000 itérations avec \verb|perf_counter|
+  \item \textbf{Sur la fonction isolée :} Mesure du temps moyen d'exécution de
+    $V$ sur 10000 itérations avec \verb|perf_counter|.
   \item \textbf{Sur les fonctions résidus :} Mesure du temps minimal sur 
-    5 cycles de 10000 évaluations avec \verb|timeit.repeat()|(pour filtrer de potentielles interférences)
+    5 cycles de 10000 évaluations avec \verb|timeit.repeat()|(pour filtrer de
+    possibles interférences de processus indépendants qui tourneraient en 
+    arrière plan).
   \item \textbf{Sur la résolution complète} (\verb|least_squares|) \textbf{:} 
     Mesure du temps moyen de fit sur 1000 $p_0$ tirés aléatoirement, pour évaluer 
-    le gain en conditions réelles
+    le gain en conditions réelles.
 \end{itemize}
 
-\noindent Pour éviter tout biais dans les mesures, on effectue les tests dans 
+\noindent Pour éviter les biais de mesure, on réalise les tests dans 
 des conditions expérimentales identiques par l'intégration de \textit{warm-up}
 \footnote{Exécution préliminaire que l'on ne comptabilise pas. Elle permet 
 de précharger la fonction et les données dans le cache du CPU}
@@ -559,17 +559,17 @@ et le nettoyage de la mémoire.
 \section{Les critères d'évaluation des ajustements}
 
 \noindent Après avoir déterminé des paramètres optimaux à l'aide des différentes
-méthodes il est essentiel d'évaluer la qualité de ces ajustements. Pour s'assurer 
-que le modèle accompagné des nouveaux paramètres reproduise bien les données, on
-effectue une première analyse graphique puis on évalue à l'aide de métriques 
+méthodes, il est essentiel d'évaluer la qualité de ces ajustements. Pour s'assurer 
+que le modèle incluant les nouveaux paramètres reproduise bien les données, on
+effectue une première analyse graphique que l'on précisera à l'aide de métriques 
 quantitatives.\\
 
-\noindent La vérification graphique est la première étape qui permet de mettre
-de coté les résultats aberrants et de pointer de potentielles faiblesses dans 
-les méthodes utilisées.
+\noindent La vérification graphique est la première étape qui permet d'écarter
+les résultats aberrants et d'identifier de possibles faiblesses dans les méthodes
+utilisées :
 \begin{itemize}
   \item \textbf{Superposition aux données} : Comparaison directe des courbes
-    obtenues aux données \textit{ab initio} à l'aide de coupes de surfaces sur 
+    obtenues aux données \textit{ab initio} à l'aide de coupes de la surface sur 
     plusieurs $R$ ou $\theta$ fixés
   \item \textbf{Cartes d'erreurs} : Représentation graphique des erreurs en 
     fonction de la géométrie
@@ -577,9 +577,9 @@ les méthodes utilisées.
 
 \qquad
 
-\noindent Ensuite, pour mesurer de manière plus objective la qualité, on introduit 
-trois métriques : R², RMSE et MAE. On pose $V$ les données de référence, $\bar{V}$ la moyenne de ces données et 
-$\hat{V}$ les valeurs obtenues avec le modèle analytique.
+\noindent Ensuite, pour mesurer de manière plus précise la qualité, on introduit 
+trois métriques : R², RMSE et MAE. On note $V$ les données de référence, $\bar{V}$ la moyenne de ces données et 
+$\hat{V}$ les valeurs obtenues avec le modèle analytique :
 
 \begin{itemize}
   \item \textbf{Coefficient de détermination (R²) :} Indicateur sans dimension 
@@ -587,46 +587,47 @@ $\hat{V}$ les valeurs obtenues avec le modèle analytique.
     $$R^2 = 1 - \frac{ \sum\limits_{i=1}^{N} (V_i - \hat{V}_i)^2 }{ \sum\limits_{i=1}^{N} (V_i - \bar{V})^2 }$$
   \item \textbf{Erreur quadratique moyenne (RMSE) :} Pénalise
     les grands écarts locaux. Elle prend la même unité que les données que
-    l'on cherche à évaluer
+    l'on cherche à évaluer.
     $$\text{RMSE} = \sqrt{ \frac{1}{N} \sum_{i=1}^{N} \left( V_i - \hat{V}_i \right)^2 }$$
-  \item \textbf{Erreur absolue moyenne} : Accorde un poids linéaire à toutes 
+  \item \textbf{Erreur absolue moyenne (MAE)} : Accorde un poids linéaire à toutes 
     les erreurs. Elle prend la même unité que les données étudiées.
     $$\text{MAE} = \frac{1}{N} \sum_{i=1}^{N} \left\vert{} V_i - \hat{V}_i \right\vert{}$$
 \end{itemize}
 
 \section{Approche alternative : Réseaux de neurones}
 
-\noindent On choisit brièvement d'apporter une alternative à l'ajustement du modèle analytique.
-On pose un modèle semi analytique : 
+\noindent Durant la dernière semaine du stage, nous avons tenté d'apporter une
+alternative à l'ajustement du modèle analytique. On pose un modèle semi analytique : 
 $$V(R, \theta) = \sum\limits_{l=0}^{L_{\max}} c_l(R) \cdot P_l(\cos\theta)$$
 
 \noindent On cherche à implémenter avec le module PyTorch un réseau de neurones qui 
 apprendra les fonctions représentant les coefficients $c_{l}(R)$. Pour ce
-faire, par souci de temps, on présente d'abord le problème à Gemini pour obtenir 
-un premier prototype  que l'on ajustera au besoin. L'architecture de notre
-procédure est composée de trois étapes :
+faire, par souci de temps, j'ai d'abord présenté le problème à Gemini pour obtenir 
+un premier prototype à ajuster si nécessaire. L'architecture de la procédure est
+composée de trois étapes :
 \begin{itemize}
   \item \textbf{Réseau dense :} Un réseau de neurones prend la distance $R$ 
     (que l'on normalise) en entrée et prédit le vecteur des $L_{\max} + 1$ 
-    coefficients $c_l(R)$. On prend comme fonction d'activation : GELU.
+    coefficients $c_l(R)$. On prend comme fonction d'activation : GELU (Gaussian
+    Error Linear Unit).
   \item \textbf{Polynomes de Legendre :} Les $P_l(\cos \theta)$ sont évalués
     en parallèle.
   \item \textbf{Fusion :} L'énergie totale est le produit scalaire entre le vecteur des coefficients
-    $c_l(R)$ et le vecteur des polynomes $P_l(\cos \theta)$
+    $c_l(R)$ et le vecteur des polynomes $P_l(\cos \theta)$.
 \end{itemize}
 
 \qquad
 
 \noindent On fixe $L_{max}=18$ et on effectue l'entraînement sur la surface n°3
-(\ref{sec:surf3}). Pour identifier la 
+(\ref{itm:surf3}). Pour identifier la 
 configuration optimale, on fait varier cinq hyperparamètres :
 
 \begin{itemize}
-  \item \verb|batch_size| : taille du lot 
-  \item \verb|hidden_layers| : nombre et dimensions des couches cachées 
-  \item \verb|learning_rate| : taux d'apprentissage
+  \item \verb|batch_size| : taille du lot.
+  \item \verb|hidden_layers| : nombre et dimensions des couches cachées.
+  \item \verb|learning_rate| : taux d'apprentissage.
   \item \verb|loss| : fonction que l'on cherche à minimiser (MAE ou Erreur 
-    relative \ref{lst:loss_NN})
+    relative \ref{lst:loss_NN}).
 \end{itemize}
 
 \noindent On fixe le nombre d'époques d'entraînement à 1000 ou 2000 et on selectionne le
@@ -638,8 +639,7 @@ meilleur checkpoint.
 
 \section{Ajustement de la surface n°1}
 
-\noindent Pour l'ajustement de cette première surface d'énergie potentielle 
-(Section~\ref{sec:surf1}), seules
+\noindent Pour l'ajustement de cette première surface d'énergie potentielle \cite{ref1}, seules
 \texttt{curve\_fit} et \texttt{least\_squares} ont été employées. On se satisfait d'une fonction de 
 résidus standard (définie par $|V_{\text{ref}} - V_{\text{pred}}|$) pour la 
 résolution via \texttt{least\_squares}. \\ 
@@ -652,7 +652,10 @@ sont très similaires sur le plan graphique et quantitatif
 
 \noindent On choisit de retenir pour cette surface le jeu de paramètres obtenu avec 
 \texttt{least\_squares}, configuré avec la mise à l'échelle 
-\texttt{x\_scale='jac'} et la fonction de perte \texttt{loss='huber'}. \\
+\texttt{x\_scale='jac'}\footnote{Met à l'échelle les paramètres en
+utilisant le Jacobien de la fonction résidu.} et la fonction de perte 
+\texttt{loss='huber'}\footnote{Réduit l'influence des valeurs 
+abberrantes lors de l'optimisation.}. \\
 
 \begin{figure}[H]
     \centering
@@ -702,8 +705,8 @@ un écart minime est beaucoup plus marqué.\\
     \end{subfigure}
 \end{figure}
 
-\noindent Vous trouverez en annexe des figures complémentaires qui viennent
-appuyer les observations (\ref{fig:PES_surf1}).
+\noindent Des figures complémentaires appuyant les observations sont présentés
+dans l'Annexe (\ref{fig:PES_surf1}).
 
 \newpage{}
 \section{Ajustement de la surface n°2}
@@ -716,10 +719,11 @@ valeurs qui tendent vers zéro}. On utilise les méthodes \texttt{curve\_fit,
 least\_squares et differential\_evolution}.\\
 
 \noindent Afin d'optimiser le fit, plusieurs formulations de l'erreur ont été testées.
-L'objectif de cela est de donner plus de poids aux faibles valeurs d'énergie (dans 
-la zone du puits et à grande distance) car elles se font écraser par les valeurs
-du mur répulsif. On prend également la décision de réduire l'ensemble d'étude
-à des valeurs de $R\in[4.7,18.9]\;a_0$.
+L'objectif de cela est de donner plus de poids aux valeurs d’énergie dans les zones 
+physiquement importantes du puits et à grande distance, plus faibles que celles
+de la barrière centrifuge où la fonction d’onde ne pénètre pas. On prend 
+également la décision de réduire l'ensemble d'étude à des valeurs de 
+$R\in[4.7,18.9]\;a_0$ :
 
 \begin{itemize}
   \item Pour \texttt{least\_squares} : On effectue les calculs sur trois 
@@ -757,8 +761,8 @@ d'execution considérable.
 
 \subsection{Analyse graphique et quantitative\label{sec:fit-surf2}}
 
-\noindent On effectue une première sélection graphique des paramètres qui ressortent
-de nos différentes configurations. Par exemple, il apparaît immédiatement
+\noindent On effectue une première sélection graphique des paramètres obtenus 
+par les différentes configurations. Par exemple, il apparaît immédiatement
 que la fonction \texttt{least\_squares} accompagnée d'un résidu simple (erreur
 absolue) ne suffit pas (Voir Figure~\ref{fig:ls_mauvais_surf2}).\\
 
@@ -785,10 +789,10 @@ graphiques et des métriques.
     \end{subfigure}
 \end{figure}
 
-\noindent On met de côté les paramètres obtenus via 
-\texttt{differential\_evolution} dont les résultats sont graphiquement peu
-satisfaisants. Les autres
-paramètres donnent des résultats similaires avec chacun ses caractéristiques.
+\noindent On écarte les paramètres obtenus via 
+\texttt{differential\_evolution} dont les résultats sont visiblement peu
+satisfaisants. Les autres paramètres donnent des résultats similaires avec
+chacun ses caractéristiques.
 Par exemple, les paramètres issus de \texttt{curve\_fit} sont particulièrement
 bons pour $R$ grand (Figure~\ref{fig:surf2-selec-R15}). Néanmoins,
 ils présentent une certaine faiblesse aux extrémités pour certaines valeurs de 
@@ -819,13 +823,13 @@ differential\_evolution & 0.98121175 & 5.58426445 & 0.87852188 & 0.03881056 & 0.
 \noindent On finit par choisir les paramètres obtenus avec \texttt{curve\_fit}
 (Tableau~\ref{tab:best_params_surf2})
 car bien qu'ils ne se démarquent pas sur le plan quantitatif, lorsque l'on
-s'intéresse aux erreurs relatives aux alentours des énergies minimales c'est
-ce jeu qui prend le dessus (voir Figure~\ref{fig:PES-surface-2}).
+s'intéresse aux erreurs relatives aux alentours des énergies minimales, il 
+apparaît comme meilleur (voir Figure~\ref{fig:PES-surface-2}).
 
 \section{Nouveau système : Ar-HNC}
 
-\noindent On effectue un dernier ajustement "classique" sur la surface n°3 
-(Section~\ref{sec:surf3}).
+\noindent J'effectue un dernier ajustement "classique" sur la surface n°3 
+(Section~\ref{itm:surf3}).
 Les difficultés rencontrées sont intrinsèquement
 les mêmes que pour la surface n°2. On réitère donc la méthodologie de la 
 Section~\ref{sec:fit-surf2} 
@@ -852,7 +856,7 @@ et on compare les deux surfaces. (Paramètres appliqués au modèle : Table~\ref
 \end{figure}
 
 \noindent Ces figures mettent en évidence le comportement géométrique lié à l'inversion 
-des atomes de carbone et d'azote. Lorsque l'Argon s'approche par les extrémités
+des atomes de carbone et d'azote. Lorsque l'argon s'approche par les extrémités
 de la molécule (à $0^\circ$ et $180^\circ$), il fait face à une configuration
 différente d'un système à l'autre. Ainsi il y a un phénomène d'inversion des
 puits de potentiel qui apparaît. En revanche, à $90$° le centre de la molécule
@@ -921,19 +925,19 @@ nettement plus intéressant.
 mettre en évidence l'influence de leurs caractéristiques sur la qualité des 
 ajustements.\\ 
 
-\noindent Par exemple, la surface n°1 (Section~\ref{sec:surf1})
+\noindent Par exemple, la surface n°1 (Section~\ref{itm:surf1})
 étant composée d'un faible nombre de points rend fragile la fiabilité des
 paramètres en dehors des zones denses. Cette fragilité reste anecdotique, du
 fait que les points sont répartis de manière à viser les régions les plus 
 pertinentes de la surface.\\
 
-\noindent Pour la surface n°3 (Section~\ref{sec:surf3})
+\noindent Pour la surface n°3 (Section~\ref{itm:surf3})
 le caractère hybride du jeu de données (points \textit{ab initio} et issus d'un
 précédent ajustement via un autre modèle) est potentiellement source 
 d'introduction d'un biais dans l'évaluation de qualité des paramètres\footnote{
 On effectue l'ajustement d'une surface déjà ajustée}. La démarche reste justifiée
 en raison de l'objectif premier de l'étude de cette surface qui était simplement
-de fournir des paramètres fonctionnels.\\ 
+de fournir des paramètres capables de fitter les données ab initio.\\ 
 
 \noindent Enfin, les surfaces 2 et 3 incluent des distances $R$ extrêmes dont
 l'intérêt physique est négligeable\footnote{Le comportement à très courte et très longue distance 
@@ -943,12 +947,13 @@ l'énergie que cela engendre ajoutent une complexité qui peut facilement être
 
 \section{Approche par les réseaux de neurones}
 
-\noindent Cette étape confirme une limite propre aux modèles purement basés sur
-les données. En effet, bien que le réseau reproduise bien la région du puits de
-potentiel, il tend à rapidement diverger à grande distance (oscillations, 
-valeurs d'énergies positives). L'absence de contraintes permettant de respecter
-les comportements physiques du système pénalise cette approche et valorise 
-l'utilisation plus traditionnelle d'un modèle analytique.\\
+\noindent Cette étape confirme une limite propre aux modèles basés purement sur
+les données. En effet, bien que le réseau reproduise correctement la région du
+puits de potentiel, il tend à diverger rapidement à grande distance (présentant 
+des puits locaux non physiques et des valeurs d'énergie positives). L'absence 
+de contraintes permettant de respecter les comportements physiques du système
+pénalise cette approche et valorise l'utilisation plus traditionnelle d'un 
+modèle analytique.\\
 
 \noindent Ce constat reste à nuancer car cette approche n'a peut-être pas 
 eu l'occasion de pleinement faire ses preuves, et l'optimisation du réseau 
@@ -961,15 +966,14 @@ des standards actuels}, ce qui a potentiellement été un facteur limitant dans
 l'ampleur de la recherche d'hyperparamètres.\\ 
 
 
-\noindent D'autres pistes d'amélioration pourraient éventuellement permettre
-de donner une chance à cette méthode :
+\noindent D'autres pistes d'amélioration pourraient éventuellement donner une
+chance à cette méthode :
 
 \begin{itemize}
   \item \textbf{Intégration de contraintes physiques :} En pénalisant directement
-    les comportements non physiques (\textit{Réseaux neuronaux informés par la physique})
-  \item \textbf{Nouvelle architecture :} En ayant recours à un réseau qui
-    viserait à appliquer une correction pour compenser les erreurs du modèle
-    analytique
+    les comportements non physiques (\textit{Réseaux neuronaux informés par la physique}).
+  \item \textbf{Nouvelle architecture :} En ayant recours à un réseau appliquant 
+    une correction pour compenser les erreurs du modèle analytique.
   \item \textbf{Système à dimension supérieure :} Là où les réseaux de neurones
     gagneraient en pertinence et en compétitivité serait sur des problèmes
     impliquant davantage de degrés de liberté, par exemple en intégrant les 
@@ -984,19 +988,19 @@ de donner une chance à cette méthode :
 
 \section{Bilan Technique et Scientifique}
 
-\noindent Ce stage a tout d'abord été marqué par l'implémentation du modèle analytique
+\noindent Ce stage a tout d'abord été marqué par mon implémentation du modèle analytique
 permettant de modéliser les surface d'énergie potentielle pour les systèmes
-composés d'un atome et d'une molécule linéaire. Implémentation qui n'a pas 
-échappé à un travail d'optimisation du code pour rendre viable les futurs 
-ajustements de surface. Ensuite, ce programme a pu être utilisé comme base dans
+composés d'un atome et d'une molécule linéaire. Cette implémentation m'a
+également demandé un important travail d'optimisation pour rendre viables les
+futurs ajustements de surface. Ensuite, ce programme a pu être utilisé comme base dans
 la détermination de nouveaux paramètres validés par nos tests et par calculs
-d'états liés, permettant de résoudre les incohérences soulevées dans les
-travaux de référence. Il y a également eu un travail de comparaison des 
-méthodes d'optimisation (comme \texttt{curve\_fit, least\_squares} et 
-\texttt{differential\_evolution}) mettant la lumière sur l'importance du 
-choix des algorithmes on fonction des données d'étude. Enfin, le projet a 
-été vecteur d'une première approche sur les réseaux de neurones, leur potentiel
-ainsi que leurs limites.
+d'états liés, permettant de résoudre les erreurs repérées dans les
+travaux de référence \cite{ref1}. J'ai également effectué un travail de 
+comparaison des méthodes d'optimisation (comme \texttt{curve\_fit, 
+least\_squares} et \texttt{differential\_evolution}) mettant la lumière sur
+l'importance du choix des algorithmes on fonction des données d'étude. 
+Enfin, le projet a été vecteur d'une première approche personnelle sur les 
+réseaux de neurones, leur potentiel ainsi que leurs limites.
 
 \section{Bilan Personnel et Professionnel}
 
@@ -1009,7 +1013,7 @@ de développement en travaillant sur l'environnement Linux et par l'utilisation
 d'outils de gestion de versions (Git). Il était nécessaire au quotidien de 
 faire preuve d'organisation, de rigueur et d'autonomie pour structurer
 l'évolution du code et gérer les erreurs d'implémentation rencontrées. Enfin,
-La rédaction de résumés intermédiaires au court du stage ainsi que la 
+la rédaction de résumés intermédiaires au cours du stage ainsi que la 
 préparation de la soutenance et de ce rapport ont été une occasion de travailler
 ma communication scientifique.\\
 
@@ -1026,10 +1030,11 @@ ma communication scientifique.\\
 
 \begin{thebibliography}{99}
     \bibitem{structure} Site officiel de l'Institut de Physique de Rennes : \url{https://ipr.univ-rennes.fr/linstitut/presentation-de-lipr}
-    \bibitem{ref1} R.R. Toczyłowski, F. Doloresco, S.M. Cybulski -- 2000 -- \textit{Theoretical study of the He–HCN, Ne–HCN, Ar–HCN, and Kr–HCN complexes}.
-    \bibitem{ref2} T. Liman, S. Tong, N. Chuangang, C. Xialin -- 5 Janvier 2026 -- \textit{Ab initio Potential Energy Surfaces and Low-Temperature
-    Collisional Dynamics for Rotational De-excitation of HNC and HCN by Ar} -- Chinese Journal of Chemical Physics
-    \bibitem{these} R.R. Toczylowski -- 2004 -- \textit{Doctoral thesis} -- Miami University
+    \bibitem{ref1} Toczylowski R R, Doloresco F and Cybulski S M 2001 J. Chem. Phys. 114 851–864
+    \bibitem{ref2} T. Liman, S. Tong, N. Chuangang, C. Xialin -- 2026 -- \textit{Ab initio Potential Energy Surfaces and Low-Temperature
+    Collisional Dynamics for Rotational De-excitation of HNC and HCN by Ar} -- Chinese Journal of Chemical Physics, sous presse.
+    \bibitem{these} R.R. Toczylowski -- 2004 -- \textit{Doctoral thesis} -- Miami University.
+    \bibitem{refHNC} Robin et Lique, communication privée.
     \bibitem{curve_fit} Documentation officielle Scipy \url{https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html}.
     \bibitem{least_squares} Documentation officielle Scipy \url{https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html}.
     \bibitem{differential_evolution} Documentation officielle Scipy \url{https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html}.
@@ -1148,13 +1153,13 @@ ma communication scientifique.\\
       \multicolumn{1}{c}{\textbf{4}} & 
       \multicolumn{1}{c}{\textbf{5}} \\
       \hline
-      $b_k$ & 1.483457952935 & 0.111931368900 & -0.032828733644 & 0.094380671717 & 0.033808516509 & -0.004628551890 \\
-      $c_k$ & 135784.7475864 & -325678.7456490 & -57995.35167154 & -125775.7741746 \\
-      $d_k$ &  14.27152853080 & 1.209656214133 & 1.127567224360 & 0.466412506074 & 0.263897304056 & 0.043692025377\\
-      $g_{k,0}$ & 0.048859570762 & -0.166635423268 & 0.031988132103 & -0.032470634423 & 0.014849432941 & 0.010149363971\\
-      $g_{k,1}$ & 0.009865239397 & 0.055766281397 & -0.009759579998 & 0.014943953379 & -0.009911618483 & -0.005587739697 \\
-      $g_{k,2}$ & -0.003225615792 & -0.005993491651 & 0.001263511065 & -0.001300645436 & 0.002027982919 & 0.000830833240 \\
-      $g_{k,3}$ & 0.000152113346 & 0.000212959522 & -0.000059131006 & -0.000009134797 & -0.000125630570 & -0.000034280455  \\
+      $b_k$ & 1.4834580 & 0.1119314 & -0.0328287 & 0.0943807 & 0.0338085 & -0.0046286 \\
+      $c_k$ & 135784.75 & -325678.75 & -57995.352 & -125775.77 \\
+      $d_k$ &  14.271529 & 1.2096562 & 1.1275672 & 0.4664125 & 0.2638973 & 0.0436920\\
+      $g_{k,0}$ & 0.0488596 & -0.1666354 & 0.0319881 & -0.0324706 & 0.0148494 & 0.0101494\\
+      $g_{k,1}$ & 0.0098652 & 0.0557663 & -0.0097596 & 0.0149440 & -0.0099116 & -0.0055877 \\
+      $g_{k,2}$ & -0.0032256 & -0.0059935 & 0.0012635 & -0.0013006 & 0.0020280 & 0.0008308 \\
+      $g_{k,3}$ & 0.0001521 & 0.0002130 & -0.0000591 & -0.0000091 & -0.0001256 & -0.0000343  \\
       
       \hline
     \end{tabular}
@@ -1163,7 +1168,7 @@ ma communication scientifique.\\
 \end{table}
 
 \begin{table}[H]
-  \caption{\centering Scores relatifs aux paramètres obtenus pour chaque méthode sur la surface n°1 }\label{tab:scores_toczylowski}
+  \caption{\centering Scores relatifs aux paramètres obtenus \\ pour chaque méthode sur la surface n°1 }\label{tab:scores_toczylowski}
   \begin{center}
   \resizebox{\textwidth}{!}{%
     \begin{tabular}[c]{lccc}
@@ -1193,17 +1198,17 @@ ma communication scientifique.\\
 \caption{Paramètres sélectionnés pour la surface n°2}
 \label{tab:best_params_surf2}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lcccccc}
+\begin{tabular}{lrrrrrr}
 \toprule
 \textbf{k} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
 \midrule
-$b_k$  &  1.433026267043 &  0.035713400754 & -0.160747912395 & -0.012163543403 & -0.045734423333 &  0.014835677041 \\
-$c_k$  & -119043.4133135 & -234068.2911972 & -42215.10719918 & -124876.0841546 &   & \\
-$d_k$  &  13.37595395903 & -0.318989227438 & 1.454357988273 & -0.267476013548 & -0.000050656728 & 0.039665559971 \\
-$g_{k,0}$ & 0.187013081600 & 0.042943546370 & 0.032408853047 & 0.253636959892 & 0.171654855691 & 0.041932261094 \\
-$g_{k,1}$ & -0.018123920294 & 0.015589124760 & -0.030649394237 & -0.090147861586 & -0.059478699677 & -0.018315314621 \\
-$g_{k,2}$ & -0.000901379137 & -0.003974696113 & 0.004000824468 & 0.010096114197 & 0.006993136783 & 0.002467755349 \\
-$g_{k,3}$ & 0.000011197371 & 0.000169599655 & -0.000054892560 & -0.000344462082 & -0.000286962916 & -0.000104872221 \\
+$b_k$  &  1.4330263 &  0.0357134 & -0.1607479 & -0.0121635 & -0.0457344 &  0.0148357 \\
+$c_k$  & -119043.41 & -234068.29 & -42215.107 & -124876.08 &   & \\
+$d_k$  &  13.375954 & -0.3189892 & 1.4543580 & -0.2674760 & -0.0000507 & 0.0396656 \\
+$g_{k,0}$ & 0.1870131 & 0.0429435 & 0.0324089 & 0.2536370 & 0.1716549 & 0.0419323 \\
+$g_{k,1}$ & -0.0181239 & 0.0155891 & -0.0306494 & -0.0901479 & -0.0594787 & -0.0183153 \\
+$g_{k,2}$ & -0.0009014 & -0.0039747 & 0.0040008 & 0.0100961 & 0.0069931 & 0.0024678 \\
+$g_{k,3}$ & 0.0000112 & 0.0001696 & -0.0000549 & -0.0003445 & -0.0002870 & -0.0001049 \\
 \bottomrule
 \end{tabular}
 }
@@ -1214,17 +1219,17 @@ $g_{k,3}$ & 0.000011197371 & 0.000169599655 & -0.000054892560 & -0.000344462082 
 \caption{Paramètres sélectionnés pour la surface n°3}
 \label{tab:best_params_surf3}
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lcccccc}
+\begin{tabular}{lrrrrrr}
 \toprule
 \textbf{k} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} \\
 \midrule
-$b_k$  &  1.3927514645113 & 0.0969300220323 & -0.0598408365993 & 0.0979666320780 & 0.0440331249725 & -0.0066773573730 \\
-$c_k$  & -135783.58642776 & -325692.43447538 & -57995.311054132 & -125784.84697654 \\
-$d_k$  &  14.356222526628 & 1.2155113608982 & 1.1171693978112 & 0.4725050499800 & 0.2654722356128 & 0.0397397126798 \\
-$g_{k,0}$ & 0.0421957569618 & -0.0743663336295 & 0.0044449246699 & -0.0055690533186 & 0.0510967140603 & -0.0110267889605 \\
-$g_{k,1}$ & 0.0012035409107 & 0.0230019854597 & 0.0016336165358 & -0.0014389874416 & -0.0208051820470 & 0.0056295386237 \\
-$g_{k,2}$ & -0.0014415287347 & -0.0031206461923 & -0.0005977968133 & 0.0011482862886 & 0.0027666079533 & -0.0009802729077 \\
-$g_{k,3}$ & 0.0000769984960 & 0.0001784250246 & 0.0000445011209 & -0.0001171508711 & -0.0001207857249 & 0.0000577998328 \\
+$b_k$  &  1.3927515 & 0.0969300 & -0.0598408 & 0.0979666 & 0.0440331 & -0.0066774 \\
+$c_k$  & -135783.59 & -325692.43 & -57995.311 & -125784.85 \\
+$d_k$  &  14.356223 & 1.2155114 & 1.1171694 & 0.4725050 & 0.2654722 & 0.0397397 \\
+$g_{k,0}$ & 0.0421958 & -0.0743663 & 0.0044449 & -0.0055691 & 0.0510967 & -0.0110268 \\
+$g_{k,1}$ & 0.0012035 & 0.0230020 & 0.0016336 & -0.0014390 & -0.0208052 & 0.0056295 \\
+$g_{k,2}$ & -0.0014415 & -0.0031206 & -0.0005978 & 0.0011483 & 0.0027666 & -0.0009803 \\
+$g_{k,3}$ & 0.0000770 & 0.0001784 & 0.0000445 & -0.0001172 & -0.0001208 & 0.0000578 \\
 \bottomrule
 \end{tabular}
 }
@@ -1238,14 +1243,14 @@ $g_{k,3}$ & 0.0000769984960 & 0.0001784250246 & 0.0000445011209 & -0.00011715087
     \centering
     \caption{\centering Contour plot de l'énergie potentielle pour Ar-HCN (surface n°1)}
     \label{fig:PES_surf1}
-    \begin{subfigure}{0.45\textwidth}
+    \begin{subfigure}{0.49\textwidth}
         \centering
-        \caption{Paramètres de R.R. Toczyłowski \cite{these}}
+        \caption{Paramètres de R.R. Toczyłowski (\ref{tab:params_toczylowski})}
         \includegraphics[width=\linewidth]{../Figures/Soutenance/PES-AR-Toczylowski-params.png}
     \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
+    \begin{subfigure}{0.49\textwidth}
         \centering
-        \caption{Paramètres calculés retenus}
+        \caption{Paramètres calculés retenus (\ref{tab:best_params_1})}
         \includegraphics[width=\linewidth]{../Figures/Soutenance/PES-AR-Toczylowski-bestfit.png}
     \end{subfigure}
     \begin{subfigure}{0.55\textwidth}
@@ -1262,21 +1267,23 @@ $g_{k,3}$ & 0.0000769984960 & 0.0001784250246 & 0.0000445011209 & -0.00011715087
     \includegraphics[width=0.95\textwidth]{../Figures/Rapport/surf2-ls1-R7_5.png}
   \end{center}
 \end{figure}
+
+
 \begin{figure}[H]
     \centering
     \caption{\centering Coupes de surface pour $\theta$ fixé -- Ar-HCN (surface n°2)}
     \label{fig:Theta-fixe-surf2}
-    \begin{subfigure}{0.45\textwidth}
+    \begin{subfigure}{0.65\textwidth}
         \centering
         \caption{$\theta=0$°}
         \includegraphics[width=\linewidth]{../Figures/Rapport/surf2-T0.png}
     \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
+    \begin{subfigure}{0.65\textwidth}
         \centering
         \caption{$\theta=90$°}
         \includegraphics[width=\linewidth]{../Figures/Rapport/surf2-T90.png}
     \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
+    \begin{subfigure}{0.65\textwidth}
         \centering
         \caption{$\theta=180$°}
         \includegraphics[width=\linewidth]{../Figures/Rapport/surf2-T180.png}
@@ -1287,17 +1294,17 @@ $g_{k,3}$ & 0.0000769984960 & 0.0001784250246 & 0.0000445011209 & -0.00011715087
     \centering
     \caption{\centering Contour plot de l'énergie potentielle pour Ar-HCN (surface n°2)}
     \label{fig:PES-surface-2}
-    \begin{subfigure}{0.45\textwidth}
+    \begin{subfigure}{0.55\textwidth}
         \centering
         \caption{Paramètres issus de \texttt{least\_squares} n°1}
         \includegraphics[width=\linewidth]{../Figures/Rapport/PES-surf2-ls1.png}
     \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
+    \begin{subfigure}{0.55\textwidth}
         \centering
         \caption{Paramètres issus de \texttt{least\_squares} n°2}
         \includegraphics[width=\linewidth]{../Figures/Rapport/PES-surf2-ls2.png}
     \end{subfigure}
-    \begin{subfigure}{0.45\textwidth}
+    \begin{subfigure}{0.55\textwidth}
         \centering
         \caption{Paramètres issus de \texttt{curve\_fit}}
         \includegraphics[width=\linewidth]{../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png}
@@ -1308,17 +1315,49 @@ $g_{k,3}$ & 0.0000769984960 & 0.0001784250246 & 0.0000445011209 & -0.00011715087
 \newpage{}
 \section{Code Source}
 
-\begin{lstlisting}[language=Python, caption={Implémentation primaire du modèle analytique de V}, label={lst:V_classique}]
+\lstset{
+  backgroundcolor=\color{white},     % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize\ttfamily, % the size of the fonts that are used for the code
+  breakatwhitespace=false,           % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                   % sets automatic line breaking
+  captionpos=b,                      % sets the caption-position to bottom
+  commentstyle=\color{red},          % comment style
+  deletekeywords={...},              % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},            % if you want to add LaTeX within your code
+  extendedchars=true,                % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,	                     % adds a frame around the code
+  framextopmargin=0pt,
+  framexbottommargin=0pt,
+  keepspaces=true,                   % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\bfseries\color{blue},% keyword style
+  language=Python,                   % the language of the code
+  numbers=left,                      % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                     % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray},   % the style that is used for the line-numbers
+  rulecolor=\color{black},           % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                  % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,            % underline spaces within strings only
+  showtabs=false,                    % show tabs within strings adding particular underscores
+  stepnumber=1,                      % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},       % string literal style
+  tabsize=2,	                     % sets default tabsize to 2 spaces
+  inputpath=../Fonctions/,                  % subdirectory with C source files
+  title=\lstname                     % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+
+\begin{lstlisting}[ caption={Implémentation primaire du modèle analytique de V}, label={lst:V_classique}]
 def G(R,Theta,g0,g1,g2,g3):
     g = 0.
     for i in range(6):
-        g = g + (g0[i]+g1[i]*R+g2[i]*R*R+g3[i]*R*R*R)*eval_legendre(i,math.cos(Theta))
+        g = g + (g0[i]+g1[i]*R+g2[i]*R*R+g3[i]*R*R*R)
+              * eval_legendre(i,math.cos(Theta))
     return g
 
 def X(Theta,x):
     y = 0.
     for i in range(6):
-        y = y + x[i]*eval_legendre(i,math.cos(Theta))
+        y = y + x[i] * eval_legendre(i,math.cos(Theta))
     return y
 
 def f(n,x):
@@ -1345,15 +1384,20 @@ def V(vars, params):
     abs_BR = math.fabs(X(Theta_rad,b)*R)
     cosTh = math.cos(Theta_rad)
         
-    V_sh = G(R,Theta_rad,g0,g1,g2,g3) * math.exp(X(Theta_rad,d)-X(Theta_rad,b)*R)
+    V_sh = G(R,Theta_rad,g0,g1,g2,g3) 
+         * math.exp(X(Theta_rad,d)-X(Theta_rad,b)*R)
         
-    V_as = f(6,abs_BR) * (c[0]*eval_legendre(0,cosTh)+c[2]*eval_legendre(2,cosTh))/(R**6)\
-    + f(7,abs_BR) * (c[1]*eval_legendre(1,cosTh)+c[3]*eval_legendre(3,cosTh))/(R**7)
+    V_as = f(6,abs_BR) * (c[0]*eval_legendre(0,cosTh)\
+                         + c[2]*eval_legendre(2,cosTh))/(R**6)\
+         + f(7,abs_BR) * (c[1]*eval_legendre(1,cosTh)\
+                         + c[3]*eval_legendre(3,cosTh))/(R**7)
         
     return V_sh + V_as
 \end{lstlisting}
 
-\begin{lstlisting}[language=Python, caption={Implémentation optimisée du modèle analytique de V}, label={lst:V_opt}]
+
+\newpage
+\begin{lstlisting}[caption={Implémentation optimisée du modèle analytique de V}, label={lst:V_opt}]
 import numpy as np
 from   numpy.polynomial.legendre import legval
 from   scipy.special             import eval_legendre
@@ -1361,13 +1405,11 @@ from   scipy.special             import eval_legendre
 def f6_opt(x):
     y = 1.0 + x * (1.0 + x * (0.5 + x * (1.0/6.0 + x * (1.0/24.0 + x * (1.0/120.0 + x / 720.0)))))
     return 1.0 - np.exp(-x) * y
-
 def f7_opt(x):
     y = 1.0 + x * (1.0 + x * (0.5 + x * (1.0/6.0 + x * (1.0/24.0 + x * (1.0/120.0 + x * (1.0/720.0 + x / 5040.0))))))
     return 1.0 - np.exp(-x) * y
 
 def V_opt(p, R, Theta):
-
     R = np.asarray(R, dtype=float)
     cosTh = np.cos(np.deg2rad(np.asarray(Theta, dtype=float)))
     
@@ -1400,17 +1442,16 @@ def V_opt(p, R, Theta):
           + f7_opt(abs_BR) * legval(cosTh,[0,c[1],0,c[3]]) * inv_R7)
     
     V_total = V_sh + V_as
-    
     V_total = np.nan_to_num(V_total, nan=1e100, posinf=1e100, neginf=-1e100)
     V_total = np.clip(V_total, -1e100, 1e100)
       
     return V_total
-  
 \end{lstlisting}
 
-
-\begin{lstlisting}[language=Python, caption={Fonction de loss alternative pour le réseau de neurones (Erreur relative)}, label={lst:loss_NN}]
-def relative_error_loss(predictions_norm, targets_norm, E_mean, E_std, epsilon=1.0):
+\newpage
+\begin{lstlisting}[caption={Fonction de loss alternative pour le réseau de neurones (Erreur relative)}, label={lst:loss_NN}]
+def relative_error_loss(predictions_norm, targets_norm,\
+                        E_mean, E_std, epsilon=1.0):
     predictions_raw = (predictions_norm * E_std) + E_mean
     targets_raw = (targets_norm * E_std) + E_mean
 

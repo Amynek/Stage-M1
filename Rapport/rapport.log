@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.7.4)  2 AUG 2026 15:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.7.4)  23 AUG 2026 11:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -9,8 +9,8 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/share/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
-(/usr/share/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+(/usr/share/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count275
 \c@chapter=\count276
@@ -579,12 +579,12 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 * \topmargin=-41.1381pt
 * \headheight=15.0pt
 * \headsep=25.0pt
-* \topskip=12.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=35.0pt
+* \marginparwidth=50.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -639,7 +639,7 @@ LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 1
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 119.
+(Font)              <10.95> on input line 119.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 119.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -664,20 +664,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-Underfull \hbox (badness 10000) in paragraph at lines 151--151
-[]|\T1/lmr/bx/n/12 (+20) Tuteur universitaire : \T1/lmr/m/n/12 (+20) Mariko
- []
-
-[1
+ [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
-Overfull \hbox (0.10458pt too wide) in paragraph at lines 166--172
-\T1/lmr/bx/n/12 (-20) DUNSEATH-TERAO \T1/lmr/m/n/12 (-20) et \T1/lmr/bx/n/12 (-20) Kevin DUNSEATH\T1/lmr/m/n/12 (-20) , pour leur accueil, leur suivi académique,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 166--172
+Underfull \hbox (badness 10000) in paragraph at lines 167--173
 
  []
 
@@ -685,22 +675,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--172
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.178 \newpage
+l.179 \newpage
                [1
 
 ] (./rapport.toc
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 14.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 17.
  (/usr/share/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2
-
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}])
+))
 \tf@toc=\write4
 \openout4 = `rapport.toc'.
 
-Package babel Info: 'french' activates 'french' shorthands.
-(babel)             Reported on input line 184.
- [3] (./rapport.lof
+ [2
+
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] (./rapport.lof
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 18.
  (/usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -709,191 +697,165 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-
-Overfull \hbox (7.32603pt too wide) in paragraph at lines 18--18
- [][] [][][]\T1/lmr/m/n/12 (-20) Coupe de la PES pour $\OML/lmm/m/it/12 R \OT1/lmr/m/n/12 (-20) = 7\OML/lmm/m/it/12 :\OT1/lmr/m/n/12 (-20) 5 \OML/lmm/m/it/12 a[]$ \T1/lmr/m/n/12 (-20) sur quatre configurations de \T1/lmtt/m/n/12 least_squares 
- []
-
 )
 \tf@lof=\write5
 \openout5 = `rapport.lof'.
 
- [4
+ [3
 
-]
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
 Chapitre 1.
 
-Overfull \hbox (25.27943pt too wide) in paragraph at lines 191--191
-|[]\T1/lmr/bx/n/24.88 (-20) Présentation de la Structure d'Accueil| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 193--200
+Underfull \hbox (badness 10000) in paragraph at lines 196--203
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--205
+Underfull \hbox (badness 10000) in paragraph at lines 204--208
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--210
+Underfull \hbox (badness 10000) in paragraph at lines 209--213
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--214
+Underfull \hbox (badness 10000) in paragraph at lines 214--217
 
  []
 
-[5
+[4
 
 ]
 Chapitre 2.
 
-Overfull \hbox (0.14783pt too wide) in paragraph at lines 224--227
-\T1/lmr/m/n/12 (-20) mécanique quantique via une fonction d'onde $\OT1/lmr/m/n/12 (-20) 	([]\OML/lmm/m/it/12 ; []\OT1/lmr/m/n/12 (-20) )$\T1/lmr/m/n/12 (-20) , solution de l'équation de Schrödinger : 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 259--264
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
 
  []
 
-<../Figures/Soutenance/Systeme.png, id=283, 1192.455pt x 724.7075pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 262--270
+
+ []
+
+<../Figures/Soutenance/Systeme.png, id=229, 1192.455pt x 724.7075pt>
 File: ../Figures/Soutenance/Systeme.png Graphic file (type png)
 <use ../Figures/Soutenance/Systeme.png>
-Package pdftex.def Info: ../Figures/Soutenance/Systeme.png  used on input line 267.
+Package pdftex.def Info: ../Figures/Soutenance/Systeme.png  used on input line 273.
 (pdftex.def)             Requested size: 250.38564pt x 152.17094pt.
 Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/lmr/m/sc/12'.
+(microtype)             in font `T1/lmr/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6
+[5
 
 ]
-<../Figures/Rapport/Description-PES.png, id=295, 560.0925pt x 385.9218pt>
+<../Figures/Rapport/Description-PES.png, id=241, 560.0925pt x 385.9218pt>
 File: ../Figures/Rapport/Description-PES.png Graphic file (type png)
 <use ../Figures/Rapport/Description-PES.png>
-Package pdftex.def Info: ../Figures/Rapport/Description-PES.png  used on input line 296.
-(pdftex.def)             Requested size: 250.38564pt x 172.52669pt.
- [7{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <../Figures/Soutenance/Systeme.png> <../Figures/Rapport/Description-PES.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 306--309
+Package pdftex.def Info: ../Figures/Rapport/Description-PES.png  used on input line 308.
+(pdftex.def)             Requested size: 273.14923pt x 188.21414pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 314.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 314.
+Package babel Info: 'french' activates 'french' shorthands.
+(babel)             Reported on input line 317.
+ [6{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <../Figures/Soutenance/Systeme.png> <../Figures/Rapport/Description-PES.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 320--324
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--315
+Underfull \hbox (badness 10000) in paragraph at lines 325--330
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--322
+Underfull \hbox (badness 10000) in paragraph at lines 331--337
 
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 328.
-<../Figures/Rapport/diff-data_Toczylowski-R7_5.png, id=307, 498.663pt x 353.4003pt>
+(Font)              <10> on input line 343.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 343.
+<../Figures/Rapport/diff-data_Toczylowski-R7_5.png, id=259, 498.663pt x 353.4003pt>
 File: ../Figures/Rapport/diff-data_Toczylowski-R7_5.png Graphic file (type png)
 <use ../Figures/Rapport/diff-data_Toczylowski-R7_5.png>
-Package pdftex.def Info: ../Figures/Rapport/diff-data_Toczylowski-R7_5.png  used on input line 329.
+Package pdftex.def Info: ../Figures/Rapport/diff-data_Toczylowski-R7_5.png  used on input line 344.
 (pdftex.def)             Requested size: 204.85846pt x 145.18085pt.
-<../Figures/Rapport/diff-data_Toczylowski-R8.png, id=308, 498.663pt x 354.123pt>
+<../Figures/Rapport/diff-data_Toczylowski-R8.png, id=260, 498.663pt x 354.123pt>
 File: ../Figures/Rapport/diff-data_Toczylowski-R8.png Graphic file (type png)
 <use ../Figures/Rapport/diff-data_Toczylowski-R8.png>
-Package pdftex.def Info: ../Figures/Rapport/diff-data_Toczylowski-R8.png  used on input line 334.
+Package pdftex.def Info: ../Figures/Rapport/diff-data_Toczylowski-R8.png  used on input line 349.
 (pdftex.def)             Requested size: 204.85846pt x 145.47774pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 338--343
+Underfull \hbox (badness 10000) in paragraph at lines 353--359
 
  []
 
-[8 <../Figures/Rapport/diff-data_Toczylowski-R7_5.png> <../Figures/Rapport/diff-data_Toczylowski-R8.png>]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 352.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 352.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 352.
+[7 <../Figures/Rapport/diff-data_Toczylowski-R7_5.png> <../Figures/Rapport/diff-data_Toczylowski-R8.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 363--368
+
+ []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 352.
+Underfull \hbox (badness 10000) in paragraph at lines 374--375
+
+ []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 352.
+Underfull \hbox (badness 10000) in paragraph at lines 377--379
 
+ []
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 352.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 362.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 362.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 362.
-
-[9{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+[8{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 Chapitre 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 430--433
+Underfull \hbox (badness 10000) in paragraph at lines 420--424
 
  []
 
-[10
+
+Overfull \hbox (15.7841pt too wide) in paragraph at lines 448--454
+\T1/lmr/m/n/10.95 (-20) optimisateurs locaux dépendants d'un bon choix du point initial $\OML/lmm/m/it/10.95 p[]$\T1/lmr/m/n/10.95 (-20) , []\T1/lmtt/m/n/10.95 differential_evolution
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--467
+
+ []
+
+[9
 
 ]
-Overfull \hbox (1.83527pt too wide) in paragraph at lines 452--457
-\T1/lmr/m/n/12 (-20) Contrairement aux deux méthodes précédentes qui sont des optimisateurs locaux dépendants
- []
-
-
-Overfull \hbox (10.86156pt too wide) in paragraph at lines 452--457
-\T1/lmr/m/n/12 (-20) d'un bon choix de point initial $\OML/lmm/m/it/12 p[]$\T1/lmr/m/n/12 (-20) , []\T1/lmtt/m/n/12 differential_evolution \T1/lmr/m/n/12 (-20) est un algorithme d'optimisation
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 452--457
-
- []
-
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 469.
-
-Underfull \hbox (badness 10000) in paragraph at lines 464--470
-
- []
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 494--496
+Underfull \hbox (badness 10000) in paragraph at lines 468--473
 
  []
 
 
-Overfull \hbox (8.28532pt too wide) in paragraph at lines 533--538
-\T1/lmr/m/n/12 (-20) Pour éviter tout biais dans les mesures, on effectue les tests dans des conditions expérimentales
+Overfull \hbox (28.14882pt too wide) in paragraph at lines 481--485
+[]\T1/lmr/bx/n/10.95 (-20) Stabilité numérique : \T1/lmr/m/n/10.95 (-20) Utilisation de []\T1/lmtt/m/n/10.95 np.clip \T1/lmr/m/n/10.95 (-20) et traitement des []\T1/lmtt/m/n/10.95 NaN \T1/lmr/m/n/10.95 (-20) ou infinis ([]\T1/lmtt/m/n/10.95 np.nan_to_num\T1/lmr/m/n/10.95 (-20) ),
  []
 
-[12]
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--493
+
+ []
+
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 561--566
 
  []
 
-[13] [14]
+[11] [12]
 Chapitre 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 641--646
+Underfull \hbox (badness 10000) in paragraph at lines 642--646
 
  []
 
@@ -903,244 +865,1517 @@ Underfull \hbox (badness 10000) in paragraph at lines 647--652
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 653--656
+Underfull \hbox (badness 10000) in paragraph at lines 653--659
 
  []
 
-<../Figures/Rapport/surf1-R7_5.png, id=388, 498.663pt x 353.4003pt>
+<../Figures/Rapport/surf1-R7_5.png, id=343, 498.663pt x 353.4003pt>
 File: ../Figures/Rapport/surf1-R7_5.png Graphic file (type png)
 <use ../Figures/Rapport/surf1-R7_5.png>
-Package pdftex.def Info: ../Figures/Rapport/surf1-R7_5.png  used on input line 663.
+Package pdftex.def Info: ../Figures/Rapport/surf1-R7_5.png  used on input line 666.
 (pdftex.def)             Requested size: 204.85846pt x 145.18085pt.
-<../Figures/Rapport/surf1-R8.png, id=389, 498.663pt x 353.4003pt>
+<../Figures/Rapport/surf1-R8.png, id=344, 498.663pt x 353.4003pt>
 File: ../Figures/Rapport/surf1-R8.png Graphic file (type png)
 <use ../Figures/Rapport/surf1-R8.png>
-Package pdftex.def Info: ../Figures/Rapport/surf1-R8.png  used on input line 668.
+Package pdftex.def Info: ../Figures/Rapport/surf1-R8.png  used on input line 671.
 (pdftex.def)             Requested size: 204.85846pt x 145.18085pt.
-<../Figures/Rapport/surf1-R15.png, id=390, 498.663pt x 354.123pt>
+<../Figures/Rapport/surf1-R15.png, id=345, 498.663pt x 354.123pt>
 File: ../Figures/Rapport/surf1-R15.png Graphic file (type png)
 <use ../Figures/Rapport/surf1-R15.png>
-Package pdftex.def Info: ../Figures/Rapport/surf1-R15.png  used on input line 674.
+Package pdftex.def Info: ../Figures/Rapport/surf1-R15.png  used on input line 677.
 (pdftex.def)             Requested size: 204.85846pt x 145.47774pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 678--684
+Underfull \hbox (badness 10000) in paragraph at lines 681--687
 
  []
 
-[15
+[13
 
  <../Figures/Rapport/surf1-R7_5.png> <../Figures/Rapport/surf1-R8.png> <../Figures/Rapport/surf1-R15.png>]
-<../Figures/Rapport/err-rel-surf1-T0.png, id=401, 498.663pt x 426.393pt>
+<../Figures/Rapport/err-rel-surf1-T0.png, id=359, 498.663pt x 426.393pt>
 File: ../Figures/Rapport/err-rel-surf1-T0.png Graphic file (type png)
 <use ../Figures/Rapport/err-rel-surf1-T0.png>
-Package pdftex.def Info: ../Figures/Rapport/err-rel-surf1-T0.png  used on input line 691.
+Package pdftex.def Info: ../Figures/Rapport/err-rel-surf1-T0.png  used on input line 694.
 (pdftex.def)             Requested size: 204.85846pt x 175.16708pt.
-<../Figures/Rapport/err-rel-surf1-T90.png, id=402, 498.663pt x 426.393pt>
+<../Figures/Rapport/err-rel-surf1-T90.png, id=360, 498.663pt x 426.393pt>
 File: ../Figures/Rapport/err-rel-surf1-T90.png Graphic file (type png)
 <use ../Figures/Rapport/err-rel-surf1-T90.png>
-Package pdftex.def Info: ../Figures/Rapport/err-rel-surf1-T90.png  used on input line 696.
+Package pdftex.def Info: ../Figures/Rapport/err-rel-surf1-T90.png  used on input line 699.
 (pdftex.def)             Requested size: 204.85846pt x 175.16708pt.
-<../Figures/Rapport/err-rel-surf1-T180.png, id=403, 498.663pt x 426.393pt>
+<../Figures/Rapport/err-rel-surf1-T180.png, id=361, 498.663pt x 426.393pt>
 File: ../Figures/Rapport/err-rel-surf1-T180.png Graphic file (type png)
 <use ../Figures/Rapport/err-rel-surf1-T180.png>
-Package pdftex.def Info: ../Figures/Rapport/err-rel-surf1-T180.png  used on input line 701.
+Package pdftex.def Info: ../Figures/Rapport/err-rel-surf1-T180.png  used on input line 704.
 (pdftex.def)             Requested size: 204.85846pt x 175.16708pt.
- [16 <../Figures/Rapport/err-rel-surf1-T0.png> <../Figures/Rapport/err-rel-surf1-T90.png> <../Figures/Rapport/err-rel-surf1-T180.png>]
-Overfull \hbox (37.83115pt too wide) in paragraph at lines 711--717
-\T1/lmr/m/n/12 (-20) distance R[][][][][]. On utilise les méthodes \T1/lmtt/m/n/12 curve_fit, least_squares et differential_evolution\T1/lmr/m/n/12 (-20) . 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 711--717
+ [14 <../Figures/Rapport/err-rel-surf1-T0.png> <../Figures/Rapport/err-rel-surf1-T90.png> <../Figures/Rapport/err-rel-surf1-T180.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 714--720
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 760--764
+Overfull \hbox (12.14749pt too wide) in paragraph at lines 764--768
+\T1/lmr/m/n/10.95 (-20) On effectue une première sélection graphique des paramètres obtenus par les différentes configurations.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 764--768
 
  []
 
-<../Figures/Rapport/surf2-selec-R6.png, id=417, 498.663pt x 353.4003pt>
+<../Figures/Rapport/surf2-selec-R6.png, id=374, 498.663pt x 353.4003pt>
 File: ../Figures/Rapport/surf2-selec-R6.png Graphic file (type png)
 <use ../Figures/Rapport/surf2-selec-R6.png>
-Package pdftex.def Info: ../Figures/Rapport/surf2-selec-R6.png  used on input line 774.
+Package pdftex.def Info: ../Figures/Rapport/surf2-selec-R6.png  used on input line 778.
 (pdftex.def)             Requested size: 204.85846pt x 145.18085pt.
-<../Figures/Rapport/surf2-selec-R8_3.png, id=418, 498.663pt x 353.4003pt>
+<../Figures/Rapport/surf2-selec-R8_3.png, id=375, 498.663pt x 353.4003pt>
 File: ../Figures/Rapport/surf2-selec-R8_3.png Graphic file (type png)
 <use ../Figures/Rapport/surf2-selec-R8_3.png>
-Package pdftex.def Info: ../Figures/Rapport/surf2-selec-R8_3.png  used on input line 779.
+Package pdftex.def Info: ../Figures/Rapport/surf2-selec-R8_3.png  used on input line 783.
 (pdftex.def)             Requested size: 204.85846pt x 145.18085pt.
-<../Figures/Rapport/surf2-selec-R15.png, id=419, 498.663pt x 353.4003pt>
+<../Figures/Rapport/surf2-selec-R15.png, id=376, 498.663pt x 353.4003pt>
 File: ../Figures/Rapport/surf2-selec-R15.png Graphic file (type png)
 <use ../Figures/Rapport/surf2-selec-R15.png>
-Package pdftex.def Info: ../Figures/Rapport/surf2-selec-R15.png  used on input line 784.
+Package pdftex.def Info: ../Figures/Rapport/surf2-selec-R15.png  used on input line 788.
 (pdftex.def)             Requested size: 204.85846pt x 145.18085pt.
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 788--796
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 792--800
 
  []
 
-[18 <../Figures/Rapport/surf2-selec-R6.png> <../Figures/Rapport/surf2-selec-R8_3.png> <../Figures/Rapport/surf2-selec-R15.png>]
-<../Figures/Soutenance/HCN-HNC-T0.png, id=445, 497.9403pt x 353.4003pt>
+
+Overfull \hbox (4.00333pt too wide) in paragraph at lines 831--837
+\T1/lmr/m/n/10.95 (-20) rencontrées sont intrinsèquement les mêmes que pour la surface n\TS1/lmr/m/n/10.95 (-20) °\T1/lmr/m/n/10.95 (-20) 2. On réitère donc la méthodologie
+ []
+
+[16 <../Figures/Rapport/surf2-selec-R6.png> <../Figures/Rapport/surf2-selec-R8_3.png> <../Figures/Rapport/surf2-selec-R15.png>]
+<../Figures/Soutenance/HCN-HNC-T0.png, id=401, 497.9403pt x 353.4003pt>
 File: ../Figures/Soutenance/HCN-HNC-T0.png Graphic file (type png)
 <use ../Figures/Soutenance/HCN-HNC-T0.png>
-Package pdftex.def Info: ../Figures/Soutenance/HCN-HNC-T0.png  used on input line 840.
+Package pdftex.def Info: ../Figures/Soutenance/HCN-HNC-T0.png  used on input line 844.
 (pdftex.def)             Requested size: 204.85846pt x 145.39116pt.
-<../Figures/Soutenance/HCN-HNC-T90.png, id=446, 498.663pt x 353.4003pt>
+<../Figures/Soutenance/HCN-HNC-T90.png, id=402, 498.663pt x 353.4003pt>
 File: ../Figures/Soutenance/HCN-HNC-T90.png Graphic file (type png)
 <use ../Figures/Soutenance/HCN-HNC-T90.png>
-Package pdftex.def Info: ../Figures/Soutenance/HCN-HNC-T90.png  used on input line 845.
+Package pdftex.def Info: ../Figures/Soutenance/HCN-HNC-T90.png  used on input line 849.
 (pdftex.def)             Requested size: 204.85846pt x 145.18085pt.
-<../Figures/Soutenance/HCN-HNC-T180.png, id=447, 497.9403pt x 353.4003pt>
+<../Figures/Soutenance/HCN-HNC-T180.png, id=403, 497.9403pt x 353.4003pt>
 File: ../Figures/Soutenance/HCN-HNC-T180.png Graphic file (type png)
 <use ../Figures/Soutenance/HCN-HNC-T180.png>
-Package pdftex.def Info: ../Figures/Soutenance/HCN-HNC-T180.png  used on input line 850.
+Package pdftex.def Info: ../Figures/Soutenance/HCN-HNC-T180.png  used on input line 854.
 (pdftex.def)             Requested size: 204.85846pt x 145.39116pt.
- [19 <../Figures/Soutenance/HCN-HNC-T0.png> <../Figures/Soutenance/HCN-HNC-T90.png> <../Figures/Soutenance/HCN-HNC-T180.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 864--870
+ [17 <../Figures/Soutenance/HCN-HNC-T0.png> <../Figures/Soutenance/HCN-HNC-T90.png> <../Figures/Soutenance/HCN-HNC-T180.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 868--874
 
  []
 
-<../Figures/Rapport/NN-T0.png, id=458, 415.5525pt x 314.3745pt>
+<../Figures/Rapport/NN-T0.png, id=414, 415.5525pt x 314.3745pt>
 File: ../Figures/Rapport/NN-T0.png Graphic file (type png)
 <use ../Figures/Rapport/NN-T0.png>
-Package pdftex.def Info: ../Figures/Rapport/NN-T0.png  used on input line 877.
+Package pdftex.def Info: ../Figures/Rapport/NN-T0.png  used on input line 881.
 (pdftex.def)             Requested size: 204.85846pt x 154.98026pt.
-<../Figures/Rapport/NN-T90.png, id=459, 409.0482pt x 314.3745pt>
+<../Figures/Rapport/NN-T90.png, id=415, 409.0482pt x 314.3745pt>
 File: ../Figures/Rapport/NN-T90.png Graphic file (type png)
 <use ../Figures/Rapport/NN-T90.png>
-Package pdftex.def Info: ../Figures/Rapport/NN-T90.png  used on input line 882.
+Package pdftex.def Info: ../Figures/Rapport/NN-T90.png  used on input line 886.
 (pdftex.def)             Requested size: 204.85846pt x 157.44109pt.
-<../Figures/Rapport/NN-T180.png, id=460, 415.5525pt x 314.3745pt>
+<../Figures/Rapport/NN-T180.png, id=416, 415.5525pt x 314.3745pt>
 File: ../Figures/Rapport/NN-T180.png Graphic file (type png)
 <use ../Figures/Rapport/NN-T180.png>
-Package pdftex.def Info: ../Figures/Rapport/NN-T180.png  used on input line 887.
+Package pdftex.def Info: ../Figures/Rapport/NN-T180.png  used on input line 891.
 (pdftex.def)             Requested size: 204.85846pt x 154.98026pt.
-[20 <../Figures/Rapport/NN-T0.png> <../Figures/Rapport/NN-T90.png> <../Figures/Rapport/NN-T180.png>]
+[18 <../Figures/Rapport/NN-T0.png> <../Figures/Rapport/NN-T90.png> <../Figures/Rapport/NN-T180.png>]
 Chapitre 5.
 
-Overfull \hbox (30.73056pt too wide) in paragraph at lines 902--908
-\T1/lmr/m/n/12 (-20) La comparaison des trois algorithmes ([][]3.2[][]) a mis en évidence le fait que \T1/lmtt/m/n/12 differential_evolution
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 902--908
+Underfull \hbox (badness 10000) in paragraph at lines 906--912
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 920--923
+Underfull \hbox (badness 10000) in paragraph at lines 924--927
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 924--929
+Underfull \hbox (badness 10000) in paragraph at lines 928--933
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 930--937
+Underfull \hbox (badness 10000) in paragraph at lines 934--941
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 950--957
+
+ []
+
+[19
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 958--967
+
+ []
+
+[20]
+Chapitre 6.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1007--1019
 
  []
 
 [21
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 946--952
-
+Underfull \hbox (badness 1132) in paragraph at lines 1032--1033
+[]\T1/lmr/m/n/10.95 (+20) Site officiel de l'Institut de Physique de Rennes : [][]$\T1/lmtt/m/n/10.95 https : / / ipr . univ-[]rennes . fr /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 953--962
-
+Underfull \hbox (badness 10000) in paragraph at lines 1038--1039
+[]\T1/lmr/m/n/10.95 (+20) Documentation officielle Scipy [][]$\T1/lmtt/m/n/10.95 https : / / docs . scipy . org / doc / scipy / reference /
  []
 
 
-Overfull \hbox (20.06529pt too wide) in paragraph at lines 968--970
-[]\T1/lmr/bx/n/12 (-20) Intégration de contraintes physiques : \T1/lmr/m/n/12 (-20) En pénalisant directement les comportements
+Underfull \hbox (badness 10000) in paragraph at lines 1039--1040
+[]\T1/lmr/m/n/10.95 (+20) Documentation officielle Scipy [][]$\T1/lmtt/m/n/10.95 https : / / docs . scipy . org / doc / scipy / reference /
  []
 
-[22]
-Chapitre 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1003--1015
-
+Underfull \hbox (badness 10000) in paragraph at lines 1040--1041
+[]\T1/lmr/m/n/10.95 (+20) Documentation officielle Scipy [][]$\T1/lmtt/m/n/10.95 https : / / docs . scipy . org / doc / scipy / reference /
  []
 
-[23
-
-] [24
+[22
 
 ]
 Annexe A.
-[25
+[23
 
 ]
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1187.
- [26] [27]
-<../Figures/Soutenance/PES-AR-Toczylowski-params.png, id=538, 549.9747pt x 505.89pt>
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1192.
+ [24] [25]
+<../Figures/Soutenance/PES-AR-Toczylowski-params.png, id=496, 549.9747pt x 505.89pt>
 File: ../Figures/Soutenance/PES-AR-Toczylowski-params.png Graphic file (type png)
 <use ../Figures/Soutenance/PES-AR-Toczylowski-params.png>
-Package pdftex.def Info: ../Figures/Soutenance/PES-AR-Toczylowski-params.png  used on input line 1244.
-(pdftex.def)             Requested size: 204.85846pt x 188.4346pt.
-<../Figures/Soutenance/PES-AR-Toczylowski-bestfit.png, id=539, 549.9747pt x 505.89pt>
+Package pdftex.def Info: ../Figures/Soutenance/PES-AR-Toczylowski-params.png  used on input line 1249.
+(pdftex.def)             Requested size: 223.07211pt x 205.18536pt.
+<../Figures/Soutenance/PES-AR-Toczylowski-bestfit.png, id=499, 549.9747pt x 505.89pt>
 File: ../Figures/Soutenance/PES-AR-Toczylowski-bestfit.png Graphic file (type png)
 <use ../Figures/Soutenance/PES-AR-Toczylowski-bestfit.png>
-Package pdftex.def Info: ../Figures/Soutenance/PES-AR-Toczylowski-bestfit.png  used on input line 1249.
-(pdftex.def)             Requested size: 204.85846pt x 188.4346pt.
-<../Figures/Soutenance/PES-AR-Toczylowski.png, id=542, 873.2625pt x 803.0pt>
+Package pdftex.def Info: ../Figures/Soutenance/PES-AR-Toczylowski-bestfit.png  used on input line 1254.
+(pdftex.def)             Requested size: 223.07211pt x 205.18536pt.
+<../Figures/Soutenance/PES-AR-Toczylowski.png, id=502, 873.2625pt x 803.0pt>
 File: ../Figures/Soutenance/PES-AR-Toczylowski.png Graphic file (type png)
 <use ../Figures/Soutenance/PES-AR-Toczylowski.png>
-Package pdftex.def Info: ../Figures/Soutenance/PES-AR-Toczylowski.png  used on input line 1254.
+Package pdftex.def Info: ../Figures/Soutenance/PES-AR-Toczylowski.png  used on input line 1259.
 (pdftex.def)             Requested size: 250.38564pt x 230.24194pt.
-<../Figures/Rapport/surf2-ls1-R7_5.png, id=543, 642.4803pt x 426.393pt>
+<../Figures/Rapport/surf2-ls1-R7_5.png, id=503, 642.4803pt x 426.393pt>
 File: ../Figures/Rapport/surf2-ls1-R7_5.png Graphic file (type png)
 <use ../Figures/Rapport/surf2-ls1-R7_5.png>
-Package pdftex.def Info: ../Figures/Rapport/surf2-ls1-R7_5.png  used on input line 1262.
+Package pdftex.def Info: ../Figures/Rapport/surf2-ls1-R7_5.png  used on input line 1267.
 (pdftex.def)             Requested size: 432.48051pt x 287.0221pt.
-<../Figures/Rapport/surf2-T0.png, id=544, 497.2176pt x 353.4003pt>
+ [26
+
+ <../Figures/Soutenance/PES-AR-Toczylowski-params.png> <../Figures/Soutenance/PES-AR-Toczylowski-bestfit.png> <../Figures/Soutenance/PES-AR-Toczylowski.png>]
+<../Figures/Rapport/surf2-T0.png, id=512, 497.2176pt x 353.4003pt>
 File: ../Figures/Rapport/surf2-T0.png Graphic file (type png)
 <use ../Figures/Rapport/surf2-T0.png>
-Package pdftex.def Info: ../Figures/Rapport/surf2-T0.png  used on input line 1272.
-(pdftex.def)             Requested size: 204.85846pt x 145.60684pt.
-<../Figures/Rapport/surf2-T90.png, id=545, 498.663pt x 353.4003pt>
+Package pdftex.def Info: ../Figures/Rapport/surf2-T0.png  used on input line 1279.
+(pdftex.def)             Requested size: 295.90588pt x 210.327pt.
+<../Figures/Rapport/surf2-T90.png, id=513, 498.663pt x 353.4003pt>
 File: ../Figures/Rapport/surf2-T90.png Graphic file (type png)
 <use ../Figures/Rapport/surf2-T90.png>
-Package pdftex.def Info: ../Figures/Rapport/surf2-T90.png  used on input line 1277.
-(pdftex.def)             Requested size: 204.85846pt x 145.18085pt.
-<../Figures/Rapport/surf2-T180.png, id=546, 499.3857pt x 353.4003pt>
+Package pdftex.def Info: ../Figures/Rapport/surf2-T90.png  used on input line 1284.
+(pdftex.def)             Requested size: 295.90588pt x 209.70686pt.
+<../Figures/Rapport/surf2-T180.png, id=514, 499.3857pt x 353.4003pt>
 File: ../Figures/Rapport/surf2-T180.png Graphic file (type png)
 <use ../Figures/Rapport/surf2-T180.png>
-Package pdftex.def Info: ../Figures/Rapport/surf2-T180.png  used on input line 1282.
-(pdftex.def)             Requested size: 204.85846pt x 144.97054pt.
- [28
+Package pdftex.def Info: ../Figures/Rapport/surf2-T180.png  used on input line 1289.
+(pdftex.def)             Requested size: 295.90588pt x 209.40489pt.
+ [27 <../Figures/Rapport/surf2-ls1-R7_5.png>]
+Overfull \vbox (6.25566pt too high) has occurred while \output is active []
 
- <../Figures/Soutenance/PES-AR-Toczylowski-params.png> <../Figures/Soutenance/PES-AR-Toczylowski-bestfit.png> <../Figures/Soutenance/PES-AR-Toczylowski.png>] [29 <../Figures/Rapport/surf2-ls1-R7_5.png>]
-<../Figures/Rapport/PES-surf2-ls1.png, id=561, 671.3883pt x 573.1011pt>
+ [28 <../Figures/Rapport/surf2-T0.png> <../Figures/Rapport/surf2-T90.png> <../Figures/Rapport/surf2-T180.png>]
+<../Figures/Rapport/PES-surf2-ls1.png, id=529, 671.3883pt x 573.1011pt>
 File: ../Figures/Rapport/PES-surf2-ls1.png Graphic file (type png)
 <use ../Figures/Rapport/PES-surf2-ls1.png>
-Package pdftex.def Info: ../Figures/Rapport/PES-surf2-ls1.png  used on input line 1293.
-(pdftex.def)             Requested size: 204.85846pt x 174.8699pt.
-<../Figures/Rapport/PES-surf2-ls2.png, id=562, 671.3883pt x 573.1011pt>
+Package pdftex.def Info: ../Figures/Rapport/PES-surf2-ls1.png  used on input line 1300.
+(pdftex.def)             Requested size: 250.38564pt x 213.73183pt.
+<../Figures/Rapport/PES-surf2-ls2.png, id=530, 671.3883pt x 573.1011pt>
 File: ../Figures/Rapport/PES-surf2-ls2.png Graphic file (type png)
 <use ../Figures/Rapport/PES-surf2-ls2.png>
-Package pdftex.def Info: ../Figures/Rapport/PES-surf2-ls2.png  used on input line 1298.
-(pdftex.def)             Requested size: 204.85846pt x 174.8699pt.
-<../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png, id=563, 671.3883pt x 573.1011pt>
+Package pdftex.def Info: ../Figures/Rapport/PES-surf2-ls2.png  used on input line 1305.
+(pdftex.def)             Requested size: 250.38564pt x 213.73183pt.
+<../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png, id=531, 671.3883pt x 573.1011pt>
 File: ../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png Graphic file (type png)
 <use ../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png>
-Package pdftex.def Info: ../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png  used on input line 1303.
-(pdftex.def)             Requested size: 204.85846pt x 174.8699pt.
- [30 <../Figures/Rapport/surf2-T0.png> <../Figures/Rapport/surf2-T90.png> <../Figures/Rapport/surf2-T180.png>] [31 <../Figures/Rapport/PES-surf2-ls1.png> <../Figures/Rapport/PES-surf2-ls2.png> <../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png>] (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+Package pdftex.def Info: ../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png  used on input line 1310.
+(pdftex.def)             Requested size: 250.38564pt x 213.73183pt.
+
+Overfull \vbox (18.01239pt too high) has occurred while \output is active []
+
+ [29 <../Figures/Rapport/PES-surf2-ls1.png> <../Figures/Rapport/PES-surf2-ls2.png> <../Figures/Soutenance/Ar-chinois-contour-err-curve-fit.png>] (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1311.
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1312.
- [32
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1349.
 
-] [33] [34] 
+
+./rapport.tex:1350: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1350 def 
+           G(R,Theta,g0,g1,g2,g3):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 1350.
+
+./rapport.tex:1351: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1351  
+           g = 0.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1352: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1352  
+           for i in range(6):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1353: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1353  
+               g = g + (g0[i]+g1[i]*R+g2[i]*R*R+g3[i]*R*R*R)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1354: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1354  
+                     * eval_legendre(i,math.cos(Theta))
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1355: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1355  
+           return g
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1357: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1357 def 
+           X(Theta,x):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1357: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1357 def 
+           X(Theta,x):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1358: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1358  
+           y = 0.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1359: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1359  
+           for i in range(6):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1360: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1360  
+               y = y + x[i] * eval_legendre(i,math.cos(Theta))
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1361: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1361  
+           return y
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1363: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1363 def 
+           f(n,x):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1363: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1363 def 
+           f(n,x):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1364: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1364  
+           y = 0.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1365: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1365  
+           for k in range(n+1):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1366: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1366  
+               y = y + (x**k)/factorial(k)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1367: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1367  
+           y = 1. - math.exp(-x)*y
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1368: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1368  
+           return y
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1370: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1370 def 
+           V(vars, params):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1370: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1370 def 
+           V(vars, params):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1372: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1372  
+           R, Theta = vars
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1372: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1372  
+           R, Theta = vars
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1374: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1374  
+           Theta_rad = math.radians(Theta)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1374: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1374  
+           Theta_rad = math.radians(Theta)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1376: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1376  
+           b  = params[0:6]    # b0, b1, b2, b3, b4, b5
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1376: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1376  
+           b  = params[0:6]    # b0, b1, b2, b3, b4, b5
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1377: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1377  
+           c  = params[6:10]   # c0, c1, c2, c3
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1378: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1378  
+           d  = params[10:16]  # d0, d1, d2, d3, d4, d5
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1379: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1379  
+           g0 = params[16:22]  # g00, g01, g02, g03, g04, g05
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1380: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1380  
+           g1 = params[22:28]  # g10, g11, g12, g13, g14, g15
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1381: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1381  
+           g2 = params[28:34]  # g20, g21, g22, g23, g24, g25
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1382: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1382  
+           g3 = params[34:40]  # g30, g31, g32, g33, g34, g35
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1384: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1384  
+           abs_BR = math.fabs(X(Theta_rad,b)*R)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1384: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1384  
+           abs_BR = math.fabs(X(Theta_rad,b)*R)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1385: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1385  
+           cosTh = math.cos(Theta_rad)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1387: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1387  
+           V_sh = G(R,Theta_rad,g0,g1,g2,g3)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1387: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1387  
+           V_sh = G(R,Theta_rad,g0,g1,g2,g3)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1388: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1388  
+                * math.exp(X(Theta_rad,d)-X(Theta_rad,b)*R)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1390: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1390  
+           V_as = f(6,abs_BR) * (c[0]*eval_legendre(0,cosTh)\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1390: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1390  
+           V_as = f(6,abs_BR) * (c[0]*eval_legendre(0,cosTh)\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1391: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1391  
+                                + c[2]*eval_legendre(2,cosTh))/(R**6)\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1392: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1392  
+                + f(7,abs_BR) * (c[1]*eval_legendre(1,cosTh)\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1393: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1393  
+                                + c[3]*eval_legendre(3,cosTh))/(R**7)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1395: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1395  
+           return V_sh + V_as
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1395: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1395  
+           return V_sh + V_as
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[30
+
+]
+
+./rapport.tex:1401: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1401 import 
+              numpy as np
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1402: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1402 from 
+              numpy.polynomial.legendre import legval
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1403: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1403 from 
+              scipy.special             import eval_legendre
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1405: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1405 def 
+           f6_opt(x):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1405: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1405 def 
+           f6_opt(x):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1406: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1406  
+           y = 1.0 + x * (1.0 + x * (0.5 + x * (1.0/6.0 + x * (1.0/24.0 + x ...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1407: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1407  
+           return 1.0 - np.exp(-x) * y
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1408: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1408 def 
+           f7_opt(x):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1409: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1409  
+           y = 1.0 + x * (1.0 + x * (0.5 + x * (1.0/6.0 + x * (1.0/24.0 + x ...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1410: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1410  
+           return 1.0 - np.exp(-x) * y
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1412: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1412 def 
+           V_opt(p, R, Theta):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1412: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1412 def 
+           V_opt(p, R, Theta):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1413: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1413  
+           R = np.asarray(R, dtype=float)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1414: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1414  
+           cosTh = np.cos(np.deg2rad(np.asarray(Theta, dtype=float)))
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1416: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1416  
+           b  = p[0:6]
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1416: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1416  
+           b  = p[0:6]
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1417: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1417  
+           c  = p[6:10]
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1418: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1418  
+           d  = p[10:16]
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1419: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1419  
+           g0 = np.asarray(p[16:22], dtype=float)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1420: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1420  
+           g1 = np.asarray(p[22:28], dtype=float)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1421: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1421  
+           g2 = np.asarray(p[28:34], dtype=float)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1422: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1422  
+           g3 = np.asarray(p[34:40], dtype=float)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1424: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1424  
+           X_b = legval(cosTh, b)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1424: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1424  
+           X_b = legval(cosTh, b)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1425: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1425  
+           X_d = legval(cosTh, d)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1427: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1427  
+           X_bR = X_b * R
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1427: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1427  
+           X_bR = X_b * R
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1428: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1428  
+           abs_BR = np.abs(X_bR)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1430: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1430  
+           Pl = eval_legendre(np.arange(6)[:,None],cosTh)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1430: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1430  
+           Pl = eval_legendre(np.arange(6)[:,None],cosTh)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1432: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1432  
+           g = g0[:, None] + R * (g1[:, None] + R * (g2[:, None] + R *  g3[:...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1432: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1432  
+           g = g0[:, None] + R * (g1[:, None] + R * (g2[:, None] + R *  g3[:...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1434: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1434  
+           exp_val = np.clip(X_d-X_bR,-200,200)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1434: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1434  
+           exp_val = np.clip(X_d-X_bR,-200,200)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1435: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1435  
+           V_sh = np.sum(g * Pl, axis=0) * np.exp(exp_val)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1437: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1437  
+           inv_R = 1.0/R
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1437: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1437  
+           inv_R = 1.0/R
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1438: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1438  
+           inv_R6 = inv_R * inv_R * inv_R * inv_R * inv_R * inv_R
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1439: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1439  
+           inv_R7 = inv_R6 * inv_R
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1441: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1441  
+           V_as = (f6_opt(abs_BR) * legval(cosTh,[c[0],0,c[2]]) * inv_R6
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1441: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1441  
+           V_as = (f6_opt(abs_BR) * legval(cosTh,[c[0],0,c[2]]) * inv_R6
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1442: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1442  
+                 + f7_opt(abs_BR) * legval(cosTh,[0,c[1],0,c[3]]) * inv_R7)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1444: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1444  
+           V_total = V_sh + V_as
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1444: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1444  
+           V_total = V_sh + V_as
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1445: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1445  
+           V_total = np.nan_to_num(V_total, nan=1e100, posinf=1e100, neginf=...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1446: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1446  
+           V_total = np.clip(V_total, -1e100, 1e100)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1448: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1448  
+           return V_total
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1448: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1448  
+           return V_total
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[31]
+
+./rapport.tex:1453: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1453 def 
+           relative_error_loss(predictions_norm, targets_norm,\
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1454: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1454  
+                               E_mean, E_std, epsilon=1.0):
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1455: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1455  
+           predictions_raw = (predictions_norm * E_std) + E_mean
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1456: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1456  
+           targets_raw = (targets_norm * E_std) + E_mean
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1458: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1458  
+           erreur_absolue = torch.abs(predictions_raw - targets_raw)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1458: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1458  
+           erreur_absolue = torch.abs(predictions_raw - targets_raw)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1460: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1460  
+           erreur_relative = erreur_absolue / (torch.abs(targets_raw) + epsi...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1460: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1460  
+           erreur_relative = erreur_absolue / (torch.abs(targets_raw) + epsi...
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1462: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1462  
+           return torch.mean(erreur_relative)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./rapport.tex:1462: Package xcolor Error: Undefined color `mygray'.
+
+See the xcolor package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1462  
+           return torch.mean(erreur_relative)
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[32] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./rapport.aux)
  ***********
@@ -1148,21 +2383,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 6FAC0C9AA3046F1DAB0F877C936DF06F;7586.
+(rerunfilecheck)             Checksum: 800C76C574727E1C2CFE566D189EB014;5987.
  ) 
 Here is how much of TeX's memory you used:
- 20069 strings out of 469515
- 323416 string characters out of 5470808
- 1251349 words of memory out of 5000000
- 47939 multiletter control sequences out of 15000+600000
- 739046 words of font info for 249 fonts, out of 8000000 for 9000
+ 20019 strings out of 469515
+ 322609 string characters out of 5470808
+ 1443756 words of memory out of 5000000
+ 47920 multiletter control sequences out of 15000+600000
+ 732771 words of font info for 229 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,13n,92p,1004b,2250s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on rapport.pdf (35 pages, 3069779 bytes).
+ 75i,13n,79p,1004b,1328s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on rapport.pdf (33 pages, 3097369 bytes).
 PDF statistics:
- 867 PDF objects out of 1000 (max. 8388607)
- 707 compressed objects within 8 object streams
- 227 named destinations out of 1000 (max. 500000)
- 71650 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 839 PDF objects out of 1000 (max. 8388607)
+ 675 compressed objects within 7 object streams
+ 222 named destinations out of 1000 (max. 500000)
+ 66970 words of extra memory for PDF output out of 74296 (max. 10000000)
 
